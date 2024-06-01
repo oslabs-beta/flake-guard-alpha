@@ -113,5 +113,5 @@
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"
-, "src/index.tsx"  ]
+, "src/index.tsx", "src/client/pages/nav-bar.tsx"  ]
 }
