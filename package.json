@@ -6,7 +6,6 @@
   "scripts": {
     "start": "concurrently \"webpack serve --open\" \"nodemon ./src/server/server.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
@@ -48,7 +47,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "concurrently": "^8.2.2",
     "express": "^4.19.2",
+    "nodemon": "^3.1.2",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1"
