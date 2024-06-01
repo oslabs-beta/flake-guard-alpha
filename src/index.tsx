@@ -3,14 +3,13 @@ import {createRoot} from 'react-dom/client';
 import NavBarHeading from './client/pages/nav-bar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <div>
         <NavBarHeading />
       </div>
-      <h1 className="hello">Hello world!</h1>
-      <h2>Tip: Check your console</h2>
+      <div>Login</div>
     </>
   );
 };
