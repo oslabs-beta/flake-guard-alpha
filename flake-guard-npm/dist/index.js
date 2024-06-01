@@ -10,13 +10,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const { exec } = require('node:child_process');
-let runTimes = 10;
+const fs = require('fs');
+const path = require('path');
+function loadConfig() {
+    const defaultConfigPath = path.join(__dirname, '../config/default.json');
+    let config = JSON.parse(fs.readFileSync(defaultConfigPath, 'utf8'));
+    const userConfigPath = path.join(process.cwd(), 'fg.config.json');
+    if (fs.existsSync(userConfigPath)) {
+        const externalConfig = JSON.parse(fs.readFileSync(userConfigPath, 'utf8'));
+        config = Object.assign(Object.assign({}, config), externalConfig);
+    }
+    return config;
+}
+const configObj = loadConfig();
+let runTimes = configObj.runs;
 const filename = process.argv[2];
 const command = `jest ${filename} --json`;
 if (!filename) {
     console.error('Please provide a test file name to run FlakeGuard. ex "flake-guard <testfile>.js"');
     process.exit(1);
 }
+console.log(`Number of runs: ${runTimes}`);
 const runTest = () => {
     return new Promise((resolve) => {
         exec(command, (error, stdout) => {

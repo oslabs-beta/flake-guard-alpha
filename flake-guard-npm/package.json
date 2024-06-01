@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "flake-guard": "dist/index.js" 
+    "flake-guard": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
