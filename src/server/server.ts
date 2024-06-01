@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 import npmRouter from '../server/routes/npm';
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, '../client')));
 app.use('/results', npmRouter);
 
