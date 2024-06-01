@@ -1,3 +1,8 @@
 {
-  "extends": "./node_modules/gts/"
+  "extends": "./node_modules/gts/",
+  "rules": {
+    "node/no-unpublished-require": ["error", {
+      "allowModules": ["html-webpack-plugin", "mini-css-extract-plugin", "workbox-webpack-plugin"]
+    }]
+  }
 }

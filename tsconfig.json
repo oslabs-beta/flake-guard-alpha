@@ -1,7 +1,7 @@
-// DO NOT USE "TYPE ANY"
 {
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
+    "jsx": "react",
     "rootDir": ".",
     "outDir": "build",
     /* Visit https://aka.ms/tsconfig to read more about this file */
@@ -114,5 +114,5 @@
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"
-,   "src/index.tsx"  ]
+, "src/index.tsx", "src/client/pages/nav-bar.tsx"  ]
 }
