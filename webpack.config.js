@@ -11,9 +11,12 @@ const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
   devServer: {
     open: true,
@@ -39,8 +42,14 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: 'asset',
       },
-      /* ** WILL NEED A TS LOADER AND BABEL FOR JS LOADER ** */
-
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+        resolve: {
+          extensions: ['.ts', '.tsx', '.js', '.json'],
+        },
+      },
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
