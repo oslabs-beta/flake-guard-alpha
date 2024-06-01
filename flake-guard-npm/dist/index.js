@@ -32,7 +32,7 @@ if (!filename) {
 }
 console.log(`Number of runs: ${runTimes}`);
 const runTest = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         exec(command, (error, stdout) => {
             resolve(stdout);
         });
@@ -41,36 +41,36 @@ const runTest = () => {
 const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* () {
     const timestampStart = Date.now();
     const flakeGuardResults = {};
+    const flakeGuardResultsVerbose = [];
     for (let i = 0; i < iterations; i++) {
         try {
             const result = yield runTest();
             const parsedResult = JSON.parse(result);
+            flakeGuardResultsVerbose.push(parsedResult);
             const { assertionResults } = parsedResult.testResults[0];
             assertionResults.forEach(assertion => {
                 if (!flakeGuardResults.hasOwnProperty(assertion.fullName)) {
                     flakeGuardResults[assertion.fullName] = { passed: 0, failed: 0 };
                 }
-                ;
                 if (assertion.status === 'passed') {
                     flakeGuardResults[assertion.fullName].passed += 1;
                 }
-                ;
+                else
+                    flakeGuardResults[assertion.fullName].failed += 1;
             });
             console.log(`Run ${i + 1} complete`);
         }
         catch (error) {
             console.error(`Error in run number ${i + 1}: ${error}`);
         }
-        ;
     }
-    ;
     try {
         yield fetch('http://localhost:3000/results', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/JSON'
+                'Content-Type': 'application/JSON',
             },
-            body: JSON.stringify(flakeGuardResults)
+            body: JSON.stringify(flakeGuardResultsVerbose),
         });
         console.log('Results successfully sent to FlakeGuard server');
     }
@@ -79,7 +79,9 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
     }
     const timestampEnd = Date.now();
     console.log(`Total FlakeGuard runtime: ${(timestampEnd - timestampStart) / 1000} seconds`);
-    console.log('Log in to FlakeGuard.com to view results');
+    console.log('Results Summary:');
+    console.log(flakeGuardResults);
+    console.log('Log in to FlakeGuard.com to view full results');
 });
 flakeGuard(runTimes);
 //# sourceMappingURL=index.js.map

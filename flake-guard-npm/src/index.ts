@@ -47,10 +47,12 @@ const runTest = (): Promise<string> => {
 const flakeGuard = async (iterations: number) => {
   const timestampStart = Date.now();
   const flakeGuardResults = {};
+  const flakeGuardResultsVerbose = [];
   for (let i = 0; i < iterations; i++) {
     try {
       const result = await runTest();
       const parsedResult = JSON.parse(result);
+      flakeGuardResultsVerbose.push(parsedResult);
       // Uncomment to see the full result object
       // console.log(result);
       const {assertionResults} = parsedResult.testResults[0];
@@ -61,7 +63,7 @@ const flakeGuard = async (iterations: number) => {
         }
         if (assertion.status === 'passed') {
           flakeGuardResults[assertion.fullName].passed += 1;
-        }
+        } else flakeGuardResults[assertion.fullName].failed += 1;
       });
       console.log(`Run ${i + 1} complete`);
     } catch (error) {
@@ -75,7 +77,7 @@ const flakeGuard = async (iterations: number) => {
       headers: {
         'Content-Type': 'application/JSON',
       },
-      body: JSON.stringify(flakeGuardResults),
+      body: JSON.stringify(flakeGuardResultsVerbose),
     });
     console.log('Results successfully sent to FlakeGuard server');
   } catch (error) {
@@ -88,7 +90,9 @@ const flakeGuard = async (iterations: number) => {
       (timestampEnd - timestampStart) / 1000
     } seconds`
   );
-  console.log('Log in to FlakeGuard.com to view results');
+  console.log('Results Summary:')
+  console.log(flakeGuardResults);
+  console.log('Log in to FlakeGuard.com to view full results');
 };
 
 flakeGuard(runTimes);
