@@ -1,13 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {BrowserRouter} from 'react-router-dom';
+import {createRoot} from 'react-dom/client';
+import NavBarHeading from './client/pages/nav-bar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './App';
+const App = () => {
+  return (
+    <>
+      <div>
+        <NavBarHeading />
+      </div>
+      <h1 className="hello">Hello world!</h1>
+      <h2>Tip: Check your console</h2>
+    </>
+  );
+};
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
-);
+const container = document.getElementById('react-root')!;
+const root = createRoot(container);
+root.render(<App />);

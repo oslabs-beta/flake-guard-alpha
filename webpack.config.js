@@ -43,16 +43,13 @@ const config = {
         type: 'asset',
       },
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
+        use: 'ts-loader',
+        resolve: {
+          extensions: ['.ts', '.tsx', '.js', '.json'],
+        },
       },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-      /* ** WILL NEED A TS LOADER AND BABEL FOR JS LOADER ** */
-
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
