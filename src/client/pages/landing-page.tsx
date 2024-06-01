@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarHeading from './nav-bar';
+import '../../../src/styles.css';
 
 const Landing: React.FC = () => {
   return (
@@ -7,7 +8,8 @@ const Landing: React.FC = () => {
       <div>
         <NavBarHeading />
       </div>
-      <div>Login</div>
+      <div>Landing info</div>
+      <div id="login-test">Login</div>
     </>
   );
 };

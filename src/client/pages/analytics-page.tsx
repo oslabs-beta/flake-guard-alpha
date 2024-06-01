@@ -1,15 +1,15 @@
 import React from 'react';
 import NavBarHeading from './nav-bar';
 
-const HomePage: React.FC = () => {
+const Analytics: React.FC = () => {
   return (
     <>
       <div>
         <NavBarHeading />
       </div>
-      <div>Login</div>
+      <div>Analytics info</div>
     </>
   );
 };
 
-export default HomePage;
+export default Analytics;

@@ -1,19 +1,12 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-import NavBarHeading from './client/pages/nav-bar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-const App: React.FC = () => {
-  return (
-    <>
-      <div>
-        <NavBarHeading />
-      </div>
-      <div>Login</div>
-    </>
-  );
-};
+import App from './client/app';
 
 const container = document.getElementById('react-root')!;
+//! is telling TS, saying that container will never be 'null'
 const root = createRoot(container);
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
