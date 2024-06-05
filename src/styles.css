@@ -1,3 +1,15 @@
 *{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(235, 235, 235);
+    color: rgb(0, 0, 0);
+}
+
+#flake-logo{
+    height: 35px;
+    width: 35px;
+    border-radius: 25%;
+}
+
+#social-logo{
+    height: 35px;
+    width: 35px;
 }
