@@ -2,23 +2,26 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import logo_4 from '../assets/logo_4.png';
 
 //created and imported images from canva as pngs
 //bootstrap template
 //type React Functional Componenet
 const NavBarHeading: React.FC = () => {
-  const [activeLink, setActiveLink] = useState('home');
+  // const [activeLink, setActiveLink] = useState('home');
+  const navigate: NavigateFunction = useNavigate();
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary navbar-custom">
-      <Container>
+      <Container id="navbar-container">
         <Navbar.Brand>
           <Link to="/home">
             <img id="flake-logo" src={logo_4}></img>
           </Link>
         </Navbar.Brand>
+        <Navbar.Brand onClick={() => navigate('/docs')}>Docs</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           {' '}
           <span className="navbar-toggle"></span>
