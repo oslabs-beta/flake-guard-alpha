@@ -9,9 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const { exec } = require('node:child_process');
-const fs = require('fs');
-const path = require('path');
+Object.defineProperty(exports, "__esModule", { value: true });
+const node_child_process_1 = require("node:child_process");
+const fs = require("fs");
+const path = require("path");
 function loadConfig() {
     const defaultConfigPath = path.join(__dirname, '../config/default.json');
     let config = JSON.parse(fs.readFileSync(defaultConfigPath, 'utf8'));
@@ -23,22 +24,22 @@ function loadConfig() {
     return config;
 }
 const configObj = loadConfig();
-let runTimes = configObj.runs;
-const filename = process.argv[2];
-const command = `jest ${filename} --json`;
-if (!filename) {
-    console.error('Please provide a test file name to run FlakeGuard. ex "flake-guard <testfile>.js"');
-    process.exit(1);
-}
+const runTimes = configObj.runs;
 console.log(`Number of runs: ${runTimes}`);
+const filename = process.argv[2];
+if (!filename) {
+    throw new Error('Please provide a test file name to run FlakeGuard. ex "flake-guard <testfile>.js"');
+}
+const command = `jest ${filename} --json`;
 const runTest = () => {
     return new Promise(resolve => {
-        exec(command, (error, stdout) => {
+        (0, node_child_process_1.exec)(command, (error, stdout) => {
             resolve(stdout);
         });
     });
 };
 const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(filename);
     const timestampStart = Date.now();
     const flakeGuardResults = {};
     const flakeGuardResultsVerbose = [];
@@ -48,7 +49,7 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
             const parsedResult = JSON.parse(result);
             flakeGuardResultsVerbose.push(parsedResult);
             const { assertionResults } = parsedResult.testResults[0];
-            assertionResults.forEach(assertion => {
+            assertionResults.forEach((assertion) => {
                 if (!flakeGuardResults.hasOwnProperty(assertion.fullName)) {
                     flakeGuardResults[assertion.fullName] = { passed: 0, failed: 0 };
                 }
