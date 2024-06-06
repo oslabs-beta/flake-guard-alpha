@@ -1,18 +1,61 @@
 #!/usr/bin/env node
 // ^ shebang to ensure the user can execute script from CL using node interpreter
 
-const {exec} = require('node:child_process');
+import {exec} from 'node:child_process';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const runTimes: number = 10;
+interface ConfigObj {
+  runs: number;
+}
+
+interface Results {
+  [key: string]: {
+    passed: number;
+    failed: number;
+  };
+}
+
+interface Assertion {
+  fullName: string;
+  status: string;
+}
+
+// Load config
+function loadConfig(): ConfigObj {
+  const defaultConfigPath: string = path.join(
+    __dirname,
+    '../config/default.json'
+  );
+  let config: ConfigObj = JSON.parse(
+    fs.readFileSync(defaultConfigPath, 'utf8')
+  );
+
+  // Override with user's config settings if available
+  const userConfigPath: string = path.join(process.cwd(), 'fg.config.json');
+  if (fs.existsSync(userConfigPath)) {
+    const externalConfig: object = JSON.parse(
+      fs.readFileSync(userConfigPath, 'utf8')
+    );
+    config = {...config, ...externalConfig};
+  }
+
+  return config;
+}
+
+const configObj: ConfigObj = loadConfig();
+
+const runTimes: number = configObj.runs;
+console.log(`Number of runs: ${runTimes}`);
+
 // Get test file from user's CLI command and build internal command
-const filename = process.argv[2];
-const command = `jest ${filename} --json`;
+const filename: string = process.argv[2];
 if (!filename) {
-  console.error(
+  throw new Error(
     'Please provide a test file name to run FlakeGuard. ex "flake-guard <testfile>.js"'
   );
-  process.exit(1);
 }
+const command: string = `jest ${filename} --json`;
 
 // Function to run the test file
 const runTest = (): Promise<string> => {
@@ -24,51 +67,56 @@ const runTest = (): Promise<string> => {
 };
 
 // Analyze the test by running it 'runTimes' amount of times
-const flakeGuard = async (iterations: number) => {
-  const timestampStart = Date.now();
-  const flakeGuardResults = {};
+const flakeGuard = async (iterations: number): Promise<void> => {
+  console.log(filename);
+  const timestampStart: number = Date.now();
+  const flakeGuardResults: Results = {};
+  const flakeGuardResultsVerbose: object[] = [];
   for (let i = 0; i < iterations; i++) {
     try {
       const result = await runTest();
       const parsedResult = JSON.parse(result);
+      flakeGuardResultsVerbose.push(parsedResult);
       // Uncomment to see the full result object
       // console.log(result);
       const {assertionResults} = parsedResult.testResults[0];
       // Build out the flakeGuardResults object
-      assertionResults.forEach(assertion => {
+      assertionResults.forEach((assertion: Assertion) => {
         if (!flakeGuardResults.hasOwnProperty(assertion.fullName)) {
           flakeGuardResults[assertion.fullName] = {passed: 0, failed: 0};
         }
         if (assertion.status === 'passed') {
           flakeGuardResults[assertion.fullName].passed += 1;
-        }
+        } else flakeGuardResults[assertion.fullName].failed += 1;
       });
       console.log(`Run ${i + 1} complete`);
     } catch (error) {
       console.error(`Error in run number ${i + 1}: ${error}`);
     }
   }
-  // On completeion, send results to FlakeGuard server
+  // On completion, send results to FlakeGuard server
   try {
     await fetch('http://localhost:3000/results', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/JSON',
       },
-      body: JSON.stringify(flakeGuardResults),
+      body: JSON.stringify(flakeGuardResultsVerbose),
     });
     console.log('Results successfully sent to FlakeGuard server');
   } catch (error) {
     console.error('Error sending results to FlakeGuard server: ', error);
   }
   // On completion, log runtime and website info to user's terminal
-  const timestampEnd = Date.now();
+  const timestampEnd: number = Date.now();
   console.log(
     `Total FlakeGuard runtime: ${
       (timestampEnd - timestampStart) / 1000
     } seconds`
   );
-  console.log('Log in to FlakeGuard.com to view results');
+  console.log('Results Summary:');
+  console.log(flakeGuardResults);
+  console.log('Log in to FlakeGuard.com to view full results');
 };
 
 flakeGuard(runTimes);
