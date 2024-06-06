@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarHeading from './nav-bar';
-import '../../../src/styles.css';
+import '../../../src/styles/styles.css';
 import npmLogo from '../assets/npm-logo.png';
 // import logo_1 from '../assets/logo_1.png';
 import Carousel from '../components/landing-carousel';
