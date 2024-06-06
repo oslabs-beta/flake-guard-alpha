@@ -39,7 +39,6 @@ const runTest = () => {
     });
 };
 const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(filename);
     const timestampStart = Date.now();
     const flakeGuardResults = {};
     const flakeGuardResultsVerbose = [];
