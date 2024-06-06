@@ -4,5 +4,11 @@
     "node/no-unpublished-require": ["error", {
       "allowModules": ["html-webpack-plugin", "mini-css-extract-plugin", "workbox-webpack-plugin"]
     }]
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
