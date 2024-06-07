@@ -1,6 +1,8 @@
 import React from 'react';
+import '../../../src/styles/styles.css';
+import npmLogo from '../assets/npm-logo.png';
 import NavBarHeading from '../components/nav-bar';
-import '../../../src/styles.css';
+  
 // import logo_1 from '../assets/logo_1.png';
 import Carousel from '../components/landing-carousel';
 const Landing: React.FC = () => {
