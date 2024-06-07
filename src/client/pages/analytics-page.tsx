@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarHeading from './nav-bar';
+import NavBarHeading from '../components/nav-bar';
 
 const Analytics: React.FC = () => {
   return (
