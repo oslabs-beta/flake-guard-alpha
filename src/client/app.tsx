@@ -14,25 +14,23 @@ import {
 } from 'react-router-dom';
 
 const App: React.FC = () => {
-  //type = React.FunctionalComponent
+  // Define the style object
+
   return (
-    <>
-      {/* This is the alias of BrowserRouter i.e. Router */}
+    <div>
+      {/* Alias of BrowserRouter i.e. Router */}
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/login" element={<LoginOrOut />} />
-          <Route path="/docs" element={<DocPage />}></Route>
-
-          {/* If any route mismatches the upper
-      route endpoints then, redirect triggers
-      and redirects app to home component with to="/" */}
-          {/* <Redirect to="/" /> */}
+          <Route path="/docs" element={<DocPage />} />
+          {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 };
+
 export default App;
