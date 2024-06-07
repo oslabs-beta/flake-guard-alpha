@@ -55,19 +55,19 @@
 }
 
 .flakeRiskSlice:nth-child(2) {
-  transform: rotate(-36deg); /* Adjust rotation angle for each slice */
+  transform: rotate(-36deg);
 }
 
 .flakeRiskSlice:nth-child(3) {
-  transform: rotate(0deg); /* Adjust rotation angle for each slice */
+  transform: rotate(0deg); 
 }
 
 .flakeRiskSlice:nth-child(4) {
-  transform: rotate(36deg); /* Adjust rotation angle for each slice */
+  transform: rotate(36deg); 
 }
 
 .flakeRiskSlice:nth-child(5) {
-  transform: rotate(72deg); /* Adjust rotation angle for each slice */
+  transform: rotate(72deg); 
 }
 
 .flakeRiskSlice h3 {
@@ -80,7 +80,7 @@
     -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000; /* Adjust shadow positions and colors as needed */
+    1px 1px 0 #000; 
 }
 
 .flakeRiskArrow {
