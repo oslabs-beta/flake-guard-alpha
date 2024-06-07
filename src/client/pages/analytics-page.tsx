@@ -1,4 +1,5 @@
 import React from 'react';
+import FlakeRiskContainer from '../components/FlakeRiskSign/FlakeRiskContainer';
 import NavBarHeading from '../components/nav-bar';
 
 const Analytics: React.FC = () => {
@@ -8,6 +9,7 @@ const Analytics: React.FC = () => {
         <NavBarHeading />
       </div>
       <div>Analytics info</div>
+      <FlakeRiskContainer />
     </>
   );
 };

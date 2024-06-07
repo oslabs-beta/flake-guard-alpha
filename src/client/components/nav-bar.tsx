@@ -38,6 +38,9 @@ const NavBarHeading: React.FC = () => {
               </NavDropdown.Item> */}
               <NavDropdown.Divider />
               <NavDropdown.Item>
+                <Link to="/dashboard">Dashboard</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
                 <Link to="/login">Login / Logout</Link>
               </NavDropdown.Item>
             </NavDropdown>
