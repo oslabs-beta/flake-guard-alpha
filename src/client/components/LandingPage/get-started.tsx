@@ -6,7 +6,7 @@ import '../../../styles/styles.css';
 
 const GetStarted = (): JSX.Element => {
   return (
-    <div style={{ backgroundImage: `url(${earthLightsLogo})`, backgroundSize: 'cover', height: '100vh', backgroundPosition: 'center' }}>
+    <div style={{ backgroundImage: `url(${earthLightsLogo})`, backgroundSize: 'cover', width: '1000px', height: '100px', backgroundPosition: 'center' }}>
       <q id="tagline">
         Stability Starts Here:
         <em id="tagline-emphasize">Master Test Flakiness Ensure Reliability</em>

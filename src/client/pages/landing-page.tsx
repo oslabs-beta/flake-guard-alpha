@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/styles.css';
 import NavBarHeading from '../components/nav-bar';
 import GetStarted from '../components/LandingPage/get-started';
-// import logo_1 from '../assets/logo_1.png';
+import lightBulb from '../assets/lightbulb.png';
 import Carousel from '../components/landing-carousel';
 const Landing: React.FC = () => {
   return (
@@ -12,7 +12,8 @@ const Landing: React.FC = () => {
       </header>
  
       <div className="intro-container">
-        <h1 id="intro-title">flake-guard</h1><br/>
+        <h1 id="intro-title">flake-guard</h1>
+        <br/>
         <GetStarted />
       </div>
       <br />
@@ -27,7 +28,7 @@ const Landing: React.FC = () => {
         Insert documentation page info here as a scrolling option but for the
         landing page but also a direct link with the endpoint or header
       </p>
-
+        <section><img src={lightBulb}></img></section>
       <footer></footer>{' '}
     </>
   );
