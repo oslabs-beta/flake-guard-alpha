@@ -1,4 +1,5 @@
 import React from 'react';
+import npmLogo from '../assets/npm-logo.png';
 
 const Carousel: React.FC = () => {
   return (
@@ -65,10 +66,20 @@ const Carousel: React.FC = () => {
               <section className="cards-container">
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">Flake-guard feature 3</h5>
-                    <p className="card-text">Explanation & benefit.</p>
-                    <a href="#" className="btn btn-primary">
-                      Go to URL
+                    <h5 className="card-title">NPM Package</h5>
+                    <p className="card-text">
+                      Easy to utilize npm package{' '}
+                    </p>{' '}
+                    <div className="registry-link">
+                      <a href="https://www.npmjs.com/package/flake-guard">
+                        <img src={npmLogo} alt="npm logo" id="social-logo" />
+                      </a>
+                    </div>
+                    <a
+                      href="https://www.npmjs.com/package/flake-guard"
+                      className="btn btn-primary"
+                    >
+                      NPM Registry
                     </a>
                   </div>
                 </div>

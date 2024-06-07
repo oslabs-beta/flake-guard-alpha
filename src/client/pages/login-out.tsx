@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarHeading from './nav-bar';
+import NavBarHeading from '../components/nav-bar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LoginOrOut: React.FC = () => {
@@ -9,7 +9,7 @@ const LoginOrOut: React.FC = () => {
       <div className="App-header">
         <NavBarHeading />
       </div>
-      <div>Login</div>
+      <div id="login-test">Login</div>
     </>
   );
 };
