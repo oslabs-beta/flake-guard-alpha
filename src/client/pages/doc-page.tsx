@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarHeading from '../pages/nav-bar';
+import NavBarHeading from '../components/nav-bar';
 
 const DocPage: React.FC = () => {
   return (
