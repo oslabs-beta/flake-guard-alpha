@@ -1,25 +1,28 @@
 import React from 'react';
-import '../../../src/styles/styles.css';
-import npmLogo from '../assets/npm-logo.png';
+import '../../styles/styles.css';
 import NavBarHeading from '../components/nav-bar';
-  
-// import logo_1 from '../assets/logo_1.png';
+import GetStarted from '../components/LandingPage/get-started';
+import lightBulb from '../assets/lightbulb.png';
 import Carousel from '../components/landing-carousel';
+import code_image from '../assets/code_2.png';
+
 const Landing: React.FC = () => {
   return (
     <>
       <header>
         <NavBarHeading />
       </header>
-      <q id="tagline">
-        Stability Starts Here:
-        <em id="tagline-emphasize">Master Test Flakiness Ensure Reliability</em>
-      </q>
       <div className="intro-container">
         <h1 id="intro-title">flake-guard</h1>
+        <br />
+        <GetStarted />
       </div>
       <br />
       <Carousel />
+      <img src={code_image}></img>
+      <section>
+        <img src={lightBulb}></img>
+      </section>
       <p
         style={{
           display: 'flex',

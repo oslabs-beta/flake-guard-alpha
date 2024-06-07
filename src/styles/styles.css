@@ -11,13 +11,15 @@
   font-size: 60px;
   font-family: Georgia, serif;
   text-align: center; /* Centers text within the h1 */
+  margin-bottom: 20px;
 }
 
 .intro-container {
   display: flex;
   justify-content: center; /* Centers content horizontally */
   align-items: center; /* Centers content vertically */
-
+  text-align: center;
+  padding: 20px;
 }
 
 #flake-logo {
