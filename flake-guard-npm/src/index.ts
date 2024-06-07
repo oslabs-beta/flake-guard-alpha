@@ -68,7 +68,6 @@ const runTest = (): Promise<string> => {
 
 // Analyze the test by running it 'runTimes' amount of times
 const flakeGuard = async (iterations: number): Promise<void> => {
-  console.log(filename);
   const timestampStart: number = Date.now();
   const flakeGuardResults: Results = {};
   const flakeGuardResultsVerbose: object[] = [];
@@ -78,7 +77,7 @@ const flakeGuard = async (iterations: number): Promise<void> => {
       const parsedResult = JSON.parse(result);
       flakeGuardResultsVerbose.push(parsedResult);
       // Uncomment to see the full result object
-      // console.log(result);
+      // console.log(parsedResult);
       const {assertionResults} = parsedResult.testResults[0];
       // Build out the flakeGuardResults object
       assertionResults.forEach((assertion: Assertion) => {
@@ -101,7 +100,10 @@ const flakeGuard = async (iterations: number): Promise<void> => {
       headers: {
         'Content-Type': 'application/JSON',
       },
-      body: JSON.stringify(flakeGuardResultsVerbose),
+      body: JSON.stringify({
+        verbose: flakeGuardResultsVerbose,
+        simple: flakeGuardResults,
+      }),
     });
     console.log('Results successfully sent to FlakeGuard server');
   } catch (error) {

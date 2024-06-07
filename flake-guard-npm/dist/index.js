@@ -39,7 +39,6 @@ const runTest = () => {
     });
 };
 const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(filename);
     const timestampStart = Date.now();
     const flakeGuardResults = {};
     const flakeGuardResultsVerbose = [];
@@ -71,7 +70,10 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
             headers: {
                 'Content-Type': 'application/JSON',
             },
-            body: JSON.stringify(flakeGuardResultsVerbose),
+            body: JSON.stringify({
+                verbose: flakeGuardResultsVerbose,
+                simple: flakeGuardResults,
+            }),
         });
         console.log('Results successfully sent to FlakeGuard server');
     }
