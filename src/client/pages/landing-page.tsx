@@ -1,8 +1,7 @@
 import React from 'react';
-import '../../../src/styles/styles.css';
-import npmLogo from '../assets/npm-logo.png';
+import '../../styles/styles.css';
 import NavBarHeading from '../components/nav-bar';
-  
+import GetStarted from '../components/LandingPage/get-started';
 // import logo_1 from '../assets/logo_1.png';
 import Carousel from '../components/landing-carousel';
 const Landing: React.FC = () => {
@@ -11,12 +10,10 @@ const Landing: React.FC = () => {
       <header>
         <NavBarHeading />
       </header>
-      <q id="tagline">
-        Stability Starts Here:
-        <em id="tagline-emphasize">Master Test Flakiness Ensure Reliability</em>
-      </q>
+ 
       <div className="intro-container">
-        <h1 id="intro-title">flake-guard</h1>
+        <h1 id="intro-title">flake-guard</h1><br/>
+        <GetStarted />
       </div>
       <br />
       <Carousel />
@@ -30,6 +27,7 @@ const Landing: React.FC = () => {
         Insert documentation page info here as a scrolling option but for the
         landing page but also a direct link with the endpoint or header
       </p>
+
       <footer></footer>{' '}
     </>
   );
