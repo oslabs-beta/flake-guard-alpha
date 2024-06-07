@@ -14,10 +14,9 @@
     // "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "src/**/*.ts",
-    "test/**/*.ts",
-    "src/index.tsx", "src/client/pages/nav-bar.tsx", "src/client/app.tsx"  
-  ]
+    "src/**/*",
+    "test/**/*", 
+    "global.d.ts" ],
 }
     /* Visit https://aka.ms/tsconfig to read more about this file */
 

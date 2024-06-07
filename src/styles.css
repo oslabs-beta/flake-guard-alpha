@@ -1,3 +1,60 @@
-*{
-    background-color: rgb(228, 228, 228);
+* {
+  background-color: rgb(235, 235, 235);
+  color: rgb(0, 0, 0);
+}
+#navbar-container {
+  width: 100vh; /*not currently making width 100%????*/
+}
+
+#intro-title {
+  font-weight: bold;
+  font-size: 60px;
+  font-family: Georgia, serif;
+  text-align: center; /* Centers text within the h1 */
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+
+}
+
+#flake-logo {
+  height: 35px;
+  width: 35px;
+  border-radius: 25%;
+}
+
+#tagline-emphasize {
+  background: linear-gradient(
+    to right,
+    #00a86b,
+    #6610f2
+  ); /* Jade to Indigo gradient */
+  background-clip: text; /* Standard */
+  color: transparent;
+}
+#social-logo {
+  height: 35px;
+  width: 35px;
+}
+.card {
+  width: 18rem;
+}
+
+.cards-container{
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+ 
+}
+
+#feature-1-logo{
+    width: 50px;
+    height: 50px;
+}
+
+#carousel{
+    border: 3px solid black;
 }
