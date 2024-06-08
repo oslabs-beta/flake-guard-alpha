@@ -57,6 +57,7 @@ function dashPrompt(): void {
   rl.on('SIGINT', () => {
     console.log('\nExiting...');
     rl.close();
+    // eslint-disable-next-line no-process-exit
     process.exit();
   });
 }

@@ -1,10 +1,10 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import type {RootState} from './store';
+import {createSlice} from '@reduxjs/toolkit';
+// import type {RootState} from './store';
 
 interface Fg {
   currentResults: object | null;
   pastResults: object[] | null;
-};
+}
 
 const initialState: Fg = {
   currentResults: null,
@@ -19,6 +19,7 @@ export const fgSlice = createSlice({
   },
 });
 
+// eslint-disable-next-line no-empty-pattern
 export const {} = fgSlice.actions;
 export default fgSlice.reducer;
 export type {Fg};
