@@ -1,6 +1,6 @@
 import React from 'react';
-import FlakeRiskContainer from '../components/FlakeRiskSign/FlakeRiskContainer';
-import NavBarHeading from '../components/nav-bar';
+import FlakeRiskContainer from '../FlakeRiskSign/FlakeRiskContainer';
+import NavBarHeading from '../nav-bar';
 
 const Analytics: React.FC = () => {
   return (
