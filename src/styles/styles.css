@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  background-color: rgb(235, 235, 235);
   color: rgb(0, 0, 0);
 }
-#navbar-container {
+#navbar-container .navbar-custom{
   width: 100vh;
 }
 #intro-title {
@@ -28,14 +27,13 @@ padding: 20px;
 border-radius: 10px; /*  Rounded corners */
 }
 .docs-overlay{
-  position: absolute;
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for the text’s dimensions */
+  /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
   color: white; /* Text color */
   /* font-size: 2rem; */
   font-family: Arial, sans-serif;
-  background: rgba(0, 0, 0, 0.5); /*  Semi-transparent background for better readability */
+  background: rgba(153, 150, 150, 0.5); /*  Semi-transparent background for better readability */
   padding: 20px;
   border-radius: 10px; /*  Rounded corners */
   }
@@ -47,6 +45,39 @@ border-radius: 10px; /*  Rounded corners */
   position: relative;
   width: 100%;
   height: 100vh;
+}
+.footer-container {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px; /* Adjust this width as needed */
+}
+.footer-div img {
+  transition: transform 0.3s ease; /* Smooth transition for the size adjustment */
+}
+
+.doc-links-container {
+  display: flex;
+  justify-content: space-around;
+}
+#github-logo:hover {
+  transform: scale(1.1); /* Adjust the scale value as needed for the desired size */
+}
+
+#npm-logo:hover {
+  transform: scale(1.2); /* Adjust the scale value as needed for the desired size */
+}
+#npm-docs-logo:hover{
+  transform: scale(1.3);
 }
 .intro-background{
   width: 100%;
