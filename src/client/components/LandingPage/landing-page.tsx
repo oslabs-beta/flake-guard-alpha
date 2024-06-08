@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../styles/styles.css';
 import NavBarHeading from '../nav-bar';
 // import GetStarted from './get-started';
-import lightBulb from '../../assets/lightbulb.png'
+import lightBulb from '../../assets/lightbulb.png';
 import Carousel from './carousel';
 import code_screen from '../../assets/code_2.png';
 // import Footer from '../footer.js';

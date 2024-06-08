@@ -51,13 +51,16 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
+    "@types/chart.js": "^2.9.41",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.3",
     "concurrently": "^8.2.2",
     "express": "^4.19.2",
     "nodemon": "^3.1.2",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1"
   }
