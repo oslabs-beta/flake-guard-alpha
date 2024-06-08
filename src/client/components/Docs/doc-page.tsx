@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarHeading from '../components/nav-bar';
+import NavBarHeading from '../nav-bar';
 
 const DocPage: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const DocPage: React.FC = () => {
       <header>
         <NavBarHeading />
       </header>
-      <div>
+      <div className="docs-overlay">
         <p>
           Downloading Instructions npm
           <a href="https://www.npmjs.com/package/flake-guard">
