@@ -1,5 +1,5 @@
 import React from 'react';
-import npmLogo from '../assets/npm-logo.png';
+import npmLogo from '../../assets/npm-logo.png';
 
 const Carousel: React.FC = () => {
   return (
