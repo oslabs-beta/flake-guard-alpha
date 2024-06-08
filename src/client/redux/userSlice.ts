@@ -1,12 +1,19 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {supabaseClient} from '../supabaseClient';
 // import type {RootState} from './store';
 
 interface User {
-  username: string | null;
+  id: string | null;
+  aud: string | null;
+  role: string | null;
+  email: string | null;
 }
 
 const initialState: User = {
-  username: null,
+  id: null,
+  aud: null,
+  role: null,
+  email: null,
 };
 
 export const userSlice = createSlice({
@@ -14,6 +21,17 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     // add reducer functions here
+    // assignUser: async (state: User): Promise<> => {
+    //   try {
+    //     const {data, error} = await supabaseClient.auth.getUser();
+    //     state.id = data.user?.id;
+    //     state.aud = data.user?.aud;
+    //     state.role = data.user?.role;
+    //     state.email = data.user?.email;
+    //   } catch (error) {
+    //     console.log('Error Fetching User:', error);
+    //   }
+    // },
   },
 });
 
