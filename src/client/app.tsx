@@ -12,6 +12,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import Chart from './components/Chart';
 
 const App: React.FC = () => {
   // Define the style object
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/dashboard" element={<Chart />} />
           <Route path="/login" element={<LoginOrOut />} />
           <Route path="/docs" element={<DocPage />} />
           {/* Redirect any unmatched routes to home */}
