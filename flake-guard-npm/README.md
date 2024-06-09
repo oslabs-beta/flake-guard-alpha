@@ -18,7 +18,7 @@ npm i flake-guard --save-dev
 
 To run FlakeGuard, simply execute the command below with the name of the test file that you want to examine.
 ```
-flake-guard <yourTestFile>
+npx flake-guard <yourTestFile>
 ```
 FlakeGuard will analyze your tests for flakiness by executing multiple test runs and analyzing the results.
 

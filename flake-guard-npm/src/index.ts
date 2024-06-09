@@ -104,6 +104,8 @@ const flakeGuard = async (iterations: number): Promise<void> => {
       body: JSON.stringify({
         verbose: flakeGuardResultsVerbose,
         simple: flakeGuardResults,
+        runTimes,
+        user: configObj.user,
       }),
     });
     console.log('Results successfully sent to FlakeGuard server');
