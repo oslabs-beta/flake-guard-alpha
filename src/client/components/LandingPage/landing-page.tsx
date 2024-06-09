@@ -2,7 +2,8 @@ import React from 'react';
 import '../../../styles/styles.css';
 import NavBarHeading from '../nav-bar';
 import lightBulb from '../../assets/lightbulb.png';
-import Carousel from './carousel';
+// import Carousel from './carousel';
+import Carousel2 from './carousel.2';
 import codeScreen from '../../assets/code_2.png';
 import earthbg from '../../assets/earth.png';
 import npmLogo from '../../assets/npm-logo.png';
@@ -45,10 +46,10 @@ const Landing = (): JSX.Element => {
           </button>
         </h1>
       </div>
-      <br />
-      <Carousel />
+      {/* <Carousel />*/}
+      <Carousel2 />
       <div
-        className="intro-container intro-bg"
+        className="codeScreen-container intro-bg"
         style={{
           backgroundImage: `url(${codeScreen})`,
           backgroundSize: 'cover',
@@ -60,7 +61,7 @@ const Landing = (): JSX.Element => {
         </div>
       </div>
       <div
-        className="intro-container intro-bg"
+        className="lightBulb-container intro-bg"
         style={{
           backgroundImage: `url(${lightBulb})`,
           backgroundSize: 'cover',

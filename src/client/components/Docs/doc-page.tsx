@@ -3,13 +3,14 @@ import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import '../../../styles/styles.css';
 import npmLogo from '../../assets/npm-logo.png';
-
+// import AcUnitIcon from '@mui/icons-material/AcUnit';
 const DocPage = (): JSX.Element => {
   return (
     <>
       <header>
         <NavBarHeading />
       </header>
+      {/* <img src={AcUnitIcon}></img> */}
       <div className="docs-overlay">
         <h1>Introduction</h1>
         <p>Welcome to the Flake-guard documentation!</p>
@@ -21,10 +22,13 @@ const DocPage = (): JSX.Element => {
             id="npm-docs-logo"
             src={npmLogo}
             style={{
-              width: '45px',
-              height: '45px',
+              width: '265px',
+              height: '265px',
               padding: '2px',
               margin: '20px',
+              position: 'absolute',
+              right: 50,
+              top: 100,
             }}
           ></img>
         </h1>{' '}

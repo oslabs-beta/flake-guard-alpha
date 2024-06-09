@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import logo_4 from '../assets/logo_4.png';
-
+import '../../styles/styles.css';
 //created and imported images from canva as pngs
 //bootstrap template
 //type React Functional Componenet
