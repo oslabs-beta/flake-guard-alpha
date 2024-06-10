@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from 'express';
-import {fakeData} from '../fakeData';
+import {fakeData} from '../../client/components/Dashboard/fakeData';
 
 const controller = {
   async npmMetrics(
@@ -8,28 +8,41 @@ const controller = {
     next: NextFunction
   ): Promise<void> {
     try {
-      const tests = fakeData[0].testResults[0]['assertionResults'];
-      res.locals.metrics = [];
+      const tests = req.body.simple;
 
-      for (let i = 0; i < tests.length; i++) {
-        const ancestorTitles = tests[i].ancestorTitles;
-        const duration = tests[i].duration;
-        const fullName = tests[i].fullName;
-        const status = tests[i].status;
-        const title = tests[i].title;
+      const results = [];
+      for (const key in tests) {
+        const fullName = key;
+        const passed = tests[key].passed;
+        const failed = tests[key].failed;
 
-        res.locals.metrics.push('TEST', i, [
-          {
-            ancestorTitles: ancestorTitles,
-            duration: duration,
-            fullName: fullName,
-            status: status,
-            title: title,
-          },
-        ]);
+        results.push({
+          fullName: fullName,
+          passed: passed,
+          failed: failed,
+          totalTests: passed + failed,
+        });
       }
+      console.log('resu;t -->', results);
+      res.locals.metrics = results;
+      //STORE RESULTS IN THE DB
+
       return next();
-    } catch (error) 
+    } catch (error) {
+      console.log('ERROR', error);
+    }
+  },
+  async npmFakeMetrics(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<void> {
+    try {
+      const fakeMetrics = fakeData;
+
+      res.locals.fakeMetrics = fakeMetrics;
+      return next();
+    } catch (error) {
       console.log('ERROR', error);
     }
   },
