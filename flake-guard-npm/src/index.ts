@@ -31,7 +31,7 @@ const runTest = (): Promise<string> => {
 };
 
 // Function to prompt the user to open dashboard
-function dashPrompt(): void {
+function dashPrompt(url: string): void {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -49,7 +49,7 @@ function dashPrompt(): void {
           : process.platform === 'darwin'
             ? 'open'
             : 'xdg-open';
-      spawn(command, ['http://google.com']);
+      spawn(command, [url]);
       rl.close();
     }
   });
@@ -96,7 +96,7 @@ const flakeGuard = async (iterations: number): Promise<void> => {
   }
   // On completion, send results to FlakeGuard server
   try {
-    await fetch('http://localhost:3000/results', {
+    const response = await fetch('http://localhost:3000/results', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/JSON',
@@ -106,23 +106,25 @@ const flakeGuard = async (iterations: number): Promise<void> => {
         simple: flakeGuardResults,
         runTimes,
         user: configObj.user,
+        apiKey: configObj.apiKey,
       }),
     });
+    const url = await response.json();
     console.log('Results successfully sent to FlakeGuard server');
+    // On completion, log runtime and website info to user's terminal
+    const timestampEnd: number = Date.now();
+    console.log(
+      `Total FlakeGuard runtime: ${
+        (timestampEnd - timestampStart) / 1000
+      } seconds`
+    );
+    console.log('Results Summary:');
+    console.log(flakeGuardResults);
+    // Prompt user to press enter to open dashboard
+    await dashPrompt(url);
   } catch (error) {
     console.error('Error sending results to FlakeGuard server: ', error);
   }
-  // On completion, log runtime and website info to user's terminal
-  const timestampEnd: number = Date.now();
-  console.log(
-    `Total FlakeGuard runtime: ${
-      (timestampEnd - timestampStart) / 1000
-    } seconds`
-  );
-  console.log('Results Summary:');
-  console.log(flakeGuardResults);
-  // Prompt user to press enter to open dashboard
-  await dashPrompt();
 };
 
 flakeGuard(runTimes);

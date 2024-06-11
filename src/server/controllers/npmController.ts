@@ -7,7 +7,11 @@ const controller = {
     next: NextFunction
   ): Promise<void> {
     try {
-      console.log('req.body --->', req.body);
+      const {simple, user} = req.body;
+      if (user === 'temp') {
+        res.locals.simple = simple;
+        res.locals.user = user;
+      }
       return next();
     } catch (error) {
       console.log('ERROR', error);
