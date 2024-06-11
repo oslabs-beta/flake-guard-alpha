@@ -1,5 +1,6 @@
 import {Request, Response, NextFunction} from 'express';
 import {fakeData} from '../../client/components/Dashboard/fakeData';
+import sql from '../../db/db.js';
 
 const controller = {
   async npmMetrics(
@@ -23,9 +24,12 @@ const controller = {
           totalTests: passed + failed,
         });
       }
-      console.log('resu;t -->', results);
+      console.log('result -->', results);
       res.locals.metrics = results;
-      //STORE RESULTS IN THE DB
+
+      // store results in DB
+      await sql`INSERT INTO npmMetrics (fullName, passed, failed) VALUES
+      (${results[0].fullName}, ${results[0].passed}, ${results[0].failed})`;
 
       return next();
     } catch (error) {
