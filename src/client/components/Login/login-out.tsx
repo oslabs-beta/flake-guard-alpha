@@ -3,7 +3,7 @@ import NavBarHeading from '../nav-bar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import bg_login from '../../assets/bg_login.png';
 import LoginButton from './LoginButton';
-import '../../../styles/styles.css'; // Import your CSS file for custom styling
+import '../../../styles/styles.css';
 
 const LoginOrOut: React.FC = () => {
   return (
