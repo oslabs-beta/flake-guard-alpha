@@ -1,33 +1,134 @@
 /* SUMMARY */
+.dashboard-container {
+    color: #474646;
+}
 .dashboard-container h1{
     text-align: center;
     margin: 10px;
 }
-.dashboard-items {
+.upper-dash {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+
+}
+.box-style {
     display: flex;
     justify-content: center;
-}
-.summary {
-    display: flex;
     align-items: center;
     background-color: white;
-    width: 300px;
     height: 400px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px grey;
     margin: 10px;
 }
+.summary-dash {
+    width: 300px;
+}
 
 /* ASSERTION RESULTS */
 .assertions-graph {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
     width: 600px;
-    height: 200px;
+    height: 250px;
+    padding: 5px;
+}
+
+/* DISPLAY ERRORS */
+.display-errors-container {
+    width: 80%;
+    margin: auto;
+}
+.display-errors-container p {
+    border-bottom: 1px solid #d0d3d3;
+    font-weight: 500;
+}
+.errors-dash {
+    background-color: white;
+    width: 100%;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px grey;
     margin: 10px;
 }
 
+.errors-dash button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+}
+
+.errors-details p {
+    color: #5b5b5b;
+    border: none;
+    margin-left: 20px;
+    
+}
+
+/* hover effect */
+.outer{
+    position: relative;
+    margin: 50px;
+  }
+/* modify the shadow */
+  .button{
+    height: 62px;
+    width: 212px;
+    border-radius: 10px;
+  }
+  .outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .outer button{
+    outline: none;
+    border: none;
+    z-index: 9;
+    cursor: pointer;
+  }
+  /* modify the box */
+  .button button{
+    height: 60px;
+    width: 210px;
+    border-radius: 10px;
+  }
+ 
+  .outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+  }
+  .button span{
+    border-radius: 50px;
+  }
+  .outer:hover span:nth-child(2){
+    filter: blur(5px);
+  }
+  .outer:hover{
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    animation: rotate 2s linear infinite;
+  }
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+  @media (max-width: 640px){
+    .center{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .outer{
+      margin: 50px 0;
+    }
+  }
