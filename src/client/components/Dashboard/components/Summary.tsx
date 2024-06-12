@@ -56,7 +56,7 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
         align: 'center' as const,
         labels: {
           usePointStyle: true,
-          color: '#474646',          
+          color: '#474646',
         },
       },
       textInside: {

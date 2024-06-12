@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import arrow from '../../../assets/arrow.png';
 
 interface MetricsData {
@@ -12,7 +12,7 @@ interface AssertionsGraphProps {
   fetchResults: MetricsData[] | undefined;
 }
 
-const DisplayErrors: React.FC<AssertionsGraphProps> = ({ fetchResults }) => {
+const DisplayErrors: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
   const [showDetails, setShowDetails] = useState<boolean[]>([]);
   const [arrowDirections, setArrowDirections] = useState<boolean[]>([]);
 
@@ -42,7 +42,9 @@ const DisplayErrors: React.FC<AssertionsGraphProps> = ({ fetchResults }) => {
                   style={{
                     width: '12px',
                     marginRight: '10px',
-                    transform: arrowDirections[index] ? 'rotate(90deg)' : 'rotate(0deg)',
+                    transform: arrowDirections[index]
+                      ? 'rotate(90deg)'
+                      : 'rotate(0deg)',
                   }}
                 />
                 <button
