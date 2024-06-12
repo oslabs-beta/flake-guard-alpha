@@ -3,8 +3,8 @@ import '../../../styles/styles.css';
 import NavBarHeading from '../nav-bar';
 import nasa from '../../assets/nasa.png';
 import Carousel from './carousel';
-import codeScreen from '../../assets/code_2.png';
-// import earthbg from '../../assets/earth.png';
+// import codeScreen from '../../assets/code_2.png';
+// import flakeLogo from '../../assets/logo_3.png';
 import npmLogo from '../../assets/npm-logo.png';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
@@ -54,14 +54,7 @@ const Landing = (): JSX.Element => {
       </div>
       {/* <Carousel />*/}
 
-      <div
-        className="codeScreen-container intro-bg"
-        style={{
-          backgroundImage: `url(${codeScreen})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <div className="codeScreen-container intro-bg">
         <div className="code-overlay">
           <em id="tagline-emphasize" className="fixed top-0">
             Stability starts here: <br /> Master Test Flakiness Ensure

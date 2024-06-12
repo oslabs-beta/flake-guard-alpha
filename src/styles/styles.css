@@ -64,6 +64,7 @@ border-radius: 10px; /*  Rounded corners */
   position: relative;
   width: 100%;
   height: 55vh;
+  background-color: rgb(173, 213, 244);
 }
 
 
@@ -135,6 +136,7 @@ border-radius: 10px; /*  Rounded corners */
   color: white;
   padding: 20px;
   height: 30vh;
+  
 }
 
 #carousel-container {
@@ -143,6 +145,7 @@ border-radius: 10px; /*  Rounded corners */
   width: 100%;
   max-width: 500px; /* Adjust as needed */
   margin-top: 10px;
+  
 }
 
 #carousel-prev,
@@ -167,6 +170,7 @@ border-radius: 10px; /*  Rounded corners */
   text-align: center;
   justify-content: center;
   align-items: center;
+
 }
 
 #feature-1-logo{
@@ -179,6 +183,31 @@ border-radius: 10px; /*  Rounded corners */
 
 
 
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  z-index: -1; /* Send the image to the background */
+}
+
+.login-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(70%, -80%);
+  text-align: center;
+  color: white;
+}
 
 
 

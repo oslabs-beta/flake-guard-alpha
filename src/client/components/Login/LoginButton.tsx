@@ -50,7 +50,7 @@ const LoginButton: React.FC = () => {
     );
   } else {
     return (
-      <div>
+      <div className="login-text">
         <h1>Hello, please sign in!</h1>
         <button onClick={signInWithGithub}>Sign In</button>
       </div>
