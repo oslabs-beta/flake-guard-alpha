@@ -2,10 +2,20 @@ import React from 'react';
 import npmLogo from '../../assets/npm-logo.png';
 import earthLightsLogo from '../../assets/earth.png';
 import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../../../styles/styles.css';
 
 const GetStarted = (): JSX.Element => {
   return (
+    <div
+      style={{
+        backgroundImage: `url(${earthLightsLogo})`,
+        backgroundSize: 'cover',
+        width: '1000px',
+        height: '100px',
+        backgroundPosition: 'center',
+      }}
+    >
     <div
       style={{
         backgroundImage: `url(${earthLightsLogo})`,

@@ -18,7 +18,7 @@
 position: absolute;
 top: 50%; /* Center vertically */
 left: 50%; /* Center horizontally */
-transform: translate(-50%, -50%); /* Adjust for the text’s dimensions */
+transform: translate(-50%, -50%);  /*Adjust for the text’s dimensions */
 color: white; /* Text color */
 font-size: 2rem;
 font-family: Arial, sans-serif;

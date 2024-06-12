@@ -5,7 +5,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import logo_4 from '../assets/logo_4.png';
-import '../../styles/styles.css';
+import LoginButton from './Login/LoginButton';
+
 //created and imported images from canva as pngs
 //bootstrap template
 //type React Functional Componenet
@@ -38,6 +39,9 @@ const NavBarHeading: React.FC = () => {
               </NavDropdown.Item> */}
               <NavDropdown.Divider />
               <NavDropdown.Item>
+                <Link to="/dashboard">Dashboard</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
                 <Link to="/login">Login / Logout</Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -51,6 +55,7 @@ const NavBarHeading: React.FC = () => {
             </div>
           </span>
         </Navbar.Collapse>
+        <LoginButton />
       </Container>
     </Navbar>
   );
