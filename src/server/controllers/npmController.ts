@@ -50,16 +50,18 @@ const controller = {
       // pull data from DB and clear
       const resultsQuery = await sql`SELECT "fullName", passed, failed FROM "npmMetrics"`;
       console.log(resultsQuery);
-      await sql`DELETE FROM "npmMetrics"`;
-      const dbData = [];
-      for (let i = 0; i < resultsQuery.length; i++) {
-        dbData.push({
-          fullName: resultsQuery[i].fullName,
-          passed: resultsQuery[i].passed,
-          failed: resultsQuery[i].failed,
-        });
-      }
-      res.locals.dbMetrics = dbData;
+      // await sql`DELETE FROM "npmMetrics"`;
+      // const dbData = [];
+      // for (let i = 0; i < resultsQuery.length; i++) {
+      //   dbData.push({
+      //     fullName: resultsQuery[i].fullName,
+      //     passed: resultsQuery[i].passed,
+      //     failed: resultsQuery[i].failed,
+      //     skipped: 0,
+      //   });
+      // }
+      // res.locals.dbMetrics = dbData;
+      res.locals.dbMetrics = resultsQuery;
 
       return next();
     } catch (error) {
