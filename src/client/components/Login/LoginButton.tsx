@@ -20,7 +20,7 @@ const LoginButton: React.FC = () => {
       const {data, error} = await supabaseClient.auth.getUser();
       if (data && !error && data.user && data.user.email) {
         console.log('data --->', data);
-        setUser({email: data.user.email});
+        setUser({email: data.user.user_metadata.user_name});
       } else {
         setUser(null);
       }
