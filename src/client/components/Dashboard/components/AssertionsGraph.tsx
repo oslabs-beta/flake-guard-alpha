@@ -37,14 +37,14 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
       {
         label: 'Passed',
         data: [] as number[],
-        backgroundColor: 'rgba(81, 209, 156)',
+        backgroundColor: 'rgba(81, 209, 156, 0.6)',
         hoverOffset: 1,
         barThickness: 15,
       },
       {
         label: 'Failed',
         data: [] as number[],
-        backgroundColor: 'rgba(250, 88, 102)',
+        backgroundColor: 'rgba(255, 49, 49, .9)',
         hoverOffset: 1,
         barThickness: 15,
       },
@@ -88,7 +88,7 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
   };
 
   return (
-    <div className="assertions-graph">
+    <div className="assertions-graph box-style">
       <Bar options={options} data={barChartData} />
     </div>
   );

@@ -4,6 +4,7 @@ import '../../../styles/dashboard.css';
 import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
+import Trends from './components/Trends';
 
 const Dashboard: React.FC = () => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
@@ -39,14 +40,26 @@ const Dashboard: React.FC = () => {
     <div className="dashboard-container">
       <h1>Flake-Guard Dashboard</h1>
       <div className="dashboard-items">
-        <div className="summary-dash">
-          {metrics && <Summary metrics={metrics} />}
+        <div className="upper-dash">
+          <div className="summary-dash">
+            {metrics && <Summary metrics={metrics} />}
+          </div>
+
+          <div>
+            <div className="bar-dash">
+              {metrics && <AssertionsGraph fetchResults={fetchResults} />}
+            </div>
+            <div>
+              <div className="trends-dash">
+                <Trends />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="bar-dash">
-          {metrics && <AssertionsGraph fetchResults={fetchResults} />}
+        <div className="display-errors-container">
+          <DisplayErrors fetchResults={fetchResults} />
         </div>
       </div>
-      <DisplayErrors fetchResults={fetchResults} />
     </div>
   );
 };

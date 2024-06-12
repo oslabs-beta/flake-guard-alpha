@@ -48,18 +48,20 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
 
   //OPTIONS
   const options = {
-    cutout: '80%',
+    cutout: '90%',
     responsive: true,
     plugins: {
       legend: {
         position: 'bottom' as const,
+        align: 'center' as const,
         labels: {
           usePointStyle: true,
+          color: '#474646',          
         },
       },
       textInside: {
         text: `${total} assertions`,
-        color: 'grey',
+        color: '#474646',
         fontSize: 20,
       },
       title: {
@@ -71,7 +73,7 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
       },
     },
   };
-  //Configuration of the plugin on line 60. Allows display the total of tests
+  //Configuration of the plugin from line 60. Allows display the total of assertions (text)
   const textInsidePlugin = {
     id: 'textInside',
     afterDatasetsDraw: function (chart: any) {
@@ -109,7 +111,7 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
   const plugins = [textInsidePlugin, backgroundColorPlugin];
 
   return (
-    <div className="summary">
+    <div className="box-style">
       <Doughnut options={options} data={pieChartData} plugins={plugins} />
     </div>
   );
