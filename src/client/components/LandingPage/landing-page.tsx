@@ -4,7 +4,7 @@ import NavBarHeading from '../nav-bar';
 import nasa from '../../assets/nasa.png';
 import Carousel from './carousel';
 import codeScreen from '../../assets/code_2.png';
-import earthbg from '../../assets/earth.png';
+// import earthbg from '../../assets/earth.png';
 import npmLogo from '../../assets/npm-logo.png';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
