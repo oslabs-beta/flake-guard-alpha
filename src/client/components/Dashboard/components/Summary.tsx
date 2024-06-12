@@ -30,6 +30,7 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
       },
     ],
   };
+
   let total = 0;
   if (metrics) {
     const passed = metrics.passed;
@@ -45,7 +46,6 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
     pieChartData.labels[2] = `Skipped ${skipped}/${total}`;
   }
 
-
   //OPTIONS
   const options = {
     cutout: '80%',
@@ -58,9 +58,9 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
         },
       },
       textInside: {
-        text: `${total} tests`,
+        text: `${total} assertions`,
         color: 'grey',
-        fontSize: 28,
+        fontSize: 20,
       },
       title: {
         display: true,
@@ -69,17 +69,10 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
           size: 18,
         },
       },
-      datalabels: {
-        display: true,
-        formatter: (value: any) => {
-          console.log('value', value);
-          return value;
-        },
-      },
     },
   };
   //Configuration of the plugin on line 60. Allows display the total of tests
-  ChartJS.register({
+  const textInsidePlugin = {
     id: 'textInside',
     afterDatasetsDraw: function (chart: any) {
       const ctx = chart.ctx;
@@ -95,28 +88,29 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
       const textY = Math.round(height / 2);
       ctx.fillText(text, textX, textY);
     },
-  });
-  const plugin = [
-    {
-      id: 'customCanvasBackgroundColor',
-      beforeDraw: (
-        chart: ChartJS<'doughnut'>,
-        args: any,
-        options: {color?: string}
-      ) => {
-        const {ctx} = chart;
-        ctx.save();
-        ctx.globalCompositeOperation = 'destination-over';
-        ctx.fillStyle = options.color || '#ffffff';
-        ctx.fillRect(0, 0, chart.width, chart.height);
-        ctx.restore();
-      },
+  };
+  const backgroundColorPlugin = {
+    id: 'customCanvasBackgroundColor',
+    beforeDraw: (
+      chart: ChartJS<'doughnut'>,
+      args: any,
+      options: {color?: string}
+    ) => {
+      const {ctx} = chart;
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.fillStyle = options.color || '#ffffff';
+      ctx.fillRect(0, 0, chart.width, chart.height);
+      ctx.restore();
     },
-  ];
+  };
+  ChartJS.register(backgroundColorPlugin);
+
+  const plugins = [textInsidePlugin, backgroundColorPlugin];
 
   return (
     <div className="summary">
-      <Doughnut options={options} data={pieChartData} plugins={plugin} />
+      <Doughnut options={options} data={pieChartData} plugins={plugins} />
     </div>
   );
 };
