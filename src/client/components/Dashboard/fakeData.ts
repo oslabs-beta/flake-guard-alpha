@@ -1,9 +1,9 @@
 export const fakeData = [
   {
     fullName: 'db unit tests #sync writes a valid marketList to the JSON file',
-    passed: 3,
+    passed: 2,
     failed: 2,
-    skipped: 0,
+    skipped: 1,
     totalRuns: 5,
   },
   {
