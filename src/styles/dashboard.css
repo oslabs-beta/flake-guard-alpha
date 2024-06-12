@@ -1,8 +1,12 @@
+/* SUMMARY */
 .dashboard-container h1{
     text-align: center;
     margin: 10px;
 }
-
+.dashboard-items {
+    display: flex;
+    justify-content: center;
+}
 .summary {
     display: flex;
     align-items: center;
@@ -13,3 +17,17 @@
     box-shadow: 0px 0px 20px grey;
     margin: 10px;
 }
+
+/* ASSERTION RESULTS */
+.assertions-graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 600px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px grey;
+    margin: 10px;
+}
+
