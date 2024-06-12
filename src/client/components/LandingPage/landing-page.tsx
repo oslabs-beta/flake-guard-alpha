@@ -1,16 +1,13 @@
 import React from 'react';
 import '../../../styles/styles.css';
 import NavBarHeading from '../nav-bar';
-import lightBulb from '../../assets/lightbulb.png';
-// import Carousel from './carousel';
-import Carousel2 from './carousel.2';
+import nasa from '../../assets/nasa.png';
+import Carousel from './carousel';
 import codeScreen from '../../assets/code_2.png';
 import earthbg from '../../assets/earth.png';
 import npmLogo from '../../assets/npm-logo.png';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
-// import Footer from '../footer.js';
-// import GetStarted from './get-started';
 
 const Landing = (): JSX.Element => {
   return (
@@ -18,49 +15,7 @@ const Landing = (): JSX.Element => {
       <header>
         <NavBarHeading />
       </header>
-      <div
-        className="intro-container intro-bg"
-        style={{
-          backgroundImage: `url(${earthbg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <h1 className="intro-bg-overlay">
-          flake-guard <br />
-          <em id="tagline-emphasize" className="fixed top-0">
-            Stability starts here: Master Test Flakiness Ensure Reliability
-          </em>
-          <br />
-          <button>
-            <Link to="/docs">Get Started</Link>
-          </button>
-          <button>
-            <Link to="https://www.npmjs.com/package/flake-guard">
-              <img
-                src={npmLogo}
-                alt="npm logo"
-                style={{width: '70px', height: '20px'}}
-              />
-            </Link>
-          </button>
-        </h1>
-      </div>
-      {/* <Carousel />*/}
-      <Carousel2 />
-      <div
-        className="codeScreen-container intro-bg"
-        style={{
-          backgroundImage: `url(${codeScreen})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="code-overlay">
-          Stop wasting hours of time on Flaky tests!!
-        </div>
-      </div>
-      <div
+      {/* <div
         className="lightBulb-container intro-bg"
         style={{
           backgroundImage: `url(${lightBulb})`,
@@ -71,7 +26,51 @@ const Landing = (): JSX.Element => {
         <div className="code-overlay">
           Stop wasting hours of time on Flaky tests!!
         </div>
+      </div> */}
+      <div
+        className="intro-container intro-bg"
+        style={{
+          backgroundImage: `url(${nasa})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <h1 className="intro-bg-overlay">
+          flake-guard <br />
+          <br />
+          <button style={{margin: '20px'}}>
+            <Link to="/docs">Get Started</Link>
+          </button>
+          <button>
+            <Link to="https://www.npmjs.com/package/flake-guard">
+              <img
+                src={npmLogo}
+                alt="npm lo go"
+                style={{width: '70px', height: '20px'}}
+              />
+            </Link>
+          </button>
+        </h1>
       </div>
+      {/* <Carousel />*/}
+
+      <div
+        className="codeScreen-container intro-bg"
+        style={{
+          backgroundImage: `url(${codeScreen})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="code-overlay">
+          <em id="tagline-emphasize" className="fixed top-0">
+            Stability starts here: <br /> Master Test Flakiness Ensure
+            Reliability
+          </em>
+          <Carousel />
+        </div>
+      </div>
+
       <Footer />
     </>
   );

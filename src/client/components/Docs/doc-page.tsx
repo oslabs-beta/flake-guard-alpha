@@ -15,7 +15,7 @@ const DocPage = (): JSX.Element => {
         <h1>Introduction</h1>
         <p>Welcome to the Flake-guard documentation!</p>
         <h1>What is Flake-guard?</h1>
-        <p>lightweight framework....etc</p>
+        <p>lightweight framework....</p>
         <h1>
           Quickstart
           <img
@@ -34,6 +34,7 @@ const DocPage = (): JSX.Element => {
         </h1>{' '}
         {'Installation: '}
         <code>npm i flake-guard</code>
+        <br />
         Installation as dev dependency:{' '}
         <code>npm i flake-guard --save-dev</code>
         <p>
