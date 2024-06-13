@@ -20,7 +20,7 @@ const controller = {
           fullName: fullName,
           passed: passed,
           failed: failed,
-          totalTests: passed + failed,
+          totalRuns: passed + failed,
         });
       }
       console.log('resu;t -->', results);
