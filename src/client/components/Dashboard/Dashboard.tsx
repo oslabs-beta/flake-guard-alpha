@@ -5,12 +5,16 @@ import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
 import Trends from './components/Trends';
+import {useParams} from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
     undefined
   );
   const [fetchResults, setFetchResults] = useState();
+
+  const {id} = useParams();
+  console.log('id', id);
 
   useEffect(() => {
     const fetchMetrics = async () => {
