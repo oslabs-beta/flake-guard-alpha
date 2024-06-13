@@ -27,6 +27,9 @@ const controller = {
       console.log('result -->', results);
       res.locals.metrics = results;
       
+      // clear DB before storing results
+      await sql`DELETE FROM "npmMetrics"`;
+
       // store results in DB
       for (let i = 0; i < results.length; i += 1) {
         await sql`INSERT INTO "npmMetrics" ("fullName", passed, failed)
@@ -51,11 +54,13 @@ const controller = {
       const resultsQuery =
         await sql`SELECT "fullName", passed, failed FROM "npmMetrics"`;
 
+      // convert strings to numbers and add required results object keys
       for (let i = 0; i < resultsQuery.length; i += 1) {
         resultsQuery[i].passed = Number(resultsQuery[i].passed);
         resultsQuery[i].failed = Number(resultsQuery[i].failed);
         resultsQuery[i].totalRuns =
           resultsQuery[i].passed + resultsQuery[i].failed;
+
         // temporary placeholder
         resultsQuery[i].skipped = 0;
       }
