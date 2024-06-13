@@ -26,8 +26,12 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const response = await api.get('/results');
+        // remove get request from db - will add conditional later for permanent users
+        // const response = await api.get('/results');
+
+        const response = await api.get(`/tempDash/${id}`);
         const results = response.data;
+        console.log('retrieved cached results', results);
         setFetchResults(results);
 
         const flakePercentage = calculateFlakePercentage(results); // Calculate flake percentage
