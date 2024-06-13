@@ -31,9 +31,6 @@ const NavBarHeading: React.FC = () => {
           <Nav className="me-auto">
             {/* <Nav.Link href="#home">Home</Nav.Link> */}
             <NavDropdown title="Dashboard" id="basic-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/analytics">Analytics</Link>
-              </NavDropdown.Item>
               {/* <NavDropdown.Item>
                 <Link to="/profile">Profile</Link>
               </NavDropdown.Item> */}
