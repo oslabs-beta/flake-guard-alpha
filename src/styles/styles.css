@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  background-color: rgb(235, 235, 235);
   color: rgb(0, 0, 0);
 }
-#navbar-container {
+#navbar-container .navbar-custom{
   width: 100vh;
 }
 #intro-title {
@@ -19,7 +18,7 @@
 position: absolute;
 top: 50%; /* Center vertically */
 left: 50%; /* Center horizontally */
-transform: translate(-50%, -50%); /* Adjust for the text’s dimensions */
+transform: translate(-50%, -50%);  /*Adjust for the text’s dimensions */
 color: white; /* Text color */
 font-size: 2rem;
 font-family: Arial, sans-serif;
@@ -28,14 +27,13 @@ padding: 20px;
 border-radius: 10px; /*  Rounded corners */
 }
 .docs-overlay{
-  position: absolute;
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for the text’s dimensions */
+  /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
   color: white; /* Text color */
   /* font-size: 2rem; */
   font-family: Arial, sans-serif;
-  background: rgba(0, 0, 0, 0.5); /*  Semi-transparent background for better readability */
+  background: rgba(67, 67, 67, 0.5); /*  Semi-transparent background for better readability */
   padding: 20px;
   border-radius: 10px; /*  Rounded corners */
   }
@@ -46,7 +44,67 @@ border-radius: 10px; /*  Rounded corners */
   text-align: center;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 35vh;
+}
+.lightBulb-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  zoom: unset;
+}
+.codeScreen-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  background-color: rgb(173, 213, 244);
+}
+
+
+
+.footer-container {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px; /* Adjust this width as needed */
+}
+.footer-div img {
+  transition: transform 0.3s ease; /* Smooth transition for the size adjustment */
+}
+
+.doc-links-container {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+#github-logo:hover {
+  transform: scale(1.1); /* Adjust the scale value as needed for the desired size */
+}
+
+#npm-logo:hover {
+  transform: scale(1.2); /* Adjust the scale value as needed for the desired size */
+}
+#npm-docs-logo:hover{
+  transform: scale(1.3);
 }
 .intro-background{
   width: 100%;
@@ -59,26 +117,62 @@ border-radius: 10px; /*  Rounded corners */
   border-radius: 25%;
 }
 #tagline-emphasize {
-  background: linear-gradient(
-    to right,
-    #00A86B,
-    #6610F2
-  ); /* Jade to Indigo gradient */
   background-clip: text; /* Standard */
-  color: transparent;
+  color: rgb(99, 192, 238);
+  font-size: 2rem;;
 }
+
 #social-logo {
   height: 35px;
   width: 35px;
 }
-.card {
-  width: 18rem;
+
+#carousel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  height: 30vh;
+  
 }
-.cards-container{
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+
+#carousel-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin-top: 10px;
+  
 }
+
+#carousel-prev,
+#carousel-next {
+  background-color: white;
+  color: black;
+  border: none;
+  /* padding: 10px 20px; */
+  margin: 10px;
+  cursor: pointer;
+  width:150px;
+  height: 50px;
+  font-size: 30px;
+}
+
+#carousel-next {
+  text-align: center; 
+}
+
+#carousel-overlay{
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
 #feature-1-logo{
     width: 50px;
     height: 50px;
@@ -89,6 +183,31 @@ border-radius: 10px; /*  Rounded corners */
 
 
 
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  z-index: -1; /* Send the image to the background */
+}
+
+.login-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(70%, -80%);
+  text-align: center;
+  color: white;
+}
 
 
 

@@ -20,7 +20,7 @@ const LoginButton: React.FC = () => {
       const {data, error} = await supabaseClient.auth.getUser();
       if (data && !error && data.user && data.user.email) {
         console.log('data --->', data);
-        setUser({email: data.user.email});
+        setUser({email: data.user.user_metadata.user_name});
       } else {
         setUser(null);
       }
@@ -50,12 +50,14 @@ const LoginButton: React.FC = () => {
     );
   } else {
     return (
-      <div>
+      <div className="login-text">
         <h1>Hello, please sign in!</h1>
         <button onClick={signInWithGithub}>Sign In</button>
       </div>
     );
   }
 };
+
+//
 
 export default LoginButton;
