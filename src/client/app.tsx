@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Landing from './components/LandingPage/landing-page';
-import Analytics from './components/Analytics/analytics-page';
 import LoginOrOut from './components/Login/login-out';
 import DocPage from './components/Docs/doc-page';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -23,10 +22,6 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route
-            path="/analytics"
-            element={<Analytics flakePercentage={undefined} />}
-          />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/login" element={<LoginOrOut />} />
