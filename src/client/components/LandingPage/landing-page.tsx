@@ -63,6 +63,7 @@ const Landing = (): JSX.Element => {
           <Carousel />
         </div>
       </div>
+
       <Footer />
     </>
   );

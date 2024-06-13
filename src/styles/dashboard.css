@@ -71,14 +71,14 @@
 }
 
 /* hover effect */
-.outer{
+/* .outer{
     position: relative;
     margin: 50px;
-  }
+  } */
 /* modify the shadow */
-  .button{
-    height: 62px;
-    width: 212px;
+  /* .button{
+    height: 60px;
+    width: 210px;
     border-radius: 10px;
   }
   .outer button, .outer span{
@@ -92,9 +92,9 @@
     border: none;
     z-index: 9;
     cursor: pointer;
-  }
+  } */
   /* modify the box */
-  .button button{
+  /* .button button{
     height: 60px;
     width: 210px;
     border-radius: 10px;
@@ -111,9 +111,9 @@
   .outer:hover span:nth-child(2){
     filter: blur(5px);
   }
-  .outer:hover{
+  .outer:hover{ */
     /* background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0); */
-    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    /* background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
 
     animation: rotate 2s linear infinite;
   }
@@ -133,4 +133,4 @@
     .outer{
       margin: 50px 0;
     }
-  }
+  } */

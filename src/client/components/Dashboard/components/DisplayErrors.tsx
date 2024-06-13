@@ -70,10 +70,10 @@ const DisplayErrors: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
           <p>No data available</p>
         )}
       </div>
-      <div className="outer button">
+      {/* <div className="outer button">
         <button>Hover Me</button>
         <span></span>
-      </div>
+      </div> */}
     </div>
   );
 };
