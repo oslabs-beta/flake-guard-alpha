@@ -23,7 +23,10 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/analytics" element={<Analytics />} />
+          <Route
+            path="/analytics"
+            element={<Analytics flakePercentage={undefined} />}
+          />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/login" element={<LoginOrOut />} />
