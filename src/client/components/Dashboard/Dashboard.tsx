@@ -5,29 +5,51 @@ import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
 import Trends from './components/Trends';
+import {useParams} from 'react-router-dom';
+import NavBarHeading from '../nav-bar';
+import Footer from '../footer';
+import {calculateFlakePercentage} from '../Analytics/flake-percentage';
+import Analytics from '../Analytics/analytics-page';
 
 const Dashboard: React.FC = () => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
     undefined
   );
-  const [fetchResults, setFetchResults] = useState();
+  const [fetchResults, setFetchResults] = useState<any[]>([]);
+  const [flakePercentage, setFlakePercentage] = useState<number | undefined>(
+    undefined
+  );
+
+  const {id} = useParams();
+  console.log('id', id);
 
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
         const response = await api.get('/results');
         const results = response.data;
-        console.log('results', results);
-        const labelsArr: {[key: string]: number} = {};
-        for (let i = 0; i < results.length; i++) {
-          labelsArr['passed'] = (labelsArr['passed'] || 0) + results[i].passed;
-          labelsArr['failed'] = (labelsArr['failed'] || 0) + results[i].failed;
-          labelsArr['skipped'] =
-            (labelsArr['skipped'] || 0) + results[i].skipped;
+        setFetchResults(results);
+
+        const flakePercentage = calculateFlakePercentage(results); // Calculate flake percentage
+        setFlakePercentage(flakePercentage); // Set flakePercentage state
+
+        let totalPassed = 0;
+        let totalFailed = 0;
+        let totalSkipped = 0;
+
+        for (const result of results) {
+          totalPassed += result.passed;
+          totalFailed += result.failed;
+          totalSkipped += result.skipped;
         }
 
-        setMetrics(labelsArr);
-        setFetchResults(results);
+        const labelsArr = {
+          passed: totalPassed,
+          failed: totalFailed,
+          skipped: totalSkipped,
+        };
+
+        setMetrics(labelsArr); // Set metrics state
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -37,30 +59,36 @@ const Dashboard: React.FC = () => {
   }, []);
 
   return (
-    <div className="dashboard-container">
-      <h1>Flake-Guard Dashboard</h1>
-      <div className="dashboard-items">
-        <div className="upper-dash">
-          <div className="summary-dash">
-            {metrics && <Summary metrics={metrics} />}
-          </div>
-
-          <div>
-            <div className="bar-dash">
-              {metrics && <AssertionsGraph fetchResults={fetchResults} />}
+    <>
+      <NavBarHeading />
+      <div className="dashboard-container">
+        <h1>Flake-Guard Dashboard</h1>
+        <div className="dashboard-items">
+          <div className="upper-dash">
+            <div className="summary-dash">
+              {metrics && <Summary metrics={metrics} />}
             </div>
             <div>
-              <div className="trends-dash">
-                <Trends />
+              <div className="bar-dash">
+                {metrics && <AssertionsGraph fetchResults={fetchResults} />}
+              </div>
+              <div>
+                <div className="trends-dash">
+                  <Trends />
+                </div>
               </div>
             </div>
           </div>
+          <div className="display-errors-container">
+            <DisplayErrors fetchResults={fetchResults} />
+          </div>
         </div>
-        <div className="display-errors-container">
-          <DisplayErrors fetchResults={fetchResults} />
-        </div>
+        {flakePercentage !== undefined && (
+          <Analytics flakePercentage={flakePercentage} />
+        )}
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
