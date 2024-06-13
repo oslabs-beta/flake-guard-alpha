@@ -5,6 +5,7 @@ import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
 import Trends from './components/Trends';
+import {useParams} from 'react-router-dom';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import {calculateFlakePercentage} from '../Analytics/flake-percentage';
@@ -18,6 +19,9 @@ const Dashboard: React.FC = () => {
   const [flakePercentage, setFlakePercentage] = useState<number | undefined>(
     undefined
   );
+
+  const {id} = useParams();
+  console.log('id', id);
 
   useEffect(() => {
     const fetchMetrics = async () => {

@@ -9,6 +9,11 @@ const controller = {
     next: NextFunction
   ): Promise<void> {
     try {
+      const {simple, user} = req.body;
+      if (user === 'temp') {
+        res.locals.simple = simple;
+        res.locals.user = user;
+      }
       const tests = req.body.simple;
 
       const results = [];
@@ -26,7 +31,7 @@ const controller = {
       }
       console.log('result -->', results);
       res.locals.metrics = results;
-      
+
       // clear DB before storing results
       await sql`DELETE FROM "npmMetrics"`;
 
