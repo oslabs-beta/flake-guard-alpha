@@ -8,13 +8,13 @@ import Trends from './components/Trends';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import {calculateFlakePercentage} from '../Analytics/flake-percentage';
-import Analytics from '../Analytics/analytics-page';
+import FlakeRiskContainer from '../FlakeRiskSign/FlakeRiskContainer';
 
 const Dashboard: React.FC = () => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
     undefined
   );
-  const [fetchResults, setFetchResults] = useState<any[]>([]);
+  const [fetchResults, setFetchResults] = useState([]);
   const [flakePercentage, setFlakePercentage] = useState<number | undefined>(
     undefined
   );
@@ -80,8 +80,14 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
         {flakePercentage !== undefined && (
-          <Analytics flakePercentage={flakePercentage} />
+          <div>
+            <h2>Overall Test Suite Flake Percentage: </h2>
+            <p>{flakePercentage}%</p>
+          </div>
         )}
+      </div>
+      <div id="analytics-container">
+        <FlakeRiskContainer />
       </div>
       <Footer />
     </>
