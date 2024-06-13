@@ -10,12 +10,12 @@ const controller = {
   ): Promise<void> {
     try {
       const {simple, user} = req.body;
+      const tests = req.body.simple;
+
       if (user === 'temp') {
         res.locals.simple = simple;
         res.locals.user = user;
       }
-      const tests = req.body.simple;
-
       const results = [];
       for (const key in tests) {
         const fullName = key;
