@@ -28,7 +28,7 @@ const controller = {
       res.locals.metrics = results;
       
       // store results in DB
-      for (let i = 0; i < results.length; i++) {
+      for (let i = 0; i < results.length; i += 1) {
         await sql`INSERT INTO "npmMetrics" ("fullName", passed, failed)
         VALUES (${results[i].fullName}, ${results[i].passed}, ${results[i].failed})`;
       }
@@ -47,20 +47,18 @@ const controller = {
       const fakeMetrics = fakeData;
       res.locals.fakeMetrics = fakeMetrics;
 
-      // pull data from DB and clear
-      const resultsQuery = await sql`SELECT "fullName", passed, failed FROM "npmMetrics"`;
-      console.log(resultsQuery);
-      // await sql`DELETE FROM "npmMetrics"`;
-      // const dbData = [];
-      // for (let i = 0; i < resultsQuery.length; i++) {
-      //   dbData.push({
-      //     fullName: resultsQuery[i].fullName,
-      //     passed: resultsQuery[i].passed,
-      //     failed: resultsQuery[i].failed,
-      //     skipped: 0,
-      //   });
-      // }
-      // res.locals.dbMetrics = dbData;
+      // pull data from DB
+      const resultsQuery =
+        await sql`SELECT "fullName", passed, failed FROM "npmMetrics"`;
+
+      for (let i = 0; i < resultsQuery.length; i += 1) {
+        resultsQuery[i].passed = Number(resultsQuery[i].passed);
+        resultsQuery[i].failed = Number(resultsQuery[i].failed);
+        resultsQuery[i].totalRuns =
+          resultsQuery[i].passed + resultsQuery[i].failed;
+        // temporary placeholder
+        resultsQuery[i].skipped = 0;
+      }
       res.locals.dbMetrics = resultsQuery;
 
       return next();
