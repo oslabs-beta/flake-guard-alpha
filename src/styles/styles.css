@@ -147,7 +147,9 @@ border-radius: 10px; /*  Rounded corners */
   margin-top: 10px;
   
 }
-
+.code-overlay{
+  box-shadow: 10px 5px 5px red;
+}
 #carousel-prev,
 #carousel-next {
   background-color: white;
@@ -209,6 +211,15 @@ border-radius: 10px; /*  Rounded corners */
   color: white;
 }
 
+#analytics-container{
+  /* height: 100vh; */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
+#analytics-page-container
+{
+  height: 100vh;
+}
