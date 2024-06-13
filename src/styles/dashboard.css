@@ -112,7 +112,9 @@
     filter: blur(5px);
   }
   .outer:hover{
+    /* background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0); */
     background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+
     animation: rotate 2s linear infinite;
   }
   @keyframes rotate {
