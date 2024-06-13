@@ -4,7 +4,7 @@
 * {
   color: rgb(0, 0, 0);
 }
-#navbar-container .navbar-custom{
+#navbar-container .navbar-custom {
   width: 100vh;
 }
 #intro-title {
@@ -14,29 +14,40 @@
   text-align: center; /* Centers text within the h1 */
   margin-bottom: 20px;
 }
-.intro-bg-overlay, .code-overlay{
-position: absolute;
-top: 50%; /* Center vertically */
-left: 50%; /* Center horizontally */
-transform: translate(-50%, -50%);  /*Adjust for the text’s dimensions */
-color: white; /* Text color */
-font-size: 2rem;
-font-family: Arial, sans-serif;
-background: rgba(0, 0, 0, 0.5); /*  Semi-transparent background for better readability */
-padding: 20px;
-border-radius: 10px; /*  Rounded corners */
+.intro-bg-overlay,
+.code-overlay {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /*Adjust for the text’s dimensions */
+  color: white; /* Text color */
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /*  Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 10px; /*  Rounded corners */
 }
-.docs-overlay{
+.docs-overlay {
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
   color: white; /* Text color */
   /* font-size: 2rem; */
   font-family: Arial, sans-serif;
-  background: rgba(67, 67, 67, 0.5); /*  Semi-transparent background for better readability */
+  background: rgba(
+    67,
+    67,
+    67,
+    0.5
+  ); /*  Semi-transparent background for better readability */
   padding: 20px;
   border-radius: 10px; /*  Rounded corners */
-  }
+}
 .intro-container {
   display: flex;
   justify-content: center; /* Centers content horizontally */
@@ -67,8 +78,6 @@ border-radius: 10px; /*  Rounded corners */
   background-color: rgb(173, 213, 244);
 }
 
-
-
 .footer-container {
   background-size: cover;
   background-position: center;
@@ -97,16 +106,20 @@ border-radius: 10px; /*  Rounded corners */
   transition: background-color 0.3s ease;
 }
 #github-logo:hover {
-  transform: scale(1.1); /* Adjust the scale value as needed for the desired size */
+  transform: scale(
+    1.1
+  ); /* Adjust the scale value as needed for the desired size */
 }
 
 #npm-logo:hover {
-  transform: scale(1.2); /* Adjust the scale value as needed for the desired size */
+  transform: scale(
+    1.2
+  ); /* Adjust the scale value as needed for the desired size */
 }
-#npm-docs-logo:hover{
+#npm-docs-logo:hover {
   transform: scale(1.3);
 }
-.intro-background{
+.intro-background {
   width: 100%;
   height: 100%;
   /* object-fit: cover; */
@@ -119,7 +132,7 @@ border-radius: 10px; /*  Rounded corners */
 #tagline-emphasize {
   background-clip: text; /* Standard */
   color: rgb(99, 192, 238);
-  font-size: 2rem;;
+  font-size: 2rem;
 }
 
 #social-logo {
@@ -136,7 +149,6 @@ border-radius: 10px; /*  Rounded corners */
   color: white;
   padding: 20px;
   height: 30vh;
-  
 }
 
 #carousel-container {
@@ -145,9 +157,8 @@ border-radius: 10px; /*  Rounded corners */
   width: 100%;
   max-width: 500px; /* Adjust as needed */
   margin-top: 10px;
-  
 }
-.code-overlay{
+.code-overlay {
   box-shadow: 10px 5px 5px red;
 }
 #carousel-prev,
@@ -158,32 +169,29 @@ border-radius: 10px; /*  Rounded corners */
   /* padding: 10px 20px; */
   margin: 10px;
   cursor: pointer;
-  width:150px;
+  width: 150px;
   height: 50px;
   font-size: 30px;
 }
 
 #carousel-next {
-  text-align: center; 
+  text-align: center;
 }
 
-#carousel-overlay{
+#carousel-overlay {
   color: white;
   text-align: center;
   justify-content: center;
   align-items: center;
-
 }
 
-#feature-1-logo{
-    width: 50px;
-    height: 50px;
+#feature-1-logo {
+  width: 50px;
+  height: 50px;
 }
-#carousel{
-    border: 3px solid rgb(247, 204, 204);
+#carousel {
+  border: 3px solid rgb(247, 204, 204);
 }
-
-
 
 .login-container {
   position: relative;
@@ -210,16 +218,99 @@ border-radius: 10px; /*  Rounded corners */
   text-align: center;
   color: white;
 }
-
-#analytics-container{
-  /* height: 100vh; */
+/* 
+.analytics-container{
+  height: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#analytics-page-container
-{
-  height: 100vh;
+.flakeRiskContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+
+#analytics-container:hover .flakeRiskContainer {
+  animation: moveBorder 4s linear infinite;
+}
+
+@keyframes moveBorder {
+  0% {
+    box-shadow:
+      inset 0px 0px 0px 0px black,
+      inset 0px 0px 0px 4px transparent;
+  }
+  25% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset 4px 0px 0px 0px transparent;
+  }
+  50% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset 0px 4px 0px 0px transparent;
+  }
+  75% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset -4px 0px 0px 0px transparent;
+  }
+  100% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset 0px -4px 0px 0px transparent;
+  }
+} */
+
+#analytics-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures full viewport height for centering */
+}
+
+#flakeriskcontainer {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#flakeriskcontainer:hover {
+  animation: moveBorder 4s linear infinite;
+}
+
+@keyframes moveBorder {
+  0% {
+    box-shadow:
+      inset 0px 0px 0px 0px black,
+      inset 0px 0px 0px 4px transparent;
+  }
+  25% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset 4px 0px 0px 0px transparent;
+  }
+  50% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset 0px 4px 0px 0px transparent;
+  }
+  75% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset -4px 0px 0px 0px transparent;
+  }
+  100% {
+    box-shadow:
+      inset 0px 0px 0px 4px black,
+      inset 0px -4px 0px 0px transparent;
+  }
 }

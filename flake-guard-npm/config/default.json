@@ -1,3 +1,5 @@
 {
-  "runs": 10
+  "runs": 10,
+  "user": "temp",
+  "apiKey": "temp"
 }
