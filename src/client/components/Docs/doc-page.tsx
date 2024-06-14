@@ -82,20 +82,52 @@ const DocPage = (): JSX.Element => {
           FlakeGuard server for further analysis which you can view at
         </p>
         <div className="doc-links-container">
-          <a href="https://www.npmjs.com/search?q=keywords:e2e">{'e2e '}</a>
-          <a href="https://www.npmjs.com/search?q=keywords:end-to-end">
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:e2e"
+          >
+            {'e2e '}
+          </a>
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:end-to-end"
+          >
             end-to-end
           </a>
-          <a href="https://www.npmjs.com/search?q=keywords:testing">
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:testing"
+          >
             {' testing '}
           </a>
-          <a href="https://www.npmjs.com/search?q=keywords:test">{' test '}</a>
-          <a href="https://www.npmjs.com/search?q=keywords:flake">{' flake'}</a>
-          <a href="https://www.npmjs.com/search?q=keywords:flaky">
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:test"
+          >
+            {' test '}
+          </a>
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:flake"
+          >
+            {' flake'}
+          </a>
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:flaky"
+          >
             {' flaky '}
           </a>
-          <a href="https://www.npmjs.com/search?q=keywords:jest">{' jest '}</a>
-          <a href="https://www.npmjs.com/search?q=keywords:puppeteer">
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:jest"
+          >
+            {' jest '}
+          </a>
+          <a
+            className="doc-keywords"
+            href="https://www.npmjs.com/search?q=keywords:puppeteer"
+          >
             puppeteer
           </a>
         </div>

@@ -60,7 +60,7 @@ const Dashboard = (): JSX.Element => {
     <>
       <NavBarHeading />
       <div className="dashboard-container">
-        <h1>Flake-Guard Dashboard</h1>
+        <h1 id="dashboard-header">Flake-Guard Dashboard</h1>
         <div className="dashboard-items">
           <div className="upper-dash">
             <div className="summary-dash">
@@ -83,14 +83,14 @@ const Dashboard = (): JSX.Element => {
         </div>
         {flakePercentage !== undefined && (
           <div>
-            <h2>Overall Test Failures: </h2>
-            <p>{failedPercentage(fetchResults)}%</p>
+            <h2>Overall Test Flakiness: </h2>
+            <p>{calculateFlakePercentage(fetchResults)}%</p>
           </div>
         )}
         {flakePercentage !== undefined && (
           <div>
-            <h2>Overall Test Flakiness: </h2>
-            <p>{calculateFlakePercentage(fetchResults)}%</p>
+            <h2>Overall Test Failures: </h2>
+            <p>{failedPercentage(fetchResults)}%</p>
           </div>
         )}
       </div>
