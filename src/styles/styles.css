@@ -271,46 +271,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ensures full viewport height for centering */
-}
-
-#flakeriskcontainer {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#flakeriskcontainer:hover {
-  animation: moveBorder 4s linear infinite;
-}
-
-@keyframes moveBorder {
-  0% {
-    box-shadow:
-      inset 0px 0px 0px 0px black,
-      inset 0px 0px 0px 4px transparent;
-  }
-  25% {
-    box-shadow:
-      inset 0px 0px 0px 4px black,
-      inset 4px 0px 0px 0px transparent;
-  }
-  50% {
-    box-shadow:
-      inset 0px 0px 0px 4px black,
-      inset 0px 4px 0px 0px transparent;
-  }
-  75% {
-    box-shadow:
-      inset 0px 0px 0px 4px black,
-      inset -4px 0px 0px 0px transparent;
-  }
-  100% {
-    box-shadow:
-      inset 0px 0px 0px 4px black,
-      inset 0px -4px 0px 0px transparent;
-  }
+  height: 50vh; /* Ensures full viewport height for centering */
 }

@@ -9,6 +9,7 @@ import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import {calculateFlakePercentage} from '../Analytics/flake-percentage';
 import FlakeRiskContainer from '../FlakeRiskSign/FlakeRiskContainer';
+// import FlakeGauge from './components/FlakeGauge';
 
 const Dashboard: React.FC = () => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
@@ -87,6 +88,7 @@ const Dashboard: React.FC = () => {
         )}
       </div>
       <div id="analytics-container">
+        {/* <FlakeGauge /> */}
         <FlakeRiskContainer />
       </div>
       <Footer />

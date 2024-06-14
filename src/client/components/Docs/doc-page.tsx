@@ -13,8 +13,8 @@ const DocPage = (): JSX.Element => {
       {/* <img src={AcUnitIcon}></img> */}
       <div className="docs-overlay">
         <h1>Introduction</h1>
-        <p>Welcome to the Flake-guard documentation!</p>
-        <h1>What is Flake-guard?</h1>
+        <p>Welcome to the Flake-Guard documentation!</p>
+        <h1>What is Flake-Guard?</h1>
         <p>lightweight framework....</p>
         <h1>
           Quickstart
@@ -39,11 +39,11 @@ const DocPage = (): JSX.Element => {
         <code>npm i flake-guard --save-dev</code>
         <p>
           <br /> To run Flake-guard, simply execute the command{' '}
-          <code>flake-guard {'<filename>'}</code> with the name of the test file
-          that you want to examine. FlakeGuard will analyze your E2E tests for
-          flakiness by executing multiple test runs and analyzing the results.
-          The default number of test runs is 10, but this can be adjusted as
-          described below. <br />
+          <code>npx flake-guard {'<filename>'}</code> with the name of the test
+          file that you want to examine. FlakeGuard will analyze your E2E tests
+          for flakiness by executing multiple test runs and analyzing the
+          results. The default number of test runs is 10, but this can be
+          adjusted as described below. <br />
           In general, there is a time versus accuracy tradeoff. More test
           executions increases accuracy but reduces speed.
         </p>
