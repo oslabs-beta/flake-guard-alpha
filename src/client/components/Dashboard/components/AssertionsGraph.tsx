@@ -190,7 +190,7 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({ fetchResults }) => {
         ticks: {
           callback: function (value: any, index: number, values: any) {
             if (flaggedIndices.has(index)) {
-              return `${barChartData.labels[index]} (Flaky)`;
+              return `(Flaky) ${barChartData.labels[index]} `;
             }
             return barChartData.labels[index];
           },

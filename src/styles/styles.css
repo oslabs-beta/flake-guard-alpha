@@ -158,8 +158,16 @@
   max-width: 500px; /* Adjust as needed */
   margin-top: 10px;
 }
+/* .code-overlay {
+  box-shadow: 10px 5px 5px red;
+} */
 .code-overlay {
   box-shadow: 10px 5px 5px red;
+  transition: transform 0.3s ease; /* Smooth transition for the grow effect */
+}
+
+.code-overlay:hover {
+  box-shadow: 20px 10px 10px pink /* Scale the container to 110% of its original size */
 }
 #carousel-prev,
 #carousel-next {
