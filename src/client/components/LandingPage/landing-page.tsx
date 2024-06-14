@@ -38,10 +38,10 @@ const Landing = (): JSX.Element => {
         <h1 className="intro-bg-overlay">
           flake-guard <br />
           <br />
-          <button style={{margin: '20px'}}>
-            <Link to="/docs">Get Started</Link>
+          <button style={{margin: '20px'}} id="get-started">
+            <Link to="/docs">Docs</Link>
           </button>
-          <button>
+          <button id="npm-button">
             <Link to="https://www.npmjs.com/package/flake-guard">
               <img
                 src={npmLogo}
