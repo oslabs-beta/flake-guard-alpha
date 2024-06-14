@@ -106,7 +106,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
@@ -128,7 +128,7 @@ interface AssertionsGraphProps {
   fetchResults: MetricsData[] | undefined;
 }
 
-const AssertionsGraph: React.FC<AssertionsGraphProps> = ({ fetchResults }) => {
+const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
   const barChartData = {
     labels: [] as string[],
     datasets: [
@@ -188,6 +188,7 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({ fetchResults }) => {
       y: {
         stacked: true,
         ticks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           callback: function (value: any, index: number, values: any) {
             if (flaggedIndices.has(index)) {
               return `(Flaky) ${barChartData.labels[index]} `;

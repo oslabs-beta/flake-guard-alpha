@@ -9,9 +9,10 @@ import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import {calculateFlakePercentage} from '../Analytics/flake-percentage';
 import FlakeRiskContainer from '../FlakeRiskSign/FlakeRiskContainer';
+import {failedPercentage} from '../Analytics/failed-percentage'; 
 // import FlakeGauge from './components/FlakeGauge';
 
-const Dashboard: React.FC = () => {
+const Dashboard = (): JSX.Element => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
     undefined
   );
@@ -82,8 +83,14 @@ const Dashboard: React.FC = () => {
         </div>
         {flakePercentage !== undefined && (
           <div>
-            <h2>Overall Test Suite Flake Percentage: </h2>
-            <p>{flakePercentage}%</p>
+            <h2>Overall Test Failures: </h2>
+            <p>{failedPercentage(fetchResults)}%</p>
+          </div>
+        )}
+         {flakePercentage !== undefined && (
+          <div>
+            <h2>Overall Test Flakiness: </h2>
+            <p>{calculateFlakePercentage(fetchResults)}%</p>
           </div>
         )}
       </div>
