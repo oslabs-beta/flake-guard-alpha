@@ -56,9 +56,6 @@ export const fakeData = [
     totalRuns: 5,
   },
 
-
-
-
   // {
   //   fullName:
   //     'db unit tests #find returns list of all markets from the json file',
