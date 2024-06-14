@@ -23,7 +23,7 @@ router.post(
 
 router.get('/', npmController.npmFakeMetrics, (req: Request, res: Response) => {
   console.log('im in the npm router');
-  return res.status(200).json(res.locals.dbMetrics);
+  return res.status(200).json(res.locals.fakeMetrics);
 });
 
 // router.get('/:id',

@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import {Bar} from 'react-chartjs-2';
+import Flakiness from '../components/Flakiness';
 
 ChartJS.register(
   CategoryScale,
@@ -39,14 +40,14 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
         data: [] as number[],
         backgroundColor: 'rgba(81, 209, 156, 0.6)',
         hoverOffset: 1,
-        barThickness: 15,
+        barThickness: 25,
       },
       {
         label: 'Failed',
         data: [] as number[],
         backgroundColor: 'rgba(255, 49, 49, .9)',
         hoverOffset: 1,
-        barThickness: 15,
+        barThickness: 25,
       },
     ],
   };
@@ -54,7 +55,7 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
   if (fetchResults) {
     for (let i = 0; i < fetchResults.length; i++) {
       const results = fetchResults[i];
-      console.log('fetchResults', results);
+      console.log('fetchResults ---> ', results);
 
       barChartData.labels.push('assertion ' + (i + 1));
       barChartData.datasets[0].data.push(results.passed);
@@ -88,7 +89,19 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
   };
 
   return (
-    <div className="assertions-graph box-style">
+    <div className="assertions-graph box-style ">
+      <div className="flakiness-box">
+        <p>Flaky Rate (%)</p>
+        <div className="flakiness">
+          {fetchResults &&
+            fetchResults.map(result => (
+              <div className="flakiness-container">
+                <Flakiness fetchResults={result.failed/(result.passed+result.failed)*100} />
+              </div>
+            ))}
+        </div>
+      </div>
+
       <Bar options={options} data={barChartData} />
     </div>
   );

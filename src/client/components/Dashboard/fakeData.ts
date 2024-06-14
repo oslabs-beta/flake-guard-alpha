@@ -14,29 +14,51 @@ export const fakeData = [
     totalRuns: 5,
   },
   {
-    fullName:
-      'db unit tests #sync returns an error when location and/or cards fields are not provided',
-    passed: 5,
-    failed: 0,
+    fullName: 'db unit tests #sync writes a valid marketList to the JSON file',
+    passed: 2,
+    failed: 2,
+    skipped: 1,
+    totalRuns: 5,
+  },
+  {
+    fullName: 'db unit tests #sync overwrites previously existing markets',
+    passed: 2,
+    failed: 3,
     skipped: 0,
     totalRuns: 5,
   },
   {
-    fullName:
-      'db unit tests #sync returns an error when location value is not a string',
-    passed: 4,
-    failed: 1,
+    fullName: 'db unit tests #sync writes a valid marketList to the JSON file',
+    passed: 2,
+    failed: 2,
+    skipped: 1,
+    totalRuns: 5,
+  },
+  {
+    fullName: 'db unit tests #sync overwrites previously existing markets',
+    passed: 2,
+    failed: 3,
     skipped: 0,
     totalRuns: 5,
   },
   {
-    fullName:
-      'db unit tests #sync returns an error when cards value is not a number',
-    passed: 0,
-    failed: 5,
+    fullName: 'db unit tests #sync writes a valid marketList to the JSON file',
+    passed: 2,
+    failed: 2,
+    skipped: 1,
+    totalRuns: 5,
+  },
+  {
+    fullName: 'db unit tests #sync overwrites previously existing markets',
+    passed: 2,
+    failed: 3,
     skipped: 0,
     totalRuns: 5,
   },
+
+
+
+
   // {
   //   fullName:
   //     'db unit tests #find returns list of all markets from the json file',
