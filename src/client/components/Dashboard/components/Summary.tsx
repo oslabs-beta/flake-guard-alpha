@@ -76,6 +76,7 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
   //Configuration of the plugin from line 60. Allows display the total of assertions (text)
   const textInsidePlugin = {
     id: 'textInside',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     afterDatasetsDraw: function (chart: any) {
       const ctx = chart.ctx;
       const width = chart.width;
@@ -95,6 +96,7 @@ const Summary: React.FC<SummaryProps> = ({metrics}) => {
     id: 'customCanvasBackgroundColor',
     beforeDraw: (
       chart: ChartJS<'doughnut'>,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       args: any,
       options: {color?: string}
     ) => {

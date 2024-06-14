@@ -45,14 +45,18 @@ const LoginButton: React.FC = () => {
     return (
       <div>
         <h1 id="logged-greeting">Hello, {user.email}</h1>
-        <button onClick={signOut}>Sign out</button>
+        <button onClick={signOut} id="sign-out-button">
+          Sign out
+        </button>
       </div>
     );
   } else {
     return (
       <div className="login-text">
         <h1 id="logged-greeting">Hello, please sign in!</h1>
-        <button onClick={signInWithGithub}>Sign In</button>
+        <button onClick={signInWithGithub} id="sign-in-button">
+          Sign In
+        </button>
       </div>
     );
   }
