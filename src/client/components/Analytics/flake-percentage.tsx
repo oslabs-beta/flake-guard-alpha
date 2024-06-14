@@ -5,7 +5,6 @@ interface AssertionResult {
   failed: boolean;
 }
 
-
 // export const calculateFlakePercentage = (
 //   results: TestResult[]
 // ): number | undefined => {
@@ -49,4 +48,3 @@ export const calculateFlakePercentage = (
   const flakePercentage = (flakeyCount / totalAssertions) * 100;
   return flakePercentage;
 };
-
