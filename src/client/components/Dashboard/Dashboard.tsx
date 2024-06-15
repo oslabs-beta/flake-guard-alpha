@@ -5,6 +5,7 @@ import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
 import Trends from './components/Trends';
+import {useParams} from 'react-router-dom';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import {calculateFlakePercentage} from '../Analytics/flake-percentage';
@@ -22,11 +23,18 @@ const Dashboard = (): JSX.Element => {
     undefined
   );
 
+  const {id} = useParams();
+  console.log('id', id);
+
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
+        // remove get request from db - will add conditional later for permanent users
         const response = await api.get('/results');
+
+        // const response = await api.get(`/tempDash/${id}`);
         const results = response.data;
+        console.log('retrieved cached results', results);
         setFetchResults(results);
 
         const flakePercentage = calculateFlakePercentage(results); // Calculate flake percentage
@@ -72,9 +80,7 @@ const Dashboard = (): JSX.Element => {
                 {metrics && <AssertionsGraph fetchResults={fetchResults} />}
               </div>
               <div>
-                <div className="trends-dash">
-                  <Trends />
-                </div>
+                <div className="trends-dash">{/* <Trends /> */}</div>
               </div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 export interface ConfigObj {
   runs: number;
+  user: string;
+  apiKey: string;
 }
 
 export interface Results {

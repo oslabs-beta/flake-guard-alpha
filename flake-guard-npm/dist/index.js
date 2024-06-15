@@ -28,7 +28,7 @@ const runTest = () => {
         });
     });
 };
-function dashPrompt() {
+function dashPrompt(url) {
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
@@ -41,7 +41,7 @@ function dashPrompt() {
                 : process.platform === 'darwin'
                     ? 'open'
                     : 'xdg-open';
-            (0, node_child_process_1.spawn)(command, ['http://google.com']);
+            (0, node_child_process_1.spawn)(command, [url]);
             rl.close();
         }
     }));
@@ -78,7 +78,7 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
         }
     }
     try {
-        yield fetch('http://localhost:3000/results', {
+        const response = yield fetch('http://localhost:3000/results', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/JSON',
@@ -86,19 +86,22 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
             body: JSON.stringify({
                 verbose: flakeGuardResultsVerbose,
                 simple: flakeGuardResults,
+                runTimes,
+                user: configObj.user,
+                apiKey: configObj.apiKey,
             }),
         });
+        const url = yield response.json();
         console.log('Results successfully sent to FlakeGuard server');
+        const timestampEnd = Date.now();
+        console.log(`Total FlakeGuard runtime: ${(timestampEnd - timestampStart) / 1000} seconds`);
+        console.log('Results Summary:');
+        console.log(flakeGuardResults);
+        yield dashPrompt(url);
     }
     catch (error) {
         console.error('Error sending results to FlakeGuard server: ', error);
     }
-    const timestampEnd = Date.now();
-    console.log(`Total FlakeGuard runtime: ${(timestampEnd - timestampStart) / 1000} seconds`);
-    console.log('Results Summary:');
-    console.log(flakeGuardResults);
-    console.log('Log in to FlakeGuard.com to view full results');
-    yield dashPrompt();
 });
 flakeGuard(runTimes);
 //# sourceMappingURL=index.js.map

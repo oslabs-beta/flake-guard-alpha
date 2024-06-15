@@ -14,6 +14,8 @@ const config = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js', // Specify an output filename
+    publicPath: '/', // Ensure correct public path
   },
   resolve: {
     extensions: ['.ts', '.js', 'tsx', 'jsx'],
