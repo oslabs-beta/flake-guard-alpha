@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Trends: React.FC = () => {
   return (
     <div>
@@ -8,7 +7,6 @@ const Trends: React.FC = () => {
       <p>Flakiness</p>
       <p>New Failures</p>
       <p>Always Failing</p>
-      
     </div>
   );
 };
