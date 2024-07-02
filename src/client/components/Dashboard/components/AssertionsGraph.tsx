@@ -95,7 +95,6 @@
 // };
 
 // export default AssertionsGraph;
-
 import React from 'react';
 import {
   Chart as ChartJS,
@@ -192,7 +191,7 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           callback: function (value: any, index: number, values: any) {
             if (flaggedIndices.has(index)) {
-              return `(Flaky) ${barChartData.labels[index]} `;
+              return `* ${barChartData.labels[index]} `;
             }
             return barChartData.labels[index];
           },
