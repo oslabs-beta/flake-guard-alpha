@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  color: rgb(0, 0, 0);
+}
+#navbar-container .navbar-custom {
+  width: 100vh;
+}
+#intro-title {
+  font-weight: bold;
+  font-size: 60px;
+  font-family: Georgia, serif;
+  text-align: center; /* Centers text within the h1 */
+  margin-bottom: 20px;
+}
+.intro-bg-overlay,
+.code-overlay {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /*Adjust for the text’s dimensions */
+  color: white; /* Text color */
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /*  Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 10px; /*  Rounded corners */
+}
+.docs-overlay {
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
+  color: white; /* Text color */
+  /* font-size: 2rem; */
+  font-family: Arial, sans-serif;
+  background: rgba(
+    67,
+    67,
+    67,
+    0.5
+  ); /*  Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 10px; /*  Rounded corners */
+}
+.intro-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 35vh;
+}
+.lightBulb-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  zoom: unset;
+}
+.codeScreen-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  background-color: rgb(173, 213, 244);
+}
+
+.footer-container {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px; /* Adjust this width as needed */
+}
+.footer-div img {
+  transition: transform 0.3s ease; /* Smooth transition for the size adjustment */
+}
+
+.doc-links-container {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+#github-logo:hover {
+  transform: scale(
+    1.4,1.4
+  ); /* Adjust the scale value as needed for the desired size */
+}
+
+#npm-logo:hover {
+  transform: scale(
+    1.4,1.4
+  ); /* Adjust the scale value as needed for the desired size */
+}
+#npm-docs-logo:hover {
+  transform: scale(1.3,1.3);
+}
+.intro-background {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+#flake-logo {
+  height: 35px;
+  width: 35px;
+  border-radius: 25%;
+}
+#tagline-emphasize {
+  background-clip: text; /* Standard */
+  color: rgb(99, 192, 238);
+  font-size: 2rem;
+}
+
+#social-logo {
+  height: 35px;
+  width: 35px;
+}
+
+#carousel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  height: 30vh;
+}
+
+#carousel-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin-top: 10px;
+}
+/* .code-overlay {
+  box-shadow: 10px 5px 5px red;
+} */
+.code-overlay {
+  box-shadow: 10px 5px 5px rgb(99, 192, 238);
+  transition: transform 0.3s ease; /* Smooth transition for the grow effect */
+}
+
+.code-overlay:hover {
+  box-shadow: 20px 10px 10px pink; /* Scale the container to 110% of its original size */
+}
+#carousel-prev,
+#carousel-next {
+  background-color: white;
+  color: black;
+  border: none;
+  /* padding: 10px 20px; */
+  margin: 10px;
+  cursor: pointer;
+  width: 100px;
+  height: 45px;
+  font-size: 20px;
+}
+
+#carousel-next {
+  text-align: center;
+}
+#carousel-prev:hover,
+#carousel-next:hover {
+  border: 5px solid rgb(99, 192, 238);
+  border-radius: 10%;
+}
+
+#get-started:hover,
+#npm-button:hover{
+  border: 5px solid rgb(99, 192, 238);
+  border-radius: 10%;
+}
+#get-started, #npm-button{
+  font-size: 20px;
+  width: 100px;
+  height: 45px;
+}
+#carousel-overlay {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#feature-1-logo {
+  width: 50px;
+  height: 50px;
+}
+#carousel {
+  border: 3px solid rgb(247, 204, 204);
+}
+
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+  z-index: -1; /* Send the image to the background */
+}
+
+.login-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(70%, -80%);
+  text-align: center;
+  color: white;
+}
+
+
+#analytics-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Ensures full viewport height for centering */
+}
+
+.doc-keywords:hover{
+  transition: transform 0.3s ease;
+  transform: scale(2,2);
+}
+
+.assertions-graph:hover, .summary-dash:hover, .flakeRiskContainer:hover, .errors-dash:hover, .trends-dash:hover, #sign-in-button:hover, #sign-out-button:hover{
+  transition: transform 0.3s ease;
+  transform: scale(1.1, 1.1);
+}
+
+#dashboard-header, .trends-dash{
+  margin: 30px;
+}
+
+.box-style:hover, .errors-dash:hover, .flakeRiskContainer:hover, #sign-in-button:hover, #sign-out-button:hover{
+  border: 5px solid rgb(99, 192, 238);
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
