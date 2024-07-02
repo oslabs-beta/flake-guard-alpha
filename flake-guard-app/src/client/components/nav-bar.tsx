@@ -6,6 +6,7 @@ import React from 'react';
 import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import logo from '../assets/logo.png';
 import LoginButton from './Login/LoginButton';
+import '../../styles/header.css';
 
 //created and imported images from canva as pngs
 //bootstrap template
@@ -15,17 +16,25 @@ const NavBarHeading: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
   return (
-    <div>
-      <img
-        src={logo}
-        style={{height: '90px', width: '180px'}}
-        alt="flakeguard-logo"
-      />
-      <Link to="/docs">Docs</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/dashboard">Dashboard</Link>
-      <LoginButton />
-
+    <div className="header">
+      <div className="header-container">
+        <Link to="/home">
+          <img
+            className="logo"
+            src={logo}
+            style={{height: '90px', width: '180px'}}
+            alt="flakeguard-logo"
+          />
+        </Link>
+        <Link to="/docs">Docs</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/dashboard">Dashboard</Link>
+      </div>
+      <div className="login-btn">
+        <Link to="/login">Login</Link>
+        <LoginButton />
+      </div>
+      {/* Do we need LoginButton here? */}
     </div>
 
     // <Navbar expand="lg" className="bg-body-tertiary navbar-custom">

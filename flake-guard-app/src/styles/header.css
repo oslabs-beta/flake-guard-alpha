@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    width: 90%;
+    margin: auto;
+    /* margin-right: 20px;
+    margin-left: 20px; */
+
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+.header-container Link {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.login-btn {
+    width: 90px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #22C822;
+}
