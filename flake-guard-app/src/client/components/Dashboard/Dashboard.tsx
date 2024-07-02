@@ -29,7 +29,7 @@ const Dashboard = (): JSX.Element => {
     const fetchMetrics = async () => {
       try {
         // remove get request from db - will add conditional later for permanent users
-        // const response = await api.get('/results');
+        // const response = await api.get('/results/');
 
         const response = await api.get(`/tempDash/${id}`);
         const results = response.data;
