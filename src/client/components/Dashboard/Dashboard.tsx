@@ -4,7 +4,6 @@ import '../../../styles/dashboard.css';
 import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
-import Trends from './components/Trends';
 import {useParams} from 'react-router-dom';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
@@ -29,9 +28,9 @@ const Dashboard = (): JSX.Element => {
     const fetchMetrics = async () => {
       try {
         // remove get request from db - will add conditional later for permanent users
-        const response = await api.get('/results');
+        // const response = await api.get('/results');
 
-        // const response = await api.get(`/tempDash/${id}`);
+        const response = await api.get(`/tempDash/${id}`);
         const results = response.data;
         console.log('retrieved cached results', results);
         setFetchResults(results);
