@@ -6,6 +6,7 @@ import React from 'react';
 import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import logo from '../assets/logo.png';
 import LoginButton from './Login/LoginButton';
+import LoginOrOut from './Login/login-out';
 import '../../styles/header.css';
 
 //created and imported images from canva as pngs
@@ -30,11 +31,9 @@ const NavBarHeading: React.FC = () => {
         <Link to="/blog">Blog</Link>
         <Link to="/dashboard">Dashboard</Link>
       </div>
-      <div className="login-btn">
-        <Link to="/login">Login</Link>
+      <div >
         <LoginButton />
       </div>
-      {/* Do we need LoginButton here? */}
     </div>
 
     // <Navbar expand="lg" className="bg-body-tertiary navbar-custom">

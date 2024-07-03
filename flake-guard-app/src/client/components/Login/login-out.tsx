@@ -12,9 +12,9 @@ const LoginOrOut: React.FC = () => {
         <NavBarHeading />
       </div>
       <div className="login-container">
-        <img src={bg_login} className="bg-image" alt="Background" />
+        {/* <img src={bg_login} className="bg-image" alt="Background" /> */}
         <div className="login-text">
-          <LoginButton />
+          {/* <LoginButton /> */}
         </div>
       </div>
     </>
