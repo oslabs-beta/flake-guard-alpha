@@ -21,12 +21,6 @@ ChartJS.register(
   Legend
 );
 
-// interface MetricsData {
-//   fullName: string;
-//   passed: number;
-//   failed: number;
-//   skipped: number;
-// }
 
 interface AssertionsGraphProps {
   fetchResults: number;

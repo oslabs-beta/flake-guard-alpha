@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react';
 import {supabaseClient} from '../../supabaseClient';
+import github from '../../assets/github-mark-white.png';
+import signout from '../../assets/signout.png'
 
 interface User {
   email: string;
+  profile: string;
 }
 
 const LoginButton: React.FC = () => {
@@ -20,7 +23,12 @@ const LoginButton: React.FC = () => {
       const {data, error} = await supabaseClient.auth.getUser();
       if (data && !error && data.user && data.user.email) {
         console.log('data --->', data);
-        setUser({email: data.user.user_metadata.user_name});
+        console.log(data.user.user_metadata.avatar_url);
+
+        setUser({
+          email: data.user.user_metadata.user_name,
+          profile: data.user.user_metadata.avatar_url,
+        });
       } else {
         setUser(null);
       }
@@ -43,19 +51,37 @@ const LoginButton: React.FC = () => {
 
   if (user) {
     return (
-      <div>
-        <h1 id="logged-greeting">Hello, {user.email}</h1>
-        <button onClick={signOut} id="sign-out-button">
-          Sign out
+      <div className="btn-group">
+        <button
+          type="button"
+          className="btn dropdown-toggle"
+          data-bs-toggle="dropdown"
+        >
+          <img
+            src={user.profile}
+            alt="user-profile-pic"
+            style={{width: '40px', borderRadius: '50%'}}
+          />
         </button>
+        <ul className="dropdown-menu">
+          <li>
+            <b id="logged-greeting">{user.email}</b>
+          </li>
+          <li>
+            <button onClick={signOut} className='btn-signout' id="sign-out-button">
+              <img src={signout} alt="signout-icon" style={{width: '16px'}}/>
+              <span className="btn-text-signout">Sign out</span>
+            </button>
+          </li>
+        </ul>
       </div>
     );
   } else {
     return (
-      <div className="login-text">
-        <h1 id="logged-greeting">Hello, please sign in!</h1>
-        <button onClick={signInWithGithub} id="sign-in-button">
-          Sign In
+      <div className="login-btn">
+        <button className="loginButton" onClick={signInWithGithub}>
+          <img src={github} alt="github-logo" style={{width: '25px'}} />
+          <span className="btn-text">Sign in with GitHub</span>
         </button>
       </div>
     );
