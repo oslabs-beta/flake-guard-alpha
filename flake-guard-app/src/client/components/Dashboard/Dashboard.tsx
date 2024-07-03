@@ -4,7 +4,6 @@ import '../../../styles/dashboard.css';
 import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
-import Trends from './components/Trends';
 import {useParams} from 'react-router-dom';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
