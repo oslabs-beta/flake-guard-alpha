@@ -35,8 +35,5 @@
   "devDependencies": {
     "@types/node": "^20.12.13",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "open": "^10.1.0"
   }
 }

@@ -40,7 +40,7 @@ function dashPrompt(url: string): void {
   console.log(
     'Press Enter to open results in the dashboard, or Ctrl+C to exit...'
   );
-
+  /* Determines the user's OS, generates the appropriate command, and executes the command when the user presses enter*/
   rl.on('line', async input => {
     if (input === '') {
       const command =
@@ -54,6 +54,7 @@ function dashPrompt(url: string): void {
     }
   });
 
+  /* If the user presses 'Ctrl + C'*/
   rl.on('SIGINT', () => {
     console.log('\nExiting...');
     rl.close();

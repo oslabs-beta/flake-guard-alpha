@@ -2,7 +2,7 @@ import {ConfigObj} from './types';
 import * as path from 'path';
 import * as fs from 'fs';
 
-// Load config
+/* This function parses the default config object and then overrides the default with any user-designated properties */
 export function loadConfig(): ConfigObj {
   const defaultConfigPath: string = path.join(
     __dirname,
