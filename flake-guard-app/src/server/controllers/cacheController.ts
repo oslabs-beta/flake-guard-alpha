@@ -5,20 +5,21 @@ interface CacheController {
   cacheTempResults: (req: Request, res: Response, next: NextFunction) => void;
   retrieveResults: (req: Request, res: Response, next: NextFunction) => void;
   parseResults: (req: Request, res: Response, next: NextFunction) => void;
+  evictViewedResults: (req: Request, res: Response, next: NextFunction) => void;
 }
 
 const cacheController: CacheController = {
   cacheTempResults: (req: Request, res: Response, next: NextFunction) => {
     if (res.locals.user === 'temp') {
-      tempCache[res.locals.randomString] = res.locals.metrics;
+      tempCache.set(res.locals.randomString, res.locals.metrics);
     }
     next();
   },
 
   retrieveResults: (req: Request, res: Response, next: NextFunction) => {
     const {id} = req.params;
-    if (tempCache[id]) {
-      res.locals.tempCachedResults = tempCache[id];
+    if (tempCache.get(id)) {
+      res.locals.tempCachedResults = tempCache.get(id);
     } else {
       console.error(`no data with id ${id} in cache`);
     }
@@ -32,6 +33,15 @@ const cacheController: CacheController = {
       cache[i].skipped = 0;
     }
     res.locals.cacheParsedResults = cache;
+    return next();
+  },
+
+  evictViewedResults: (req: Request, res: Response, next: NextFunction) => {
+    const {id} = req.params;
+    console.log('before', tempCache);
+    console.log('id', id);
+    tempCache.delete(id);
+    console.log('after', tempCache);
     return next();
   },
 };

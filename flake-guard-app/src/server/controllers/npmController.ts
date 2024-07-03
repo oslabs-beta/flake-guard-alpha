@@ -3,6 +3,7 @@ import {fakeData} from '../../client/components/Dashboard/fakeData';
 import sql from '../../db/db.js';
 
 const controller = {
+  // Receive the results from the user via NPM package
   async npmMetrics(
     req: Request,
     res: Response,

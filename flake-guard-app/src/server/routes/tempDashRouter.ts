@@ -1,5 +1,4 @@
 import express from 'express';
-// import tempCache from '../tempCache';
 import {Request, Response} from 'express';
 import cacheController from '../controllers/cacheController';
 
@@ -16,6 +15,14 @@ router.get(
     );
     // console.log('simple result object', tempCache[req.params.id]);
     return res.status(200).json(res.locals.cacheParsedResults);
+  }
+);
+
+router.delete(
+  '/:id',
+  cacheController.evictViewedResults,
+  (req: Request, res: Response) => {
+    return res.status(200).send();
   }
 );
 
