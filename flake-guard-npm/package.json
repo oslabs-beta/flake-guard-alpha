@@ -1,6 +1,6 @@
 {
   "name": "flake-guard",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A dev tool to detect and mitigate flake in end-to-end jest-puppeteer tests.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,8 +35,5 @@
   "devDependencies": {
     "@types/node": "^20.12.13",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "open": "^10.1.0"
   }
 }

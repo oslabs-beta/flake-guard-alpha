@@ -4,10 +4,11 @@ export interface ConfigObj {
   apiKey: string;
 }
 
-export interface Results {
+export interface FlakeGuardResult {
   [key: string]: {
     passed: number;
     failed: number;
+    skipped: number;
   };
 }
 
