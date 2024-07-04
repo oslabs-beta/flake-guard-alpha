@@ -12,6 +12,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import NavBarHeading from './components/nav-bar';
 
 const App: React.FC = () => {
   // Define the style object
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
+
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/login" element={<LoginOrOut />} />
