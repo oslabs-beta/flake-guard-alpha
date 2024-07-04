@@ -4,12 +4,12 @@ export interface ConfigObj {
   apiKey: string;
 }
 
-export interface Result {
-  fullName: string,
-  passed: number,
-  failed: number,
-  totalRuns: number,
-  skipped: number
+export interface FlakeGuardResult {
+  [key: string]: {
+    passed: number;
+    failed: number;
+    skipped: number;
+  };
 }
 
 export interface Assertion {

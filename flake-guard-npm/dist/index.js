@@ -63,13 +63,15 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
             const { assertionResults } = parsedResult.testResults[0];
             assertionResults.forEach((assertion) => {
                 if (!Object.prototype.hasOwnProperty.call(flakeGuardResults, assertion.fullName)) {
-                    flakeGuardResults[assertion.fullName] = { passed: 0, failed: 0 };
+                    flakeGuardResults[assertion.fullName] = { passed: 0, failed: 0, skipped: 0 };
                 }
                 if (assertion.status === 'passed') {
                     flakeGuardResults[assertion.fullName].passed += 1;
                 }
-                else
+                else if (assertion.status === 'failed')
                     flakeGuardResults[assertion.fullName].failed += 1;
+                else if (assertion.status === 'pending')
+                    flakeGuardResults[assertion.fullName].skipped += 1;
             });
             console.log(`Run ${i + 1} complete`);
         }
@@ -78,6 +80,10 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
         }
     }
     try {
+        const timestampEnd = Date.now();
+        console.log(`Total FlakeGuard runtime: ${(timestampEnd - timestampStart) / 1000} seconds`);
+        console.log('Results Summary:');
+        console.log(flakeGuardResults);
         const response = yield fetch('http://localhost:3000/results', {
             method: 'POST',
             headers: {
@@ -93,10 +99,6 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
         });
         const url = yield response.json();
         console.log('Results successfully sent to FlakeGuard server');
-        const timestampEnd = Date.now();
-        console.log(`Total FlakeGuard runtime: ${(timestampEnd - timestampStart) / 1000} seconds`);
-        console.log('Results Summary:');
-        console.log(flakeGuardResults);
         yield dashPrompt(url);
     }
     catch (error) {
