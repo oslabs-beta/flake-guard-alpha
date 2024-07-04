@@ -9,7 +9,7 @@ import tempDashRouter from './routes/tempDashRouter';
 
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '10mb'}));
 app.use(cors());
 app.use(express.static(path.resolve(__dirname, '../client')));
 
