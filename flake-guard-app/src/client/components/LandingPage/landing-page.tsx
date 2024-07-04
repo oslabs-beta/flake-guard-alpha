@@ -1,11 +1,7 @@
-import React from 'react';
 import '../../../styles/styles.css';
 import Header from '../nav-bar';
 import Advantages from './Advantages';
-import nasa from '../../assets/nasa.png';
-import Carousel from './carousel';
-import npmLogo from '../../assets/npm-logo.png';
-import download from '../../assets/download.png'
+import download from '../../assets/download.png';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
 import '../../../styles/landingPage.css';
@@ -28,12 +24,16 @@ const Landing = (): JSX.Element => {
               helps maintain test reliability.
             </p>
             <button className="npm-button">
-              <Link to="https://www.npmjs.com/package/flake-guard" >
+              <Link to="https://www.npmjs.com/package/flake-guard">
                 <span className="npm-link">Install npm package </span>
-                <img src={download} alt="download-icon" style={{width:'18px', marginLeft:'10px'}} />
+                <img
+                  src={download}
+                  alt="download-icon"
+                  style={{width: '18px', marginLeft: '10px'}}
+                />
               </Link>
             </button>
-            <p className='p-tag-with-link' style={{fontSize:'16px'}}>
+            <p className="p-tag-with-link" style={{fontSize: '16px'}}>
               To learn more about FlakeGuard, click{' '}
               <a href="https://medium.com/">here</a>.
             </p>

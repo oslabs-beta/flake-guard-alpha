@@ -1,10 +1,9 @@
 import React from 'react';
 import '../../../styles/advantages.css';
 import advantage1 from '../../assets/advantage1.png';
-import advantage2 from '../../assets/advantage2.png'
-import advantage3 from '../../assets/advantage3.png'
-import advantage4 from '../../assets/advantage4.png'
-
+import advantage2 from '../../assets/advantage2.png';
+import advantage3 from '../../assets/advantage3.png';
+import advantage4 from '../../assets/advantage4.png';
 
 const Advantages = (): JSX.Element => {
   return (
@@ -13,16 +12,16 @@ const Advantages = (): JSX.Element => {
         <img src={advantage1} alt="advantage1" />
         <h5>Improved Test Reliability</h5>
         <p>
-        By identifying flaky tests, FlakeGuard helps developers resolve 
-        inconsistencies, leading to more reliable and trustworthy test suites.
+          By identifying flaky tests, FlakeGuard helps developers resolve
+          inconsistencies, leading to more reliable and trustworthy test suites.
         </p>
       </div>
       <div className="advantage">
         <img src={advantage2} alt="advantage2" />
         <h5>Enhanced Developer Productivity</h5>
         <p>
-        Detecting and fixing flaky tests saves troubleshooting time, 
-        letting developers focus on writing quality code.
+          Detecting and fixing flaky tests saves troubleshooting time, letting
+          developers focus on writing quality code.
         </p>
       </div>
       <div className="advantage">
@@ -38,8 +37,9 @@ const Advantages = (): JSX.Element => {
         <img src={advantage4} alt="advantage4" />
         <h5>Faster Continuous Integration (CI) Pipelines</h5>
         <p>
-        Reducing flaky tests minimizes false negatives in CI pipelines, resulting 
-        in smoother, faster processes, and accelerating development cycles.
+          Reducing flaky tests minimizes false negatives in CI pipelines,
+          resulting in smoother, faster processes, and accelerating development
+          cycles.
         </p>
       </div>
     </div>
