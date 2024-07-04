@@ -5,7 +5,7 @@ import Landing from './components/LandingPage/landing-page';
 import LoginOrOut from './components/Login/login-out';
 import DocPage from './components/Docs/doc-page';
 import Dashboard from './components/Dashboard/Dashboard';
-
+import AdditionalDashboard from './components/Dashboard/Additional_Dash'
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/login" element={<LoginOrOut />} />
           <Route path="/docs" element={<DocPage />} />
+          <Route path="/additionaldash" element={<AdditionalDashboard />} />
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
