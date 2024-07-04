@@ -1,76 +1,36 @@
 import {Request, Response, NextFunction} from 'express';
-import {fakeData} from '../../client/components/Dashboard/fakeData';
-import sql from '../../db/db.js';
 
 const controller = {
-  // Receives the results from the user via NPM package and caches the results
+  // Receives and parses the results from the user via NPM package
   async npmMetrics(
     req: Request,
     res: Response,
     next: NextFunction
   ): Promise<void> {
     try {
-      const {simple, user} = req.body;
-      const tests = req.body.simple;
+      const {user, runTimes, simple, verbose} = req.body;
 
-      if (user === 'temp') {
-        res.locals.simple = simple;
-        res.locals.user = user;
-      }
-      const results = [];
-      for (const key in tests) {
+      // Parse the simple results into an array of results objects for front-end dashboard
+      const metrics = [];
+      for (const key in simple) {
         const fullName = key;
-        const passed = tests[key].passed;
-        const failed = tests[key].failed;
+        const passed = simple[key].passed;
+        const failed = simple[key].failed;
+        const skipped = simple[key].skipped;
 
-        results.push({
+        metrics.push({
           fullName: fullName,
           passed: passed,
           failed: failed,
-          totalRuns: passed + failed,
+          totalRuns: runTimes,
+          skipped: skipped,
         });
       }
-      console.log('result -->', results);
-      res.locals.metrics = results;
 
-      // clear DB before storing results
-      await sql`DELETE FROM "npmMetrics"`;
-
-      // store results in DB
-      for (let i = 0; i < results.length; i += 1) {
-        await sql`INSERT INTO "npmMetrics" ("fullName", passed, failed)
-        VALUES (${results[i].fullName}, ${results[i].passed}, ${results[i].failed})`;
+      if (user === 'temp') {
+        res.locals.metrics = metrics;
+        res.locals.verbose = verbose;
       }
-
-      return next();
-    } catch (error) {
-      console.log('ERROR', error);
-    }
-  },
-  async npmFakeMetrics(
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ): Promise<void> {
-    try {
-      const fakeMetrics = fakeData;
-      res.locals.fakeMetrics = fakeMetrics;
-
-      // pull data from DB
-      const resultsQuery =
-        await sql`SELECT "fullName", passed, failed FROM "npmMetrics"`;
-
-      // convert strings to numbers and add required results object keys
-      for (let i = 0; i < resultsQuery.length; i += 1) {
-        resultsQuery[i].passed = Number(resultsQuery[i].passed);
-        resultsQuery[i].failed = Number(resultsQuery[i].failed);
-        resultsQuery[i].totalRuns =
-          resultsQuery[i].passed + resultsQuery[i].failed;
-
-        // temporary placeholder
-        resultsQuery[i].skipped = 0;
-      }
-      res.locals.dbMetrics = resultsQuery;
 
       return next();
     } catch (error) {
