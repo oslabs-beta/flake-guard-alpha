@@ -30,11 +30,12 @@ const controller = {
       if (user === 'temp') {
         res.locals.metrics = metrics;
         res.locals.verbose = verbose;
+        res.locals.user = user;
       }
 
       return next();
     } catch (error) {
-      console.log('ERROR', error);
+      console.log('ERROR parsing npm metrics', error);
     }
   },
 };
