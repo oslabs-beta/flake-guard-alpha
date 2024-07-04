@@ -4,12 +4,12 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 require('dotenv').config();
 const app = express();
-import npmRouter from './routes/npm';
+import npmRouter from './routes/npmRouter';
 import tempDashRouter from './routes/tempDashRouter';
 
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '10mb'}));
 app.use(cors());
 app.use(express.static(path.resolve(__dirname, '../client')));
 

@@ -2,7 +2,7 @@
 // ^ shebang to ensure the user can execute script from CL using node interpreter
 
 import {exec, spawn} from 'node:child_process';
-import {ConfigObj, Results, Assertion} from './types';
+import {ConfigObj, FlakeGuardResult, Assertion} from './types';
 import {loadConfig} from './loadConfig';
 import * as readline from 'readline';
 
@@ -40,7 +40,7 @@ function dashPrompt(url: string): void {
   console.log(
     'Press Enter to open results in the dashboard, or Ctrl+C to exit...'
   );
-
+  /* Determines the user's OS, generates the appropriate command, and executes the command when the user presses enter*/
   rl.on('line', async input => {
     if (input === '') {
       const command =
@@ -54,6 +54,7 @@ function dashPrompt(url: string): void {
     }
   });
 
+  /* If the user presses 'Ctrl + C'*/
   rl.on('SIGINT', () => {
     console.log('\nExiting...');
     rl.close();
@@ -65,17 +66,15 @@ function dashPrompt(url: string): void {
 // Analyze the test by running it 'runTimes' amount of times
 const flakeGuard = async (iterations: number): Promise<void> => {
   const timestampStart: number = Date.now();
-  const flakeGuardResults: Results = {};
+  const flakeGuardResults: FlakeGuardResult = {};
   const flakeGuardResultsVerbose: object[] = [];
   for (let i = 0; i < iterations; i++) {
     try {
-      const result = await runTest();
+      const result: string = await runTest();
       const parsedResult = JSON.parse(result);
       flakeGuardResultsVerbose.push(parsedResult);
-      // Uncomment to see the full result object
-      // console.log(parsedResult);
       const {assertionResults} = parsedResult.testResults[0];
-      // Build out the flakeGuardResults object
+      // Build out the flakeGuardResults array
       assertionResults.forEach((assertion: Assertion) => {
         if (
           !Object.prototype.hasOwnProperty.call(
@@ -83,11 +82,13 @@ const flakeGuard = async (iterations: number): Promise<void> => {
             assertion.fullName
           )
         ) {
-          flakeGuardResults[assertion.fullName] = {passed: 0, failed: 0};
+          flakeGuardResults[assertion.fullName] = {passed: 0, failed: 0, skipped: 0};
         }
         if (assertion.status === 'passed') {
           flakeGuardResults[assertion.fullName].passed += 1;
-        } else flakeGuardResults[assertion.fullName].failed += 1;
+        } 
+        else if (assertion.status === 'failed') flakeGuardResults[assertion.fullName].failed += 1
+        else if (assertion.status === 'pending') flakeGuardResults[assertion.fullName].skipped += 1;
       });
       console.log(`Run ${i + 1} complete`);
     } catch (error) {
@@ -96,6 +97,16 @@ const flakeGuard = async (iterations: number): Promise<void> => {
   }
   // On completion, send results to FlakeGuard server
   try {
+    // On completion, log runtime and website info to user's terminal
+    const timestampEnd: number = Date.now();
+    console.log(
+      `Total FlakeGuard runtime: ${
+        (timestampEnd - timestampStart) / 1000
+      } seconds`
+    );
+    console.log('Results Summary:');
+    console.log(flakeGuardResults);
+    // Send results to Flake Guard App server
     const response = await fetch('http://localhost:3000/results', {
       method: 'POST',
       headers: {
@@ -111,15 +122,6 @@ const flakeGuard = async (iterations: number): Promise<void> => {
     });
     const url = await response.json();
     console.log('Results successfully sent to FlakeGuard server');
-    // On completion, log runtime and website info to user's terminal
-    const timestampEnd: number = Date.now();
-    console.log(
-      `Total FlakeGuard runtime: ${
-        (timestampEnd - timestampStart) / 1000
-      } seconds`
-    );
-    console.log('Results Summary:');
-    console.log(flakeGuardResults);
     // Prompt user to press enter to open dashboard
     await dashPrompt(url);
   } catch (error) {
