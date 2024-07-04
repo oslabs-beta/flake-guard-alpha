@@ -2,7 +2,7 @@
 // ^ shebang to ensure the user can execute script from CL using node interpreter
 
 import {exec, spawn} from 'node:child_process';
-import {ConfigObj, Results, Assertion} from './types';
+import {ConfigObj, Result, Assertion} from './types';
 import {loadConfig} from './loadConfig';
 import * as readline from 'readline';
 
@@ -66,7 +66,7 @@ function dashPrompt(url: string): void {
 // Analyze the test by running it 'runTimes' amount of times
 const flakeGuard = async (iterations: number): Promise<void> => {
   const timestampStart: number = Date.now();
-  const flakeGuardResults: Results = {};
+  const flakeGuardResults: Result[] = [];
   const flakeGuardResultsVerbose: object[] = [];
   for (let i = 0; i < iterations; i++) {
     try {

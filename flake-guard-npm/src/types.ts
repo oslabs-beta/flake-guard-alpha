@@ -4,11 +4,12 @@ export interface ConfigObj {
   apiKey: string;
 }
 
-export interface Results {
-  [key: string]: {
-    passed: number;
-    failed: number;
-  };
+export interface Result {
+  fullName: string,
+  passed: number,
+  failed: number,
+  totalRuns: number,
+  skipped: number
 }
 
 export interface Assertion {
