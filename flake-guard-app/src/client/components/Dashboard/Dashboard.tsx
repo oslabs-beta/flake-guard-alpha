@@ -32,6 +32,7 @@ const Dashboard = (): JSX.Element => {
         // const response = await api.get('/results/');
 
         const response = await api.get(`/tempDash/${id}`);
+        await api.delete(`/tempDash/${id}`);
         const results = response.data;
         console.log('retrieved cached results', results);
         setFetchResults(results);

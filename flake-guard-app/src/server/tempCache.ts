@@ -1,7 +1,3 @@
-interface cache {
-  [key: string]: object;
-}
-
-const tempCache: cache = {};
+const tempCache = new Map<string, object>();
 
 export default tempCache;
