@@ -7,7 +7,7 @@
     margin: auto;
     font-size: 20px;
 }
-
+/* it's called left, because at some point i'd like to add something on the right side */
 .left-landing {
     display: flex;
     justify-content: center;
