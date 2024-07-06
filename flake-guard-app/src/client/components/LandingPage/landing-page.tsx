@@ -1,72 +1,82 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../../../styles/styles.css';
 import NavBarHeading from '../nav-bar';
-import nasa from '../../assets/nasa.png';
 import Carousel from './carousel';
-// import codeScreen from '../../assets/code_2.png';
-// import flakeLogo from '../../assets/logo_3.png';
-import npmLogo from '../../assets/npm-logo.png';
+import logo from '../../assets/logo.png';
 import Footer from '../footer';
-import {Link} from 'react-router-dom';
 
 const Landing = (): JSX.Element => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
   return (
     <>
       <header>
         <NavBarHeading />
       </header>
-      {/* <div
-        className="lightBulb-container intro-bg"
-        style={{
-          backgroundImage: `url(${lightBulb})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="code-overlay">
-          Stop wasting hours of time on Flaky tests!!
+      <div id="dark-mode-container">
+        <button onClick={handleClick} className="dark-mode-button">
+          {isClicked ? 'Dark!!' : 'Light'}
+        </button>
+        <div className={isClicked ? 'box clicked' : 'box'}>
+          This box changes style when the button is clicked.
         </div>
-      </div> */}
-      <div
-        className="intro-container intro-bg"
-        style={{
-          backgroundImage: `url(${nasa})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <h1 className="intro-bg-overlay">
-          flake-guard <br />
-          <br />
-          <button style={{margin: '20px'}} id="get-started">
-            <Link to="/docs">Docs</Link>
-          </button>
-          <button id="npm-button">
-            <Link to="https://www.npmjs.com/package/flake-guard">
-              <img
-                src={npmLogo}
-                alt="npm lo go"
-                style={{width: '70px', height: '20px'}}
-              />
-            </Link>
-          </button>
-        </h1>
-      </div>
-      {/* <Carousel />*/}
-
-      <div className="codeScreen-container intro-bg">
-        <div className="code-overlay">
-          <em id="tagline-emphasize" className="fixed top-0">
-            Stability starts here: <br /> Master Test Flakiness Ensure
-            Reliability
-          </em>
-          <Carousel />
+        <div className="main-container">
+          <div className="intro-bg" style={{position: 'relative'}}>
+            <img src={logo} alt="Logo" /> <br />
+            <em id="tagline-emphasize">
+              Master Test Flakiness, Ensure Reliability
+            </em>
+            <Carousel />
+          </div>
         </div>
       </div>
-
       <Footer />
     </>
   );
 };
 
 export default Landing;
+
+// import React, {useState} from 'react';
+// import '../../../styles/styles.css';
+// import NavBarHeading from '../nav-bar';
+// import Carousel from './carousel';
+// import logo from '../../assets/logo.png';
+// import Footer from '../footer';
+// // import {Link} from 'react-router-dom';
+
+// const Landing = (): JSX.Element => {
+//   const [isClicked, setIsClicked] = useState(false);
+
+//   const handleClick = () => {
+//     setIsClicked(!isClicked);
+//     console.log(isClicked, 'isclicked state clicked')
+//   };
+
+//   return (
+//     <>
+//       <header>
+//         <NavBarHeading />
+//       </header>
+//       <div id="dark-mode-container">
+//         <button onClick={handleClick()}>Dark</button>
+//       </div>
+//       <div className="main-container">
+//         <div className="intro-bg position:relative ">
+//           <img src={logo} /> <br />
+//           <em id="tagline-emphasize">
+//             Master Test Flakiness, Ensure Reliability
+//           </em>
+//           <Carousel />
+//         </div>
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Landing;
