@@ -2,6 +2,7 @@ import React from 'react';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
 import '../../../styles/styles.css';
+import '../../../styles/docs.css';
 import npmLogo from '../../assets/npm-logo.png';
 // import AcUnitIcon from '@mui/icons-material/AcUnit';
 const DocPage = (): JSX.Element => {
@@ -15,7 +16,11 @@ const DocPage = (): JSX.Element => {
         <h1>Introduction</h1>
         <p>Welcome to the Flake-Guard documentation!</p>
         <h1>What is Flake-Guard?</h1>
-        <p>lightweight framework....</p>
+        <p>
+          a free, open-source tool that allows developers to run Jest tests to
+          automatically detect, report, and manage flaky tests in software
+          development
+        </p>
         <h1>
           Quickstart
           <img

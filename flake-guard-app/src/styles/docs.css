@@ -1,0 +1,32 @@
+
+/*docs*/
+
+
+.docs-overlay {
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
+    /* font-size: 2rem; */
+    font-family: Arial, sans-serif;
+    /* background-color: #41aa35; */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px; /*  Rounded corners */
+  }
+  
+  .doc-keywords:hover {
+    box-shadow: 0 8px 16px 0 #38932e;
+    transition: transform 0.3s ease;
+    /* transform: scale(2,2); */
+  }
+
+  code{
+    color: #38932e;
+  }
+
+  #npm-docs-logo:hover {
+    transform: scale(1.1,1.1);
+  }
+  /****************************************************/
+  

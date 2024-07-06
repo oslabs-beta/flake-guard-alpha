@@ -15,26 +15,18 @@
   width: 100%;
   height: 35vh;
 }
-.lightBulb-container {
+
+/* .codeScreen-container {
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  text-align: center;
-  position: relative;
-  width: 100%;
-  height: 250px;
-  zoom: unset;
-}
-.codeScreen-container {
-  display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
+  justify-content: center;
+  align-items: center; 
   text-align: center;
   position: relative;
   width: 100%;
   height: 55vh;
   background-color: rgb(255, 255, 255);
-}
+} 
+*/
 
 .doc-links-container {
   display: flex;
@@ -55,9 +47,7 @@
     1.4,1.4
   ); /* Adjust the scale value as needed for the desired size */
 }
-#npm-docs-logo:hover {
-  transform: scale(1.3,1.3);
-}
+
 .intro-background {
   width: 100%;
   height: 100%;
@@ -121,11 +111,6 @@
   height: 50vh; /* Ensures full viewport height for centering */
 }
 
-.doc-keywords:hover{
-  transition: transform 0.3s ease;
-  transform: scale(2,2);
-}
-
 .assertions-graph:hover, .summary-dash:hover, .flakeRiskContainer:hover, .errors-dash:hover, .trends-dash:hover{
   transition: transform 0.3s ease;
   transform: scale(1.1, 1.1);
@@ -175,28 +160,6 @@
   transition: transform 0.3s ease; /* Smooth transition for the size adjustment */
 }
 
-
-/****************************************************/
-
-/*docs*/
-
-
-.docs-overlay {
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
-  color: white; /* Text color */
-  /* font-size: 2rem; */
-  font-family: Arial, sans-serif;
-  background: rgba(
-    67,
-    67,
-    67,
-    0.5
-  ); /*  Semi-transparent background for better readability */
-  padding: 20px;
-  border-radius: 10px; /*  Rounded corners */
-}
 
 /****************************************************/
 

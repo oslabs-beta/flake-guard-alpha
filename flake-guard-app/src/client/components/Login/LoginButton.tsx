@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import {supabaseClient} from '../../supabaseClient';
 import github from '../../assets/github-mark-white.png';
-import signout from '../../assets/signout.png'
+import signout from '../../assets/signout.png';
 
 interface User {
   email: string;
@@ -68,10 +69,15 @@ const LoginButton: React.FC = () => {
             <b id="logged-greeting">{user.email}</b>
           </li>
           <li>
-            <button onClick={signOut} className='btn-signout' id="sign-out-button">
-              <img src={signout} alt="signout-icon" style={{width: '16px'}}/>
+            <Link
+              to="/"
+              onClick={signOut}
+              className="btn-signout"
+              id="sign-out-button"
+            >
+              <img src={signout} alt="signout-icon" style={{width: '16px'}} />
               <span className="btn-text-signout">Sign out</span>
-            </button>
+            </Link>
           </li>
         </ul>
       </div>
