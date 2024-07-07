@@ -92,9 +92,7 @@ const flakeGuard = (iterations) => __awaiter(void 0, void 0, void 0, function* (
             body: JSON.stringify({
                 verbose: flakeGuardResultsVerbose,
                 simple: flakeGuardResults,
-                runTimes,
-                user: configObj.user,
-                apiKey: configObj.apiKey,
+                runTimes
             }),
         });
         const url = yield response.json();
