@@ -9,12 +9,11 @@ interface CacheController {
 
 const cacheController: CacheController = {
   cacheTempResults: (req: Request, res: Response, next: NextFunction) => {
-    if (res.locals.user === 'temp') {
-      tempCache.set(res.locals.randomString, {
-        metrics: res.locals.metrics,
-        verbose: res.locals.verbose,
-      });
-    }
+    tempCache.set(res.locals.randomString, {
+      metrics: res.locals.metrics,
+      verbose: res.locals.verbose,
+    });
+
     next();
   },
 
