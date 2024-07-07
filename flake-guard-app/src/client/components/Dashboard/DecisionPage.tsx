@@ -24,7 +24,7 @@ const DecisionPage: React.FC = () => {
   const {id} = useParams();
 
   const goToTemp = (): void => {
-    navigate(`/dashboard/${id}`);
+    navigate(`/tempdashboard/${id}`);
   };
 
   return (

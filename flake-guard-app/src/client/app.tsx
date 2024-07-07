@@ -25,7 +25,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/npm/:id" element={<DecisionPage />} />
           <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
-          <Route path="/dashboard/:id" element={<TempDashboard />} />
+          <Route path="/tempdashboard/:id" element={<TempDashboard />} />
           <Route path="/login" element={<LoginOrOut />} />
           <Route path="/docs" element={<DocPage />} />
           {/* Redirect any unmatched routes to home */}

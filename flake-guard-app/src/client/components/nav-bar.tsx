@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {supabaseClient} from '../supabaseClient';
 import {Link} from 'react-router-dom';
 import logo from '../assets/logo.png';
 import LoginButton from './Login/LoginButton';
@@ -8,6 +9,22 @@ import '../../styles/header.css';
 //bootstrap template
 //type React Functional Componenet
 const NavBarHeading: React.FC = () => {
+  const [userId, setUserId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const isLoggedIn = async () => {
+      try {
+        const {data, error} = await supabaseClient.auth.getUser();
+        if (data && !error) {
+          setUserId(data.user.id);
+        }
+      } catch (error) {
+        console.error('Error checking user auth: ', error);
+      }
+    };
+    isLoggedIn();
+  }, []);
+
   return (
     <div className="header">
       <div className="header-container">
@@ -21,7 +38,7 @@ const NavBarHeading: React.FC = () => {
         </Link>
         <Link to="/docs">Docs</Link>
         <Link to="/blog">Blog</Link>
-        <Link to="/dashboard/user">Dashboard</Link>
+        <Link to={`/dashboard/user/${userId}`}>Dashboard</Link>
       </div>
       <div>
         <LoginButton />
