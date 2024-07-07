@@ -4,15 +4,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Landing from './components/LandingPage/landing-page';
 import LoginOrOut from './components/Login/login-out';
 import DocPage from './components/Docs/doc-page';
-import Dashboard from './components/Dashboard/Dashboard';
-import AdditionalDashboard from './components/Dashboard/Additional_Dash'
+import UserDashboard from './components/Dashboard/UserDashboard';
+import TempDashboard from './components/Dashboard/TempDashboard';
+import DecisionPage from './components/Dashboard/DecisionPage';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from 'react-router-dom';
-import NavBarHeading from './components/nav-bar';
 
 const App: React.FC = () => {
   // Define the style object
@@ -23,12 +23,11 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
-
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/:id" element={<Dashboard />} />
+          <Route path="/npm/:id" element={<DecisionPage />} />
+          <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
+          <Route path="/tempdashboard/:id" element={<TempDashboard />} />
           <Route path="/login" element={<LoginOrOut />} />
           <Route path="/docs" element={<DocPage />} />
-          <Route path="/additionaldash" element={<AdditionalDashboard />} />
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

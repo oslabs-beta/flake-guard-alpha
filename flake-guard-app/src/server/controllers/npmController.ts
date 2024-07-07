@@ -8,7 +8,7 @@ const controller = {
     next: NextFunction
   ): Promise<void> {
     try {
-      const {user, runTimes, simple, verbose} = req.body;
+      const {runTimes, simple, verbose} = req.body;
 
       // Parse the simple results into an array of results objects for front-end dashboard
       const metrics = [];
@@ -27,11 +27,8 @@ const controller = {
         });
       }
 
-      if (user === 'temp') {
-        res.locals.metrics = metrics;
-        res.locals.verbose = verbose;
-        res.locals.user = user;
-      }
+      res.locals.metrics = metrics;
+      res.locals.verbose = verbose;
 
       return next();
     } catch (error) {

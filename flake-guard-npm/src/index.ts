@@ -115,9 +115,7 @@ const flakeGuard = async (iterations: number): Promise<void> => {
       body: JSON.stringify({
         verbose: flakeGuardResultsVerbose,
         simple: flakeGuardResults,
-        runTimes,
-        user: configObj.user,
-        apiKey: configObj.apiKey,
+        runTimes
       }),
     });
     const url = await response.json();
