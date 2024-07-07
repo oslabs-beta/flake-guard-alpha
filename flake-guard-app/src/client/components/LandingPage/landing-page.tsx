@@ -1,4 +1,8 @@
+import React from 'react';
 import '../../../styles/styles.css';
+// import NavBarHeading from '../nav-bar';
+// import Carousel from './carousel';
+import logo from '../../assets/logo.png';
 import Header from '../nav-bar';
 import Advantages from './Advantages';
 import download from '../../assets/download.png';
@@ -11,7 +15,14 @@ const Landing = (): JSX.Element => {
     <>
       <Header />
       <div className="landing-page-container">
+        {/* <div className="main-container">
+      <div className="intro-bg" style={{position: 'relative'}}> */}
         <div className="left-landing">
+          {/* <div className="intro-bg" style={{position: 'relative'}}> */}
+          <img src={logo} alt="Logo" />
+          {/* <em id="tagline-emphasize">
+            Master Test Flakiness, Ensure Reliability
+          </em> */}
           <h1>Save Thousands of Debugging Hours</h1>
           <div className="left-landing-text">
             <p>
@@ -35,69 +46,20 @@ const Landing = (): JSX.Element => {
             </button>
             <p className="p-tag-with-link" style={{fontSize: '16px'}}>
               To learn more about FlakeGuard, click{' '}
-              <a href="https://medium.com/">here</a>.
+              <a href="https://medium.com/">
+                <em id="medium-article-link">here</em>
+              </a>
+              .
             </p>
           </div>
         </div>
       </div>
+      {/* </div>
+      </div> */}
       <Advantages />
+      {/* <Carousel /> */}
       <Footer />
     </>
-    // <>
-    //   <header>
-    //     <NavBarHeading />
-    //   </header>
-    //   {/* <div
-    //     className="lightBulb-container intro-bg"
-    //     style={{
-    //       backgroundImage: `url(${lightBulb})`,
-    //       backgroundSize: 'cover',
-    //       backgroundPosition: 'center',
-    //     }}
-    //   >
-    //     <div className="code-overlay">
-    //       Stop wasting hours of time on Flaky tests!!
-    //     </div>
-    //   </div> */}
-    //   <div
-    //     className="intro-container intro-bg"
-    //     style={{
-    //       backgroundImage: `url(${nasa})`,
-    //       backgroundSize: 'cover',
-    //       backgroundPosition: 'center',
-    //     }}
-    //   >
-    //     <h1 className="intro-bg-overlay">
-    //       flake-guard <br />
-    //       <br />
-    //       <button style={{margin: '20px'}} id="get-started">
-    //         <Link to="/docs">Docs</Link>
-    //       </button>
-    //       <button id="npm-button">
-    //         <Link to="https://www.npmjs.com/package/flake-guard">
-    //           <img
-    //             src={npmLogo}
-    //             alt="npm lo go"
-    //             style={{width: '70px', height: '20px'}}
-    //           />
-    //         </Link>
-    //       </button>
-    //     </h1>
-    //   </div>
-    //   {/* <Carousel />*/}
-
-    //   <div className="codeScreen-container intro-bg">
-    //     <div className="code-overlay">
-    //       <em id="tagline-emphasize" className="fixed top-0">
-    //         Stability starts here: <br /> Master Test Flakiness Ensure
-    //         Reliability
-    //       </em>
-    //       <Carousel />
-    //     </div>
-    //   </div>
-
-    //   <Footer />
-    // </>
   );
 };
 

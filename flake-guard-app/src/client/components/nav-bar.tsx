@@ -5,9 +5,6 @@ import logo from '../assets/logo.png';
 import LoginButton from './Login/LoginButton';
 import '../../styles/header.css';
 
-//created and imported images from canva as pngs
-//bootstrap template
-//type React Functional Componenet
 const NavBarHeading: React.FC = () => {
   const [userId, setUserId] = useState<string | null>(null);
 

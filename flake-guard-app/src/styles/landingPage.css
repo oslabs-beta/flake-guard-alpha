@@ -47,6 +47,7 @@
 }
 .npm-button:hover {
     background-color: #41aa35;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .npm-link {
     color: white;
@@ -59,4 +60,8 @@
 .right-landing {
     margin: auto;
     background-color: yellow;
+}
+
+#medium-article-link{
+    color: #4aa240;
 }
