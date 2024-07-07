@@ -6,6 +6,7 @@ require('dotenv').config();
 const app = express();
 import resultsRouter from './routes/resultsRouter';
 import tempDashRouter from './routes/tempDashRouter';
+import dbRouter from './routes/dbRouter';
 // import dashboardRouter from './routes/dashboardRouter';
 
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,8 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 app.use('/results', resultsRouter);
 
 app.use('/tempDash', tempDashRouter);
+
+app.use('/db', dbRouter);
 
 // app.use('/dashboard', dashboardRouter);
 
