@@ -1,17 +1,11 @@
 import React from 'react';
-import githubLogo from '../assets/github-mark-white.png';
-import nasa from '../assets/nasa.png';
+import githubLogo from '../assets/github-mark.png';
 import npmLogo from '../assets/npm-logo.png';
 import '../../styles/styles.css'; // Adjust the path according to your project structure
 
 const Footer = (): JSX.Element => {
   return (
-    <div
-      className="footer-container"
-      style={{
-        backgroundImage: `url(${nasa})`,
-      }}
-    >
+    <div className="footer-container">
       <div className="footer-div">
         <a
           href="https://github.com/oslabs-beta/flake-guard"
