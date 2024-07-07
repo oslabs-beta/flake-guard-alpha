@@ -1,5 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {supabaseClient} from '../supabaseClient';
 // import type {RootState} from './store';
 
 interface User {
