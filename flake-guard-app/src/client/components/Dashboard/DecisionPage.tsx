@@ -14,8 +14,8 @@ const DecisionPage: React.FC = () => {
         if (data && !error) {
           console.log('USER --->', data);
           // get verbose results and save to db
-          const verboseResults = await api.get(`/tempDash/verbose/${id}`);
-          await api.post(`/db/saveResults/${data.user.id}`, verboseResults);
+          // const verboseResults = await api.get(`/tempDash/verbose/${id}`);
+          // await api.post(`/db/saveResults/${data.user.id}`, verboseResults);
           await api.delete(`/tempDash/${id}`);
           // route to user dashboard
           const url: string = `/dashboard/user/${data.user.id}`;
