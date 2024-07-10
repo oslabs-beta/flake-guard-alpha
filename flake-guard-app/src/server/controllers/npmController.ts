@@ -1,4 +1,5 @@
 import {Request, Response, NextFunction} from 'express';
+import CustomError from '../errors/CustomError';
 
 const controller = {
   // Receives and parses the results from the user via NPM package
@@ -31,8 +32,14 @@ const controller = {
       res.locals.verbose = verbose;
 
       return next();
-    } catch (error) {
-      console.log('ERROR parsing npm metrics', error);
+    } catch (e) {
+      const error = new CustomError(
+        'A server error occurred',
+        500,
+        'An error occurred in the npmMetrics middleware: ',
+        e instanceof Error ? e : new Error(String(e))
+      );
+      next(error);
     }
   },
 };
