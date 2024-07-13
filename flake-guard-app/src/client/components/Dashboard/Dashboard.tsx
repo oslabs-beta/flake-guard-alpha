@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {api} from '../../services/index';
 import '../../../styles/dashboard.css';
+import '../../../styles/riskSign.css';
 import Summary from './components/Summary';
 import AssertionsGraph from './components/AssertionsGraph';
 import DisplayErrors from './components/DisplayErrors';
@@ -10,6 +11,8 @@ import Footer from '../footer';
 import {calculateFlakePercentage} from '../Analytics/flake-percentage';
 import FlakeRiskContainer from '../FlakeRiskSign/FlakeRiskContainer';
 import {failedPercentage} from '../Analytics/overall-failed-percentage';
+import ExampleLineChart from './charts/chart';
+import Trends from './components/Trends';
 // import {assertionFailedPercent} from '../Analytics/assertion-failures-percent';
 // import FlakeGauge from './components/FlakeGauge';
 
@@ -30,7 +33,7 @@ const Dashboard = (): JSX.Element => {
       try {
         // remove get request from db - will add conditional later for permanent users
         // const response = await api.get('/results/');
-
+        // console.log(response);
         const response = await api.get(`/tempDash/${id}`);
         await api.delete(`/tempDash/${id}`);
         const results = response.data;
@@ -70,7 +73,7 @@ const Dashboard = (): JSX.Element => {
       <NavBarHeading />
       <div className="dashboard-container">
         <h1 id="dashboard-header">Flake-Guard Dashboard</h1>
-        <div className="dashboard-items">
+        {/* <div className="dashboard-items">
           <div className="upper-dash">
             <div className="summary-dash">
               {metrics && <Summary metrics={metrics} />}
@@ -80,14 +83,17 @@ const Dashboard = (): JSX.Element => {
                 {metrics && <AssertionsGraph fetchResults={fetchResults} />}
               </div>
               <div>
-                <div className="trends-dash">{/* <Trends /> */}</div>
+                <div className="trends-dash">
+                  {' '}
+                  <Trends />{' '}
+                </div>
               </div>
             </div>
           </div>
           <div className="display-errors-container">
             <DisplayErrors fetchResults={fetchResults} />
           </div>
-        </div>
+        </div> */}
         {flakePercentage !== undefined && (
           <div>
             <h2>Assertion Flakiness: </h2>
@@ -110,6 +116,9 @@ const Dashboard = (): JSX.Element => {
       <div id="analytics-container">
         {/* <FlakeGauge /> */}
         <FlakeRiskContainer />
+      </div>
+      <div id="example-line-chart-container" className="bottom-2.5	">
+        <ExampleLineChart />
       </div>
       <Footer />
     </>
