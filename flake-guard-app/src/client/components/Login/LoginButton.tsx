@@ -1,19 +1,15 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {supabaseClient} from '../../supabaseClient';
-import github from '../../assets/github-mark-white.png';
 import signout from '../../assets/signout.png';
+import github from '../../assets/github-mark-white.png';
 
 interface User {
   email: string;
   profile: string;
 }
 
-interface LoginButtonProps {
-  setLoggedIn?: Function;
-}
-
-const LoginButton: React.FC<LoginButtonProps> = ({setLoggedIn}) => {
+const LoginButton: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -34,9 +30,6 @@ const LoginButton: React.FC<LoginButtonProps> = ({setLoggedIn}) => {
           email: data.user.user_metadata.user_name,
           profile: data.user.user_metadata.avatar_url,
         });
-
-        // Set loggedIn to true on Decision Page if sign-in originated there
-        if (setLoggedIn) setLoggedIn(true);
       } else {
         setUser(null);
       }
@@ -51,7 +44,6 @@ const LoginButton: React.FC<LoginButtonProps> = ({setLoggedIn}) => {
       await supabaseClient.auth.signInWithOAuth({
         provider: 'github',
       });
-      await checkUser();
     } catch (error) {
       console.error('Error signing in: ', error);
     }
