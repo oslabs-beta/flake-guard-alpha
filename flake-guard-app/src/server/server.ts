@@ -4,8 +4,8 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 require('dotenv').config();
 import resultsRouter from './routes/resultsRouter';
+import userDashRouter from './routes/userDashRouter';
 import tempDashRouter from './routes/tempDashRouter';
-import dbRouter from './routes/dbRouter';
 import {errorHandler} from './errors/errorHandler';
 
 const app = express();
@@ -19,12 +19,11 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 // Endpoints
 app.use('/results', resultsRouter);
 app.use('/tempDash', tempDashRouter);
-app.use('/db', dbRouter);
-// app.use('/dashboard', dashboardRouter);
+app.use('/userDash', userDashRouter);
 
 // 404 error handler
 app.use((req, res) => {
-  res.status(404).send("Sorry can't find that!");
+  res.status(404).send('Resource not found');
 });
 
 // Global error handler

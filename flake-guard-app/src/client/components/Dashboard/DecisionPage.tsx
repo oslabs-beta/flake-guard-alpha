@@ -12,10 +12,10 @@ const DecisionPage: React.FC = () => {
       try {
         const {data, error} = await supabaseClient.auth.getUser();
         if (data && !error) {
-          console.log('USER --->', data);
-          // get verbose results and save to db
-          // const verboseResults = await api.get(`/tempDash/verbose/${id}`);
-          // await api.post(`/db/saveResults/${data.user.id}`, verboseResults);
+          // get results from cache and save to db
+          const response = await api.get(`/results/${id}`);
+          const results = response.data;
+          await api.post(`/userDash/${data.user.id}`, {results});
           await api.delete(`/tempDash/${id}`);
           // route to user dashboard
           const url: string = `/dashboard/user/${data.user.id}`;
