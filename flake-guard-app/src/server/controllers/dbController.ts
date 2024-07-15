@@ -1,35 +1,68 @@
 import {Request, Response, NextFunction} from 'express';
-// import sql from '../db/db.js';
+import sql from '../../db/db';
+import CustomError from '../errors/CustomError';
 
 interface DBController {
-  retrieveDashboard: (req: Request, res: Response, next: NextFunction) => void;
+  retrieveResults: (req: Request, res: Response, next: NextFunction) => void;
   saveResults: (req: Request, res: Response, next: NextFunction) => void;
 }
 
 const dbController: DBController = {
-  retrieveDashboard: async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ) => {
+  retrieveResults: async (req: Request, res: Response, next: NextFunction) => {
     try {
-      // userID = req.body;
-      // const results = await sql`SELECT "table" WHERE id=${userID}`;
-      // res.locals.dbResults = results;
+      const userId = req.params.userId;
+      const results = await sql`SELECT * FROM results WHERE user_id=${userId}`;
+      res.locals.results = results;
       return next();
     } catch (error) {
-      console.log('ERROR', error);
+      if (error instanceof Error) {
+        const customError = new CustomError(
+          'Failed to retrieve results',
+          500,
+          'Database query in retrieveResults failed: ',
+          error
+        );
+        return next(customError);
+      } else {
+        // Handle unknown errors differently
+        return next(
+          new CustomError(
+            'Unknown error occurred',
+            500,
+            'Unknown error: ',
+            new Error('Unknown error')
+          )
+        );
+      }
     }
   },
 
   saveResults: async (req: Request, res: Response, next: NextFunction) => {
     try {
-      // userID = req.body;
-      // const results = await sql`SELECT "table" WHERE id=${userID}`;
-      // res.locals.dbResults = results;
+      const userId = req.params.userId;
+      const results = req.body.results;
+      await sql`INSERT INTO results(user_id, results) VALUES (${userId}, ${results})`;
       return next();
     } catch (error) {
-      console.log('ERROR', error);
+      if (error instanceof Error) {
+        const customError = new CustomError(
+          'Failed to save results to database',
+          500,
+          'Database query in saveResults failed: ',
+          error
+        );
+        return next(customError);
+      } else {
+        // Handle unknown errors differently
+        return next(
+          new CustomError(
+            'Unknown error occurred',
+            500,
+            'Unknown error: ',
+            new Error('Unknown error')
+          )
+        );
+      }
     }
   },
 };
