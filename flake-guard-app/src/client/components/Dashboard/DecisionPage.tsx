@@ -1,9 +1,12 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {supabaseClient} from '../../supabaseClient';
 import {api} from '../../services/index';
+import LoginButton from '../Login/LoginButton';
+import NavBarHeading from '../nav-bar';
 
 const DecisionPage: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
   const {id} = useParams();
 
@@ -26,7 +29,7 @@ const DecisionPage: React.FC = () => {
       }
     };
     checkIfLoggedIn();
-  }, []);
+  }, [loggedIn]);
 
   const goToTemp = (): void => {
     navigate(`/tempdashboard/${id}`);
@@ -34,7 +37,8 @@ const DecisionPage: React.FC = () => {
 
   return (
     <div>
-      <button>Login w/ Github if you're cool</button>
+      <NavBarHeading />
+      <LoginButton setLoggedIn={setLoggedIn} />
       <button onClick={() => goToTemp()}>View temp dash if you're lame</button>
     </div>
   );

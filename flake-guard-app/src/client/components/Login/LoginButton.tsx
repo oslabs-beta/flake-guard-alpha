@@ -9,7 +9,11 @@ interface User {
   profile: string;
 }
 
-const LoginButton: React.FC = () => {
+interface LoginButtonProps {
+  setLoggedIn?: Function;
+}
+
+const LoginButton: React.FC<LoginButtonProps> = ({setLoggedIn}) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -30,6 +34,9 @@ const LoginButton: React.FC = () => {
           email: data.user.user_metadata.user_name,
           profile: data.user.user_metadata.avatar_url,
         });
+
+        // Set loggedIn to true on Decision Page if sign-in originated there
+        if (setLoggedIn) setLoggedIn(true);
       } else {
         setUser(null);
       }
@@ -40,9 +47,14 @@ const LoginButton: React.FC = () => {
   }
 
   async function signInWithGithub() {
-    await supabaseClient.auth.signInWithOAuth({
-      provider: 'github',
-    });
+    try {
+      await supabaseClient.auth.signInWithOAuth({
+        provider: 'github',
+      });
+      await checkUser();
+    } catch (error) {
+      console.error('Error signing in: ', error);
+    }
   }
 
   async function signOut() {
@@ -93,7 +105,5 @@ const LoginButton: React.FC = () => {
     );
   }
 };
-
-//
 
 export default LoginButton;
