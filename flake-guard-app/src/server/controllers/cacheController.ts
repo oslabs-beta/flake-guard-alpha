@@ -29,10 +29,7 @@ const cacheController: CacheController = {
 
   evictViewedResults: (req: Request, res: Response, next: NextFunction) => {
     const {id} = req.params;
-    console.log('before', tempCache);
-    console.log('id', id);
     tempCache.delete(id);
-    console.log('after', tempCache);
     return next();
   },
 };

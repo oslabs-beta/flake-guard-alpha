@@ -62,7 +62,6 @@ export const fakeData = [
     passed: 0,
     failed: 1,
     skipped: 0,
-
   },
   {
     fullName: 'db unit tests #find works if the list of markets is empty',
@@ -76,13 +75,12 @@ export const fakeData = [
     failed: 0,
     skipped: 1,
   },
-   {
+  {
     fullName:
       'db unit tests #sync returns an error when cards value is not a number',
     passed: 1,
     failed: 0,
     skipped: 0,
-
   },
   {
     fullName:
@@ -90,7 +88,6 @@ export const fakeData = [
     passed: 0,
     failed: 1,
     skipped: 0,
-
   },
   {
     fullName: 'db unit tests #find works if the list of markets is empty',
