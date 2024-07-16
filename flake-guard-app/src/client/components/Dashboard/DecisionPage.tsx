@@ -1,9 +1,11 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {supabaseClient} from '../../supabaseClient';
 import {api} from '../../services/index';
+import github from '../../assets/github-mark-white.png';
 
 const DecisionPage: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
   const {id} = useParams();
 
@@ -26,7 +28,21 @@ const DecisionPage: React.FC = () => {
       }
     };
     checkIfLoggedIn();
-  }, []);
+  }, [loggedIn]);
+
+  const signIn = async () => {
+    try {
+      const signInResponse = await supabaseClient.auth.signInWithOAuth({
+        provider: 'github',
+        options: {redirectTo: `http://localhost:8080/npm/${id}`},
+      });
+      console.log('SIGN IN RESPONSE------>', signInResponse);
+      const {data, error} = await supabaseClient.auth.getUser();
+      if (data.user && !error) setLoggedIn(true);
+    } catch (error) {
+      console.error('Error signing in: ', error);
+    }
+  };
 
   const goToTemp = (): void => {
     navigate(`/tempdashboard/${id}`);
@@ -34,7 +50,12 @@ const DecisionPage: React.FC = () => {
 
   return (
     <div>
-      <button>Login w/ Github if you're cool</button>
+      <div className="login-btn">
+        <button className="loginButton" onClick={signIn}>
+          <img src={github} alt="github-logo" style={{width: '25px'}} />
+          <span className="btn-text">Sign in with GitHub</span>
+        </button>
+      </div>
       <button onClick={() => goToTemp()}>View temp dash if you're lame</button>
     </div>
   );

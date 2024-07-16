@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {supabaseClient} from '../../supabaseClient';
-import github from '../../assets/github-mark-white.png';
 import signout from '../../assets/signout.png';
+import github from '../../assets/github-mark-white.png';
 
 interface User {
   email: string;
@@ -40,9 +40,13 @@ const LoginButton: React.FC = () => {
   }
 
   async function signInWithGithub() {
-    await supabaseClient.auth.signInWithOAuth({
-      provider: 'github',
-    });
+    try {
+      await supabaseClient.auth.signInWithOAuth({
+        provider: 'github',
+      });
+    } catch (error) {
+      console.error('Error signing in: ', error);
+    }
   }
 
   async function signOut() {
@@ -93,7 +97,5 @@ const LoginButton: React.FC = () => {
     );
   }
 };
-
-//
 
 export default LoginButton;
