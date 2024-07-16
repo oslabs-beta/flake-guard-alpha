@@ -33,6 +33,7 @@ const DecisionPage: React.FC = () => {
   }, [loggedIn]);
 
   const signIn = async () => {
+    console.log('LINE 36')
     try {
       const signInResponse = await supabaseClient.auth.signInWithOAuth({
         provider: 'github',
