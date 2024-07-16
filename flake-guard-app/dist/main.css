@@ -6,53 +6,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   color: rgb(0, 0, 0);
 }
-#navbar-container .navbar-custom {
-  width: 100vh;
-}
-#intro-title {
-  font-weight: bold;
-  font-size: 60px;
-  font-family: Georgia, serif;
-  text-align: center; /* Centers text within the h1 */
-  margin-bottom: 20px;
-}
-.intro-bg-overlay,
-.code-overlay {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /*Adjust for the text’s dimensions */
-  color: white; /* Text color */
-  font-size: 2rem;
-  font-family: Arial, sans-serif;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /*  Semi-transparent background for better readability */
-  padding: 20px;
-  border-radius: 10px; /*  Rounded corners */
-}
-.docs-overlay {
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
-  color: white; /* Text color */
-  /* font-size: 2rem; */
-  font-family: Arial, sans-serif;
-  background: rgba(
-    67,
-    67,
-    67,
-    0.5
-  ); /*  Semi-transparent background for better readability */
-  padding: 20px;
-  border-radius: 10px; /*  Rounded corners */
-}
+
 .intro-container {
   display: flex;
   justify-content: center; /* Centers content horizontally */
@@ -62,45 +20,18 @@
   width: 100%;
   height: 35vh;
 }
-.lightBulb-container {
+
+/* .codeScreen-container {
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  text-align: center;
-  position: relative;
-  width: 100%;
-  height: 250px;
-  zoom: unset;
-}
-.codeScreen-container {
-  display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
+  justify-content: center;
+  align-items: center; 
   text-align: center;
   position: relative;
   width: 100%;
   height: 55vh;
-  background-color: rgb(173, 213, 244);
-}
-
-.footer-container {
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 200px; /* Adjust this width as needed */
-}
-.footer-div img {
-  transition: transform 0.3s ease; /* Smooth transition for the size adjustment */
-}
+  background-color: rgb(255, 255, 255);
+} 
+*/
 
 .doc-links-container {
   display: flex;
@@ -121,9 +52,7 @@
     1.4,1.4
   ); /* Adjust the scale value as needed for the desired size */
 }
-#npm-docs-logo:hover {
-  transform: scale(1.3,1.3);
-}
+
 .intro-background {
   width: 100%;
   height: 100%;
@@ -134,71 +63,16 @@
   width: 35px;
   border-radius: 25%;
 }
-#tagline-emphasize {
-  background-clip: text; /* Standard */
-  color: rgb(99, 192, 238);
-  font-size: 2rem;
-}
+
 
 #social-logo {
   height: 35px;
   width: 35px;
 }
 
-#carousel-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-  height: 30vh;
-}
-
-#carousel-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 500px; /* Adjust as needed */
-  margin-top: 10px;
-}
-/* .code-overlay {
-  box-shadow: 10px 5px 5px red;
-} */
-.code-overlay {
-  box-shadow: 10px 5px 5px rgb(99, 192, 238);
-  transition: transform 0.3s ease; /* Smooth transition for the grow effect */
-}
-
-.code-overlay:hover {
-  box-shadow: 20px 10px 10px pink; /* Scale the container to 110% of its original size */
-}
-#carousel-prev,
-#carousel-next {
-  background-color: white;
-  color: black;
-  border: none;
-  /* padding: 10px 20px; */
-  margin: 10px;
-  cursor: pointer;
-  width: 100px;
-  height: 45px;
-  font-size: 20px;
-}
-
-#carousel-next {
-  text-align: center;
-}
-#carousel-prev:hover,
-#carousel-next:hover {
-  border: 5px solid rgb(99, 192, 238);
-  border-radius: 10%;
-}
-
 #get-started:hover,
 #npm-button:hover{
-  border: 5px solid rgb(99, 192, 238);
+  border: 5px solid rgb(138, 238, 99);
   border-radius: 10%;
 }
 #get-started, #npm-button{
@@ -221,12 +95,6 @@
   border: 3px solid rgb(247, 204, 204);
 }
 
-.login-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
 
 .bg-image {
   position: absolute;
@@ -238,14 +106,7 @@
   z-index: -1; /* Send the image to the background */
 }
 
-.login-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(70%, -80%);
-  text-align: center;
-  color: white;
-}
+/*  */
 
 
 #analytics-container {
@@ -253,11 +114,6 @@
   justify-content: center;
   align-items: center;
   height: 50vh; /* Ensures full viewport height for centering */
-}
-
-.doc-keywords:hover{
-  transition: transform 0.3s ease;
-  transform: scale(2,2);
 }
 
 .assertions-graph:hover, .summary-dash:hover, .flakeRiskContainer:hover, .errors-dash:hover, .trends-dash:hover{
@@ -270,10 +126,183 @@
 }
 
 .box-style:hover, .errors-dash:hover, .flakeRiskContainer:hover, #sign-in-button:hover{
-  border: 5px solid rgb(99, 192, 238);
+  border: 5px solid rgb(138, 238, 99);
   border-radius: 5%;
   transition: transform 0.3s ease;
 }
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*navBar*/
+
+#navbar-container .navbar-custom {
+  width: 100vh;
+}
+
+/****************************************************/
+
+/*footer*/
+
+.footer-container {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px; /* Adjust this width as needed */
+}
+.footer-div img {
+  transition: transform 0.3s ease; /* Smooth transition for the size adjustment */
+}
+
+
+/****************************************************/
+
+/*Carousel*/
+
+#carousel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  height: 30vh;
+}
+
+#carousel-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin-top: 10px;
+}
+/* .code-overlay {
+  box-shadow: 10px 5px 5px red;
+} */
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;    /* Center horizontally */
+  padding-top: 5%; /* Adjust this value to move the content just below the center */
+}
+.intro-bg {
+  box-shadow: 10px 10px 50px 10px rgb(238, 99, 99);
+  transition: transform 0.3s ease; /* Smooth transition for the grow effect */
+  background-color: #ffffff;
+  color: #000000;
+  width: fit-content;
+}
+
+.intro-bg:hover {
+  box-shadow: 20px 20px 100px 20px #000000; /* Scale the container to 110% of its original size */
+}
+#carousel-prev,
+#carousel-next {
+  background-color: white;
+  color: black;
+  border: none;
+  /* padding: 10px 20px; */
+  margin: 10px;
+  cursor: pointer;
+  width: 100px;
+  height: 45px;
+  font-size: 20px;
+}
+
+#carousel-next {
+  text-align: center;
+}
+#carousel-prev:hover,
+#carousel-next:hover {
+  border: 5px solid rgb(138, 238, 99);
+  border-radius: 10%;
+}
+
+#carousel-overlay{
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+#tagline-emphasize{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 250px;
+}
+/****************************************************/
+body {
+  background-color: white;
+  color: black;
+  font-size: 20px;;
+}
+/*dark mode*/
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+
+/****************************************************/
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*LANDING*/
+
+
+/****************************************************/
+
+/*not needed
+
+
+.login-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(70%, -80%);
+  text-align: center;
+  color: white;
+}*/
+
+
+/****************************************************/
 .header {
     display: flex;
     justify-content: space-between;
@@ -382,9 +411,14 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: blue; */
-    /* height: 250px; */
 }
+
+/* .advantage:hover {
+    cursor: auto;
+    border-radius: 5%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+} */
 
 .advantage h5 {
     text-align: center;
@@ -399,6 +433,29 @@ a {
     padding: 10px;
     color: rgb(60, 60, 60);
 }
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80px;
+    background-color: #457f3e;
+
+}
+
+.footer-links a {
+    color: white; 
+}
+.footer-links {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: red; */
+}
+
+.footer-icon-links {
+    /* background-color: blue; */
+}
 .landing-page-container {
     display: flex;
     justify-content: center;
@@ -408,7 +465,7 @@ a {
     margin: auto;
     font-size: 20px;
 }
-
+/* it's called left, because at some point i'd like to add something on the right side */
 .left-landing {
     display: flex;
     justify-content: center;
@@ -416,7 +473,6 @@ a {
     flex-direction: column;
     width: 580px;
     height: 450px;
-    background-color: 457f3e;
 }
 
 .left-landing h1 {
@@ -448,6 +504,7 @@ a {
 }
 .npm-button:hover {
     background-color: #41aa35;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .npm-link {
     color: white;
@@ -461,6 +518,48 @@ a {
     margin: auto;
     background-color: yellow;
 }
+
+#medium-article-link{
+    color: #4aa240;
+}
+
+.docs-container {
+  padding: 20px;
+}
+.questions button {
+  width: 280px;
+  text-align: start;
+}
+
+.active {
+  width: 600px;
+}
+/* Change the background color of the active tab */
+.nav-pills .nav-link.active {
+  background-color: rgb(243, 243, 243); 
+  color: #4aa240; 
+}
+
+/* Change the background color of the inactive tabs */
+.nav-pills .nav-link {
+  color: #4aa240; 
+  margin: 10px;
+}
+/* Change the background color of the tab content */
+.tab-content .tab-pane {
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  border-radius: 0.25rem;
+  height: 100vh;
+}
+
+
+
+
+
+
+
+
 /* SUMMARY */
 .dashboard-container {
     color: #474646;
