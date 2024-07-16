@@ -241,50 +241,6 @@
   font-size: 18px;
   padding: 250px;
 }
-/****************************************************/
-body {
-  background-color: white;
-  color: black;
-  font-size: 20px;;
-}
-/*dark mode*/
-
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-
-
-/****************************************************/
-
-/*LANDING*/
-
-
-/****************************************************/
-
-/*LANDING*/
-
-
-/****************************************************/
-
-/*LANDING*/
-
-
-/****************************************************/
-
-/*LANDING*/
-
-
-/****************************************************/
-
-/*LANDING*/
-
-
-/****************************************************/
-
-/*LANDING*/
 
 
 /****************************************************/
@@ -438,8 +394,9 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80px;
+    height: 100px;
     background-color: #457f3e;
+    font-size: 16px;
 
 }
 
@@ -447,15 +404,22 @@ a {
     color: white; 
 }
 .footer-links {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: space-evenly;
-    /* background-color: red; */
 }
 
 .footer-icon-links {
-    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
 }
+
+.footer-icon-links a:hover {
+    transform: scale(1.05); 
+}
+
+
 .landing-page-container {
     display: flex;
     justify-content: center;
@@ -534,27 +498,71 @@ a {
 .active {
   width: 600px;
 }
-/* Change the background color of the active tab */
 .nav-pills .nav-link.active {
-  background-color: rgb(243, 243, 243); 
-  color: #4aa240; 
+  background-color: rgb(248, 246, 246); 
+  color: #457f3e; 
 }
-
-/* Change the background color of the inactive tabs */
 .nav-pills .nav-link {
-  color: #4aa240; 
+  color: #49af3e;   
   margin: 10px;
 }
-/* Change the background color of the tab content */
 .tab-content .tab-pane {
   padding: 20px;
   border-left: 1px solid #ddd;
   border-radius: 0.25rem;
   height: 100vh;
 }
+.docs-title {
+  color: #2b7023;
+}
+
+.docs-text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(86, 90, 111);
+  padding: 10px;
+}
+
+.docs-text li {
+  width: 650px;
+  color: rgb(86, 90, 111);
+  margin: 8px;
+}
 
 
 
+/* FAQ */
+.faq-container {
+}
+.faq-container button{
+  width: 600px;
+  border-radius: 10px;
+}
+/* try to make the font bigger */
+.accordion-header:not(.collapsed) {
+  border: none; 
+
+}
+
+.accordion-header:not(.collapsed) {
+  border-bottom: none; 
+}
+
+
+.custom-bg {
+  color: #000; 
+}
+
+.custom-bg.collapsed {
+  color: #000;
+  border: none; 
+}
+
+.custom-bg:not(.collapsed) {
+  background-color: transparent;
+  color: #000; 
+}
 
 
 
