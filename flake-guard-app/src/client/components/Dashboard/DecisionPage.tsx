@@ -13,6 +13,8 @@ const DecisionPage: React.FC = () => {
     const checkIfLoggedIn = async () => {
       try {
         const {data, error} = await supabaseClient.auth.getUser();
+        console.log('FROM LINE 16', data, error)
+
         if (data && !error) {
           // get results from cache and save to db
           const response = await api.get(`/results/${id}`);
