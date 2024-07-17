@@ -1,20 +1,14 @@
-// src/errors/CustomError.ts
-class CustomError extends Error {
-  public status: number;
-  public log: string;
-
+class CustomError {
   constructor(
-    message: string,
-    status: number,
-    log: string,
-    originalError: Error
+    public message: string,
+    public status: number,
+    public log: String,
+    public error: unknown
   ) {
-    super(message);
+    this.message = message;
     this.status = status;
-    this.log = log + originalError.message; // Append the original error message to the log
-
-    // Set the prototype explicitly to maintain proper instance of CustomError
-    Object.setPrototypeOf(this, CustomError.prototype);
+    this.log = `ERROR---> ${log}: \n`;
+    this.error = error;
   }
 }
 

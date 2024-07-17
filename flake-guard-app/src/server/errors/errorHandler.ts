@@ -1,24 +1,21 @@
-// src/middleware/errorHandler.ts
-import {Request, Response} from 'express';
-import CustomError from '../errors/CustomError';
+import {Request, Response, NextFunction} from 'express';
+import CustomError from './CustomError';
 
+// Error handler middleware
 export const errorHandler = (
-  error: CustomError,
+  err: Error,
   req: Request,
-  res: Response
+  res: Response,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  next: NextFunction
 ) => {
-  const defaultErr = {
-    message: {err: 'An error occurred in the server'},
-    status: 500,
-    log: 'Express error handler caught unknown middleware error',
-  };
-
-  const errorObj = {
-    message: {error: error.message || defaultErr.message.err},
-    status: error.status || defaultErr.status,
-    log: error.log || defaultErr.log,
-  };
-
-  console.error(errorObj.log);
-  return res.status(errorObj.status).json(errorObj.message);
+  if (err instanceof CustomError) {
+    console.error(err.log, err.error);
+    return res.status(err.status).json({error: err.message});
+  } else {
+    console.error('Unknown middleware error encountered', err);
+    return res.status(500).json({error: 'Server error occurred'});
+  }
 };
+
+export default errorHandler;

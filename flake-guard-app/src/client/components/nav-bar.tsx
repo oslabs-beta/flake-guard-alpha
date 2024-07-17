@@ -35,7 +35,7 @@ const NavBarHeading: React.FC = () => {
         </Link>
         <Link to="/docs">Docs</Link>
         <Link to="/blog">Blog</Link>
-        <Link to={`/dashboard/user/${userId}`}>Dashboard</Link>
+        {userId && <Link to={`/dashboard/user/${userId}`}>Dashboard</Link>}
       </div>
       <div>
         <LoginButton />
