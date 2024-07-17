@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Landing from './components/LandingPage/landing-page';
 import DocPage from './components/Docs/DocPage';
-import UserDashboard from './components/Dashboard/UserDashboard';
+import UserDashboard from './components/newDashboard/UserDashboard';
 import TempDashboard from './components/Dashboard/TempDashboard';
 import DecisionPage from './components/Dashboard/DecisionPage';
 import {
