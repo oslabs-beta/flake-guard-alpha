@@ -16,12 +16,12 @@
     flex-direction: column;
 }
 
-.advantage:hover {
+/* .advantage:hover {
     cursor: auto;
     border-radius: 5%;
     transition: transform 0.3s ease;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 .advantage h5 {
     text-align: center;

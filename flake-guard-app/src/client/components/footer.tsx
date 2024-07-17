@@ -1,36 +1,35 @@
 import React from 'react';
-import githubLogo from '../assets/github-mark.png';
-import npmLogo from '../assets/npm-logo.png';
-import '../../styles/styles.css'; // Adjust the path according to your project structure
+import {Link} from 'react-router-dom';
+import github from '../assets/github-mark-white.png';
+import npm from '../assets/npm.png';
+
+import '../../styles/footer.css';
 
 const Footer = (): JSX.Element => {
   return (
     <div className="footer-container">
-      <div className="footer-div">
+      <div className="footer-icon-links">
         <a
           href="https://github.com/oslabs-beta/flake-guard"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={githubLogo}
-            alt="GitHub logo"
-            style={{width: '50px', height: '50px'}}
-            id="github-logo"
-          />
+          <img src={github} alt="github-logo" style={{width: '35px'}} />
         </a>
         <a
           href="https://www.npmjs.com/package/flake-guard"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={npmLogo}
-            alt="Npm logo"
-            style={{width: '70px', height: '70px'}}
-            id="npm-logo"
-          />
+          <img src={npm} alt="npm-logo" style={{width: '45px'}}/>
         </a>
+      </div>
+      <div className="footer-links">
+        <Link to="/">Home</Link>
+        <Link to="https://medium.com/">Blog</Link>
+        <Link to="/contact">Contact Us</Link>        
+        <Link to="/ourTeam">Our Team</Link>
+
       </div>
     </div>
   );

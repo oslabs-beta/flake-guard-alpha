@@ -1,5 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {supabaseClient} from '../supabaseClient';
 // import type {RootState} from './store';
 
 interface User {
@@ -32,6 +31,10 @@ export const userSlice = createSlice({
     //     console.log('Error Fetching User:', error);
     //   }
     // },
+    // userSignedIn: (state: User): void => {
+    // },
+    // userLoggedOut: (state: User): void => {
+    // }
   },
 });
 

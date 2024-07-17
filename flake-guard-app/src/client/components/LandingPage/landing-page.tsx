@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../../../styles/styles.css';
+import '../../../styles/styles.css';
 // import NavBarHeading from '../nav-bar';
 // import Carousel from './carousel';
 import logo from '../../assets/logo.png';
@@ -15,14 +15,7 @@ const Landing = (): JSX.Element => {
     <>
       <Header />
       <div className="landing-page-container">
-        {/* <div className="main-container">
-      <div className="intro-bg" style={{position: 'relative'}}> */}
         <div className="left-landing">
-          {/* <div className="intro-bg" style={{position: 'relative'}}> */}
-          <img src={logo} alt="Logo" />
-          {/* <em id="tagline-emphasize">
-            Master Test Flakiness, Ensure Reliability
-          </em> */}
           <h1>Save Thousands of Debugging Hours</h1>
           <div className="left-landing-text">
             <p>
@@ -46,18 +39,22 @@ const Landing = (): JSX.Element => {
             </button>
             <p className="p-tag-with-link" style={{fontSize: '16px'}}>
               To learn more about FlakeGuard, click{' '}
-              <a href="https://medium.com/">
-                <em id="medium-article-link">here</em>
+              <a
+                href="https://medium.com/"
+                style={{textDecoration: 'underline'}}
+              >
+                here
               </a>
               .
             </p>
           </div>
         </div>
+        <div className="right-landing">PLACEHOLDER (graph)</div>
       </div>
-      {/* </div>
-      </div> */}
+      <div style={{textAlign: 'center', backgroundColor: 'yellow'}}>
+        PLACEHOLDER (extra info)
+      </div>
       <Advantages />
-      {/* <Carousel /> */}
       <Footer />
     </>
   );

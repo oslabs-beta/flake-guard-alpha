@@ -1,6 +1,11 @@
 import {Request, Response, NextFunction} from 'express';
+import CustomError from '../errors/CustomError';
+// import CustomError from '../errors/CustomError';
+interface NPMController {
+  npmMetrics: (req: Request, res: Response, next: NextFunction) => void;
+}
 
-const controller = {
+const npmController: NPMController = {
   // Receives and parses the results from the user via NPM package
   async npmMetrics(
     req: Request,
@@ -8,7 +13,7 @@ const controller = {
     next: NextFunction
   ): Promise<void> {
     try {
-      const {user, runTimes, simple, verbose} = req.body;
+      const {runTimes, simple, verbose} = req.body;
 
       // Parse the simple results into an array of results objects for front-end dashboard
       const metrics = [];
@@ -27,17 +32,20 @@ const controller = {
         });
       }
 
-      if (user === 'temp') {
-        res.locals.metrics = metrics;
-        res.locals.verbose = verbose;
-        res.locals.user = user;
-      }
+      res.locals.metrics = metrics;
+      res.locals.verbose = verbose;
 
       return next();
     } catch (error) {
-      console.log('ERROR parsing npm metrics', error);
+      const customError = new CustomError(
+        'Failed to parse NPM metrics',
+        500,
+        'Error in npmMetrics',
+        error
+      );
+      return next(customError);
     }
   },
 };
 
-export default controller;
+export default npmController;

@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {supabaseClient} from '../../supabaseClient';
-import github from '../../assets/github-mark-white.png';
 import signout from '../../assets/signout.png';
+import github from '../../assets/github-mark-white.png';
 
 interface User {
   email: string;
@@ -11,6 +11,7 @@ interface User {
 
 const LoginButton: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
     checkUser();
@@ -22,9 +23,8 @@ const LoginButton: React.FC = () => {
   async function checkUser() {
     try {
       const {data, error} = await supabaseClient.auth.getUser();
-      if (data && !error && data.user && data.user.email) {
-        console.log('data --->', data);
-        console.log(data.user.user_metadata.avatar_url);
+      if (!error && data.user) {
+        console.log('USER DATA --->', data.user);
 
         setUser({
           email: data.user.user_metadata.user_name,
@@ -33,6 +33,7 @@ const LoginButton: React.FC = () => {
       } else {
         setUser(null);
       }
+      setAuthChecked(true);
     } catch (error) {
       console.error('Error fetching user:', error);
       setUser(null);
@@ -40,9 +41,13 @@ const LoginButton: React.FC = () => {
   }
 
   async function signInWithGithub() {
-    await supabaseClient.auth.signInWithOAuth({
-      provider: 'github',
-    });
+    try {
+      await supabaseClient.auth.signInWithOAuth({
+        provider: 'github',
+      });
+    } catch (error) {
+      console.error('Error signing in: ', error);
+    }
   }
 
   async function signOut() {
@@ -50,7 +55,7 @@ const LoginButton: React.FC = () => {
     setUser(null);
   }
 
-  if (user) {
+  if (user && authChecked) {
     return (
       <div className="btn-group">
         <button
@@ -82,7 +87,7 @@ const LoginButton: React.FC = () => {
         </ul>
       </div>
     );
-  } else {
+  } else if (authChecked) {
     return (
       <div className="login-btn">
         <button className="loginButton" onClick={signInWithGithub}>
@@ -91,9 +96,7 @@ const LoginButton: React.FC = () => {
         </button>
       </div>
     );
-  }
+  } else return <></>;
 };
-
-//
 
 export default LoginButton;
