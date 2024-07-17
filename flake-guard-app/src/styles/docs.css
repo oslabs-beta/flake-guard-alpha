@@ -1,32 +1,80 @@
+.docs-container {
+  padding: 20px;
+}
+.questions button {
+  width: 280px;
+  text-align: start;
+}
 
-/*docs*/
+.active {
+  width: 600px;
+}
+.nav-pills .nav-link.active {
+  background-color: rgb(248, 246, 246); 
+  color: #457f3e; 
+}
+.nav-pills .nav-link {
+  color: #49af3e;   
+  margin: 10px;
+}
+.tab-content .tab-pane {
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  border-radius: 0.25rem;
+  height: 100vh;
+}
+.docs-title {
+  color: #2b7023;
+}
+
+.docs-text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(86, 90, 111);
+  padding: 10px;
+}
+
+.docs-text li {
+  width: 650px;
+  color: rgb(86, 90, 111);
+  margin: 8px;
+}
 
 
-.docs-overlay {
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    /*transform: translate(-50%, -50%);  Adjust for the text’s dimensions */
-    /* font-size: 2rem; */
-    font-family: Arial, sans-serif;
-    /* background-color: #41aa35; */
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px; /*  Rounded corners */
-  }
-  
-  .doc-keywords:hover {
-    box-shadow: 0 8px 16px 0 #38932e;
-    transition: transform 0.3s ease;
-    /* transform: scale(2,2); */
-  }
 
-  code{
-    color: #38932e;
-  }
+/* FAQ */
+.faq-container {
+}
+.faq-container button{
+  width: 600px;
+  border-radius: 10px;
+}
+/* try to make the font bigger */
+.accordion-header:not(.collapsed) {
+  border: none; 
 
-  #npm-docs-logo:hover {
-    transform: scale(1.1,1.1);
-  }
-  /****************************************************/
-  
+}
+
+.accordion-header:not(.collapsed) {
+  border-bottom: none; 
+}
+
+
+.custom-bg {
+  color: #000; 
+}
+
+.custom-bg.collapsed {
+  color: #000;
+  border: none; 
+}
+
+.custom-bg:not(.collapsed) {
+  background-color: transparent;
+  color: #000; 
+}
+
+
+
+
