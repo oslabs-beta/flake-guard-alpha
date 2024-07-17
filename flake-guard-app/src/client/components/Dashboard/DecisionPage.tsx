@@ -13,6 +13,7 @@ const DecisionPage: React.FC = () => {
     const checkIfLoggedIn = async () => {
       try {
         const {data, error} = await supabaseClient.auth.getUser();
+        // const {data, error} = await getSession().session.user;
         if (data && !error) {
           // get results from cache and save to db
           const response = await api.get(`/results/${id}`);
@@ -24,7 +25,10 @@ const DecisionPage: React.FC = () => {
           navigate(url);
         }
       } catch (error) {
-        console.error('Error checking user auth: ', error);
+        console.error(
+          'Error checking user auth or getting results from cache and saving to database: ',
+          error
+        );
       }
     };
     checkIfLoggedIn();

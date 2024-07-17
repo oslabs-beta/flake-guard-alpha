@@ -1,4 +1,5 @@
 import {Request, Response, NextFunction} from 'express';
+import CustomError from '../errors/CustomError';
 
 interface UrlController {
   generateRandomString: (
@@ -11,25 +12,43 @@ interface UrlController {
 
 const urlController: UrlController = {
   generateRandomString: (req: Request, res: Response, next: NextFunction) => {
-    const characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let randomString = '';
-    const charactersLength = characters.length;
-    for (let i = 0; i < 10; i++) {
-      randomString += characters.charAt(
-        Math.floor(Math.random() * charactersLength)
+    try {
+      const characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let randomString = '';
+      const charactersLength = characters.length;
+      for (let i = 0; i < 10; i++) {
+        randomString += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
+      }
+      res.locals.randomString = randomString;
+      next();
+    } catch (error) {
+      const customError = new CustomError(
+        'Failed generate random string',
+        500,
+        'Error in generateRandomString',
+        error
       );
+      return next(customError);
     }
-    res.locals.randomString = randomString;
-
-    next();
   },
 
   buildCustomUrl: (req: Request, res: Response, next: NextFunction) => {
-    const tempUrl: string = `http://localhost:8080/npm/${res.locals.randomString}`;
-    res.locals.tempUrl = tempUrl;
-
-    next();
+    try {
+      const tempUrl: string = `http://localhost:8080/npm/${res.locals.randomString}`;
+      res.locals.tempUrl = tempUrl;
+      next();
+    } catch (error) {
+      const customError = new CustomError(
+        'Failed to build URL',
+        500,
+        'Error in buildCustomURL',
+        error
+      );
+      return next(customError);
+    }
   },
 };
 
