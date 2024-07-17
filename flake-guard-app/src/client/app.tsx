@@ -2,8 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Landing from './components/LandingPage/landing-page';
-import LoginOrOut from './components/Login/login-out';
-import DocPage from './components/Docs/doc-page';
+import DocPage from './components/Docs/DocPage';
 import UserDashboard from './components/Dashboard/UserDashboard';
 import TempDashboard from './components/Dashboard/TempDashboard';
 import DecisionPage from './components/Dashboard/DecisionPage';
@@ -26,7 +25,6 @@ const App: React.FC = () => {
           <Route path="/npm/:id" element={<DecisionPage />} />
           <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
           <Route path="/tempdashboard/:id" element={<TempDashboard />} />
-          <Route path="/login" element={<LoginOrOut />} />
           <Route path="/docs" element={<DocPage />} />
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
