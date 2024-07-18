@@ -33,7 +33,9 @@
   },
   "homepage": "https://github.com/oslabs-beta/flake-guard#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.12.13",
+    "jest": "^29.7.0",
     "typescript": "^5.4.5"
   }
 }
