@@ -19,9 +19,14 @@
     }
   },
   "overrides": [
+    // Different options based on file extensions.
     {
-      "files": ["tests/**/*"],
-  
-    }
+      "parser": "babel-eslint",
+      "files": ["**.js"]
+    },
+    {
+      "parser": "@typescript-eslint/parser",
+      "files": ["**.ts"]
+    } 
   ]
 }

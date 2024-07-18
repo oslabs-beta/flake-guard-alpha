@@ -5,8 +5,7 @@
   "main": "./src/index.tsx",
   "scripts": {
     "start": "concurrently \"webpack serve --open\" \"nodemon ./src/server/server.ts\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "jest": "ts-jest",
+    "test": "jest",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
@@ -15,8 +14,7 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix",
-    "posttest": "npm run lint"
+    "fix": "gts fix"
   },
   "author": "",
   "license": "ISC",
@@ -88,6 +86,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "faker": "^5.5.3",
+    "jest-transform-css": "^6.0.1",
+    "jest-transform-stub": "^2.0.0",
     "nodemon": "^3.1.2",
     "postgres": "^3.4.4",
     "react": "^17.0.0 || ^18.0.0",

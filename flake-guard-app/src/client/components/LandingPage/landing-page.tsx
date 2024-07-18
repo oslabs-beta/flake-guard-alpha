@@ -8,7 +8,7 @@ import Advantages from './Advantages';
 import download from '../../assets/download.png';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
-// import '../../../styles/landingPage.css';
+import '../../../styles/landingPage.css';
 
 const Landing = (): JSX.Element => {
   return (
