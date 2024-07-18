@@ -10,5 +10,16 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "overrides": [
+    // Different options based on file extensions.
+    {
+      "parser": "babel-eslint",
+      "files": ["**.js"]
+    },
+    {
+      "parser": "@typescript-eslint/parser",
+      "files": ["**.ts"]
+    } 
+  ]
 }
