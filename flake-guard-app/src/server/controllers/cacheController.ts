@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from 'express';
-import tempCache from '../tempCache';
+import {setCache, getCache, deleteCache} from '../tempCache';
 import CustomError from '../errors/CustomError';
 
 interface CacheController {
@@ -11,7 +11,7 @@ interface CacheController {
 const cacheController: CacheController = {
   cacheTempResults: (req: Request, res: Response, next: NextFunction) => {
     try {
-      tempCache.set(res.locals.randomString, {
+      setCache(res.locals.randomString, {
         metrics: res.locals.metrics,
         verbose: res.locals.verbose,
       });
@@ -30,8 +30,8 @@ const cacheController: CacheController = {
   retrieveResults: (req: Request, res: Response, next: NextFunction) => {
     try {
       const {id} = req.params;
-      if (tempCache.get(id)) {
-        res.locals.tempCachedResults = tempCache.get(id);
+      if (getCache(id)) {
+        res.locals.tempCachedResults = getCache(id);
       } else {
         console.error(`no data with id ${id} in cache`);
       }
@@ -50,7 +50,7 @@ const cacheController: CacheController = {
   evictViewedResults: (req: Request, res: Response, next: NextFunction) => {
     try {
       const {id} = req.params;
-      tempCache.delete(id);
+      deleteCache(id);
       return next();
     } catch (error) {
       const customError = new CustomError(
