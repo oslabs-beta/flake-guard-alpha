@@ -10,7 +10,7 @@
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc",
-    "test": "jest"
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,13 @@
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.13",
+    "@types/node-fetch": "^2.6.11",
     "jest": "^29.7.0",
+    "ts-jest": "^29.2.3",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "jest-transform-stub": "^2.0.0",
+    "node-fetch": "^3.3.2"
   }
 }

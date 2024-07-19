@@ -3,9 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from "jest";
-
-const config: Config = {
+/** @type {import('jest').Config} */
+const config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -13,10 +12,10 @@ const config: Config = {
   // bail: 0,
 
   // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "/private/var/folders/yw/30mn84mx2r304mgzlnkbxhhr0000gn/T/jest_dx",
+  // cacheDirectory: "/private/var/folders/52/mww99m6x1qs17jmf0g9d5p040000gn/T/jest_dx",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  // clearMocks: false,
+  clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -25,7 +24,7 @@ const config: Config = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -33,7 +32,7 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  // coverageProvider: "babel",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -73,21 +72,24 @@ const config: Config = {
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    "node_modules", "bower_components", "shared"
-  ],
+  // moduleDirectories: [
+  //   "node_modules"
+  // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx"
-  ],
+  // moduleFileExtensions: [
+  //   "js",
+  //   "mjs",
+  //   "cjs",
+  //   "jsx",
+  //   "ts",
+  //   "tsx",
+  //   "json",
+  //   "node"
+  // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  moduleNameMapper: { "\\.(css|less)$": "identity-obj-proxy" 
-  },
+  // moduleNameMapper: {},
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -99,7 +101,7 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  // preset: 'ts-jest',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -143,7 +145,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-node",
+  testEnvironment: 'jest-environment-node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -172,11 +174,11 @@ const config: Config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
+  // transform: undefined,
   transform: {
-    "\\.[ji]sx?$": "babel-jest",
-    "\\.css$": "some-css-transformer",
+    "^.+\\.(t|j)sx?$": "ts-jest",
+    ".+\\.(css|scss|png|jpg|svg)$": "jest-transform-stub"
   },
-
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
   //   "/node_modules/",
@@ -196,4 +198,4 @@ const config: Config = {
   // watchman: true,
 };
 
-export default config;
+module.exports = config;
