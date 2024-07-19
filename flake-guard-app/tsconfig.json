@@ -21,7 +21,7 @@
   "include": [
     "src/**/*",
     "test/**/*", 
-    "global.d.ts", "__tests__" ],
+    "global.d.ts", "src/__tests__" ],
     "exclude": ["node_modules", "build"] // Exclude the build directory
 }
     /* Visit https://aka.ms/tsconfig to read more about this file */

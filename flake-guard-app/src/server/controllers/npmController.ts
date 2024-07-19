@@ -13,8 +13,8 @@ const npmController: NPMController = {
     next: NextFunction
   ): Promise<void> {
     try {
+      if (!req.body) throw new Error('No data found in req.body');
       const {runTimes, simple, verbose} = req.body;
-
       // Parse the simple results into an array of results objects for front-end dashboard
       const metrics = [];
       for (const key in simple) {
