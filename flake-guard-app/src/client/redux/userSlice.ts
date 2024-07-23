@@ -31,6 +31,10 @@ export const userSlice = createSlice({
     //     console.log('Error Fetching User:', error);
     //   }
     // },
+    // userSignedIn: (state: User): void => {
+    // },
+    // userLoggedOut: (state: User): void => {
+    // }
   },
 });
 

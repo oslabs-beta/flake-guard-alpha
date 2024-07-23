@@ -1,10 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {api} from '../../services/index';
 import '../../../styles/dashboard.css';
 import '../../../styles/riskSign.css';
-import Summary from './components/Summary';
-import AssertionsGraph from './components/AssertionsGraph';
-import DisplayErrors from './components/DisplayErrors';
 import {useParams} from 'react-router-dom';
 import NavBarHeading from '../nav-bar';
 import Footer from '../footer';
@@ -12,7 +9,6 @@ import {calculateFlakePercentage} from '../Analytics/flake-percentage';
 import FlakeRiskContainer from '../FlakeRiskSign/FlakeRiskContainer';
 import {failedPercentage} from '../Analytics/overall-failed-percentage';
 import ExampleLineChart from './charts/chart';
-import Trends from './components/Trends';
 // import {assertionFailedPercent} from '../Analytics/assertion-failures-percent';
 // import FlakeGauge from './components/FlakeGauge';
 

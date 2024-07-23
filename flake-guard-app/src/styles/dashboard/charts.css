@@ -1,0 +1,26 @@
+/* CALENDAR */
+.calendar-container {
+    display: flex;
+
+    
+}
+
+.calendar-graph {
+
+}
+
+
+/* PIE CHART */
+.piechart-container {
+    display: flex;
+}
+
+.piechart-graph {
+
+}
+
+
+/* LINE CHART */
+.linechart-graph {
+    /* background-color: red; */
+}

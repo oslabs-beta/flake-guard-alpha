@@ -18,7 +18,7 @@ const Dashboard = (): JSX.Element => {
   const [fetchResults, setFetchResults] = useState([]);
   const [flakePercentage, setFlakePercentage] = useState<number | undefined>(
     undefined
-  );
+  );  
 
   const {id} = useParams();
 
