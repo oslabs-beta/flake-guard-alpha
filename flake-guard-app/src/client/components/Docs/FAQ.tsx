@@ -5,7 +5,7 @@ const Faq = (): JSX.Element => {
   return (
     <div>
       <div className="accordion accordion-flush" id="accordionFlushExample">
-        <div className="accordion-item faq-container">
+        <div className="accordion-item faq-container" data-testid = 'faq container'>
           <h2 className="accordion-header" id="flush-headingOne">
             <button
               className="accordion-button collapsed custom-bg"

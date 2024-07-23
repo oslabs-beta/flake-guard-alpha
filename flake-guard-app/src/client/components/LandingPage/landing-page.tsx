@@ -1,5 +1,8 @@
 import React from 'react';
 import '../../../styles/styles.css';
+// import NavBarHeading from '../nav-bar';
+// import Carousel from './carousel';
+import logo from '../../assets/logo.png';
 import Header from '../nav-bar';
 import Advantages from './Advantages';
 import download from '../../assets/download.png';
