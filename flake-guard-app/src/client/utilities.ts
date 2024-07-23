@@ -29,22 +29,25 @@ const lineChartParser = (userResults: Array<FG>) => {
   const output: Array<DataPoint> = [];
   userResults.forEach((fg: FG) => {
     const dataPoint: DataPoint = {x: null, y: null};
-    dataPoint.x = fg.date;
+    dataPoint.x = fg.created_at;
     let flaky: number = 0;
     let solid: number = 0;
-    fg.results.metrics.forEach((test: Test) => {
-      if (
-        test.totalRuns - test.passed !== 0 &&
-        test.totalRuns - test.failed !== 0
-      ) {
-        flaky += 1;
-      } else {
-        solid += 1;
-      }
-    });
+    if (Array.isArray(fg.results.metrics)) {
+      fg.results.metrics.forEach((test: Test) => {
+        if (
+          test.totalRuns - test.passed !== 0 &&
+          test.totalRuns - test.failed !== 0
+        ) {
+          flaky += 1;
+        } else {
+          solid += 1;
+        }
+      });
+    }
     const flakePercentage: number = flaky / solid;
     dataPoint.y = flakePercentage;
-    output.push(dataPoint);
+    if (typeof flakePercentage === 'number' && !isNaN(flakePercentage))
+      output.push(dataPoint);
   });
   return output;
 };

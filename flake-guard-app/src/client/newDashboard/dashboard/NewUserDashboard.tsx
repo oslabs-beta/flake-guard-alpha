@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react';
 import {useEffect, useState} from 'react';
 import {api} from '../../services/index';
@@ -9,7 +11,6 @@ import Calendar from '../components/calendar/Calendar';
 import {fakeData} from '../components/pie/data'; //data for PieChart
 import {CalendarData} from '../components/calendar/data'; //data for Calendar
 import LineChart from '../components/line/LineChart';
-import { result } from 'lodash';
 
 const NewUserDashboard: React.FC = () => {
   const {userId} = useParams();
@@ -59,7 +60,7 @@ const NewUserDashboard: React.FC = () => {
             className="linechart-graph graph-style"
             style={{height: '450px', width: '850px'}}
           >
-            <LineChart />
+            <LineChart results={results} />
           </div>
         </div>
       </div>
