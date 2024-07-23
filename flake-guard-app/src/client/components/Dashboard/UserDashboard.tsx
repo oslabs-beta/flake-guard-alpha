@@ -16,6 +16,7 @@ const UserDashboard: React.FC = () => {
           const ts = result.created_at;
           result.date = ts.slice(0, ts.indexOf('T'));
         }
+        console.log('RESULTS USERDASH', results, resultsArray)
         setResults(resultsArray);
         console.log('ALL SAVED RESULTS FOR USER----->', results.data);
       } catch (error) {
