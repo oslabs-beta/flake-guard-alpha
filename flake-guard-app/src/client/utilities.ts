@@ -35,8 +35,8 @@ const lineChartParser = (userResults: Array<FG>) => {
     if (Array.isArray(fg.results.metrics)) {
       fg.results.metrics.forEach((test: Test) => {
         if (
-          test.totalRuns - test.passed !== 0 &&
-          test.totalRuns - test.failed !== 0
+          test.totalRuns - test.passed !== test.skipped &&
+          test.totalRuns - test.failed !== test.skipped
         ) {
           flaky += 1;
         } else {
