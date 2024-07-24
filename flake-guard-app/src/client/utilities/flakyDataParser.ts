@@ -57,10 +57,9 @@ const flakyDataParser = (userResults: Array<FG>): Array<FlakyData> => {
         } else {
           flaky += 1;
         }
-        totalTests += (test.skipped + test.failed + test.passed)/test.totalRuns;
+        totalTests +=
+          (test.skipped + test.failed + test.passed) / test.totalRuns;
       });
-
-     
 
       data.flaky = flaky;
       data.alwaysFail = alwaysFail;
@@ -74,6 +73,5 @@ const flakyDataParser = (userResults: Array<FG>): Array<FlakyData> => {
 
   return output;
 };
-
 
 export {flakyDataParser};

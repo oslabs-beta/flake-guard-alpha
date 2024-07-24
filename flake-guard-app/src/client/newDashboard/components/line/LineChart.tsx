@@ -9,7 +9,7 @@ const LineChart: React.FC = ({results}) => {
 
   useEffect(() => {
     const chartData = lineChartParser(results);
-    // console.log('Parsed Chart Data:', chartData);
+    console.log('Parsed Chart Data:', chartData);
     if (Array.isArray(chartData)) setLineChartData(chartData);
   }, [results]);
 

@@ -86,13 +86,13 @@ const NewUserDashboard: React.FC = () => {
                   }
                   placement="right"
                 >
-                  <p className='info-icon'>
+                  <p className="info-icon">
                     <InfoOutlinedIcon />
                   </p>
                 </OverlayTrigger>
               </div>
               {flakytData && (
-                <div>
+                <div className="flaky-metrics">
                   <h3>{flakytData.flaky}</h3>
                   <p className="flakiness-text">
                     {flakytData.flaky} out of {flakytData.totalTests} tests are
@@ -102,11 +102,25 @@ const NewUserDashboard: React.FC = () => {
               )}
             </div>
             <div className="graph-style flakiness-box">
-              <p className="flakiness-box-title">
-                Always failing <InfoOutlinedIcon fontSize="small" />
-              </p>
+              <div className="flakiness-box-title">
+                <p>Always failing</p>
+                <OverlayTrigger
+                  overlay={
+                    <Tooltip id="tooltip-right">
+                      Consistently produces a failure result every time it is
+                      executed, indicating a persistent issue in the code or
+                      test setup.
+                    </Tooltip>
+                  }
+                  placement="right"
+                >
+                  <p className="info-icon">
+                    <InfoOutlinedIcon />
+                  </p>
+                </OverlayTrigger>
+              </div>
               {flakytData && (
-                <div>
+                <div className="flaky-metrics">
                   <h3>{flakytData.alwaysFail}</h3>
                   <p className="flakiness-text">
                     {flakytData.alwaysFail} out of {flakytData.totalTests} tests
