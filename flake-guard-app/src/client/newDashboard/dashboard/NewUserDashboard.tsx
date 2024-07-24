@@ -12,7 +12,7 @@ import {fakeData} from '../components/pie/data'; // data for PieChart
 import {CalendarData} from '../components/calendar/data'; // data for Calendar
 import LineChart from '../components/line/LineChart';
 import {flakyDataParser} from '../../utilities/flakyDataParser';
-import {OverlayTrigger, Tooltip, Button} from 'react-bootstrap';
+import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 
 const NewUserDashboard: React.FC = () => {
   const {userId} = useParams();
@@ -71,7 +71,7 @@ const NewUserDashboard: React.FC = () => {
             className="piechart-graph graph-style"
             style={{height: '350px', width: '30%'}}
           >
-            <PieChart piechartData={fakeData} />
+            <PieChart piechartData={flakytData} />
           </div>
           <div className="flakiness-details">
             <div className="graph-style flakiness-box">

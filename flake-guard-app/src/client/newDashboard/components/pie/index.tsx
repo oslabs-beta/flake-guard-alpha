@@ -10,7 +10,7 @@ const PieChartPage: React.FC = () => {
     <div className="piechart-container">
       <Sidebar />
       <div className="piechart-graph" style={{height: '350px', width: '800px'}}>
-        <PieChart piechartData={fakeData} />
+        {/* <PieChart piechartData={fakeData} /> */}
       </div>
     </div>
   );
