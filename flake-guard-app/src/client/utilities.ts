@@ -44,7 +44,8 @@ const lineChartParser = (userResults: Array<FG>) => {
         }
       });
     }
-    const flakePercentage: number = flaky / solid;
+    const totalRuns = userResults[0].results.metrics[0].totalRuns;
+    const flakePercentage: number = (flaky / totalRuns) * 100;
     dataPoint.y = flakePercentage;
     if (typeof flakePercentage === 'number' && !isNaN(flakePercentage))
       output.push(dataPoint);
