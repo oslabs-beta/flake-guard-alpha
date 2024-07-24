@@ -29,23 +29,20 @@ const lineChartParser = (userResults: Array<FG>) => {
   const output: Array<DataPoint> = [];
   userResults.forEach((fg: FG) => {
     const dataPoint: DataPoint = {x: null, y: null};
-    dataPoint.x = fg.date;
+    dataPoint.x = fg.created_at;
     let flaky: number = 0;
-    let solid: number = 0;
     if (Array.isArray(fg.results.metrics)) {
       fg.results.metrics.forEach((test: Test) => {
-        // add edge case for 'skipped'
         if (
-          test.totalRuns - test.passed !== 0 &&
-          test.totalRuns - test.failed !== 0
+          test.totalRuns - test.passed !== test.skipped &&
+          test.totalRuns - test.failed !== test.skipped
         ) {
           flaky += 1;
-        } else {
-          solid += 1;
         }
       });
     }
-    const flakePercentage: number = flaky / solid;
+    const totalRuns = userResults[0].results.metrics[0].totalRuns;
+    const flakePercentage: number = (flaky / totalRuns) * 100;
     dataPoint.y = flakePercentage;
     if (typeof flakePercentage === 'number' && !isNaN(flakePercentage))
       output.push(dataPoint);
