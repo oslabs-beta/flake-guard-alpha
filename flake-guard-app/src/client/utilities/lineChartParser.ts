@@ -32,20 +32,25 @@ const lineChartParser = (userResults: Array<FG>) => {
     dataPoint.x = fg.date;
     let flaky: number = 0;
     let solid: number = 0;
-    fg.results.metrics.forEach((test: Test) => {
-      if (
-        test.totalRuns - test.passed !== 0 &&
-        test.totalRuns - test.failed !== 0
-      ) {
-        flaky += 1;
-      } else {
-        solid += 1;
-      }
-    });
+    if (Array.isArray(fg.results.metrics)) {
+      fg.results.metrics.forEach((test: Test) => {
+        // add edge case for 'skipped'
+        if (
+          test.totalRuns - test.passed !== 0 &&
+          test.totalRuns - test.failed !== 0
+        ) {
+          flaky += 1;
+        } else {
+          solid += 1;
+        }
+      });
+    }
     const flakePercentage: number = flaky / solid;
     dataPoint.y = flakePercentage;
-    output.push(dataPoint);
+    if (typeof flakePercentage === 'number' && !isNaN(flakePercentage))
+      output.push(dataPoint);
   });
+  // console.log('output --->', output)
   return output;
 };
 

@@ -13,7 +13,7 @@ interface DataProps {
 }
 
 const PieChart: React.FC<DataProps> = ({piechartData}) => {
-  console.log('piechartData', piechartData);
+  // console.log('piechartData', piechartData);
   return (
     <ResponsivePie
       data={piechartData}
