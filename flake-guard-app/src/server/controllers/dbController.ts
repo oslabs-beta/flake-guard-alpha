@@ -18,7 +18,7 @@ const dbController: DBController = {
       const customError = new CustomError(
         'Failed to retrieve results',
         500,
-        'Database query in retrieveResults failed: ',
+        'Database query in retrieveResults failed',
         error
       );
       return next(customError);

@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import {Bar} from 'react-chartjs-2';
 import {ProgressBar} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 ChartJS.register(
   CategoryScale,
