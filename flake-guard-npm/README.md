@@ -44,3 +44,6 @@ For example, if you want to increase accuracy, you can increase test runs.
 
 ## How It Works
 Under the hood, the flake-guard npm package is automating repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
+
+#Run Testing Files
+npx jest

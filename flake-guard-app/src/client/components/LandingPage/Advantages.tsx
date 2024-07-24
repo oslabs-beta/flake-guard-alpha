@@ -8,7 +8,7 @@ import advantage4 from '../../assets/advantage4.png';
 const Advantages = (): JSX.Element => {
   return (
     <div className="advantages-container">
-      <div className="advantage">
+      <div className="advantage" id="advantage-div">
         <img src={advantage1} alt="advantage1" />
         <h5>Improved Test Reliability</h5>
         <p>
@@ -19,7 +19,7 @@ const Advantages = (): JSX.Element => {
       <div className="advantage">
         <img src={advantage2} alt="advantage2" />
         <h5>Enhanced Developer Productivity</h5>
-        <p>
+        <p data-testid ="paragraph1">
           Detecting and fixing flaky tests saves troubleshooting time, letting
           developers focus on writing quality code.
         </p>
@@ -27,7 +27,7 @@ const Advantages = (): JSX.Element => {
       <div className="advantage">
         <img src={advantage3} alt="advantage3" />
         <h5>Increased Confidence in Software Releases</h5>
-        <p>
+        <p data-testid ="paragraph2">
           With fewer flaky tests, teams can be more confident in the results of
           their test suites, ensuring that only stable and well-tested code is
           released to production.
@@ -36,7 +36,7 @@ const Advantages = (): JSX.Element => {
       <div className="advantage">
         <img src={advantage4} alt="advantage4" />
         <h5>Faster Continuous Integration (CI) Pipelines</h5>
-        <p>
+        <p data-testid ="paragraph3">
           Reducing flaky tests minimizes false negatives in CI pipelines,
           resulting in smoother, faster processes, and accelerating development
           cycles.
