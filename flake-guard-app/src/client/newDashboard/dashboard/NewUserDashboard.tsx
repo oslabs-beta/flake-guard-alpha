@@ -1,12 +1,6 @@
 // @ts-nocheck
 
-<<<<<<< HEAD
-import React from 'react';
-import {useEffect, useState} from 'react';
-import {api} from '../../services/index';
-=======
 import React, {useEffect, useState} from 'react';
->>>>>>> dev
 import {useParams} from 'react-router-dom';
 import {api} from '../../services/index';
 import Sidebar from '../global/Sidebar';
@@ -17,11 +11,8 @@ import Calendar from '../components/calendar/Calendar';
 import {fakeData} from '../components/pie/data'; // data for PieChart
 import {CalendarData} from '../components/calendar/data'; // data for Calendar
 import LineChart from '../components/line/LineChart';
-<<<<<<< HEAD
-=======
 import {flakyDataParser} from '../../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip, Button} from 'react-bootstrap';
->>>>>>> dev
 
 const NewUserDashboard: React.FC = () => {
   const {userId} = useParams();
