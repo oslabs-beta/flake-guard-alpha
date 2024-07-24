@@ -31,7 +31,6 @@ const lineChartParser = (userResults: Array<FG>) => {
     const dataPoint: DataPoint = {x: null, y: null};
     dataPoint.x = fg.created_at;
     let flaky: number = 0;
-    let solid: number = 0;
     if (Array.isArray(fg.results.metrics)) {
       fg.results.metrics.forEach((test: Test) => {
         if (
@@ -39,8 +38,6 @@ const lineChartParser = (userResults: Array<FG>) => {
           test.totalRuns - test.failed !== test.skipped
         ) {
           flaky += 1;
-        } else {
-          solid += 1;
         }
       });
     }
