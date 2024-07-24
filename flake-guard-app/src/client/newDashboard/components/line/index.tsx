@@ -3,7 +3,7 @@ import Sidebar from '../../global/Sidebar';
 import '../../../../styles/dashboard/charts.css';
 import LineChart from './LineChart';
 import {linechartData} from './data';
-import {lineChartParser} from '../../../utilities';
+import {lineChartParser} from '../../../utilities/lineChartParser';
 
 const LineChartPage: React.FC = () => {
   console.log('linehcart -->', lineChartParser);

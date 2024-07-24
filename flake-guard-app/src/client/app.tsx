@@ -1,6 +1,6 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Landing from './components/LandingPage/landing-page';
 import DocPage from './components/Docs/DocPage';
 import UserDashboard from './newDashboard/dashboard/NewUserDashboard';

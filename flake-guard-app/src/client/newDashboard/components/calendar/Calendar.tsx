@@ -18,7 +18,7 @@ const getColor = (value: number): string => {
 };
 
 const Calendar: React.FC<DataProps> = ({CalendarData}) => {
-  console.log('data from CalendarData', CalendarData);
+  // console.log('data from CalendarData', CalendarData);
   return (
     <ResponsiveCalendar
       data={CalendarData}

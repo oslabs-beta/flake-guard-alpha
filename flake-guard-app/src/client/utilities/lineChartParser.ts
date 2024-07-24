@@ -47,6 +47,7 @@ const lineChartParser = (userResults: Array<FG>) => {
     if (typeof flakePercentage === 'number' && !isNaN(flakePercentage))
       output.push(dataPoint);
   });
+  // console.log('output --->', output)
   return output;
 };
 

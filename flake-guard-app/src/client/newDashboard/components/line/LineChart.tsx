@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from 'react';
 import {ResponsiveLine} from '@nivo/line';
-import {lineChartParser} from '../../../utilities';
+import {lineChartParser} from '../../../utilities/lineChartParser';
 
 const LineChart: React.FC = ({results}) => {
   const [lineChartData, setLineChartData] = useState([]);
@@ -41,7 +41,7 @@ const LineChart: React.FC = ({results}) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'flake percentage',
+        legend: 'flake percentage (%)',
         legendOffset: -40,
         legendPosition: 'middle',
         truncateTickAt: 0,
@@ -85,3 +85,4 @@ const LineChart: React.FC = ({results}) => {
 };
 
 export default LineChart;
+

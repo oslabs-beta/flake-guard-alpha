@@ -38,7 +38,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.(css)$/i,
         use: [stylesHandler, 'css-loader'],
       },
       {

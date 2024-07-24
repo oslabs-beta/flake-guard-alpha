@@ -1,11 +1,18 @@
 {
   "extends": "./node_modules/gts/",
   "rules": {
-    "node/no-unpublished-require": ["error", {
-      "allowModules": ["html-webpack-plugin", "mini-css-extract-plugin", "workbox-webpack-plugin"]
-    }]
+    "node/no-unpublished-require": [
+      "error",
+      {
+        "allowModules": [
+          "html-webpack-plugin",
+          "mini-css-extract-plugin",
+          "workbox-webpack-plugin"
+        ]
+      }
+    ]
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "jest"],
   "settings": {
     "react": {
       "version": "detect"

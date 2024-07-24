@@ -64,7 +64,7 @@ function dashPrompt(url: string): void {
 }
 
 // Analyze the test by running it 'runTimes' amount of times
-const flakeGuard = async (iterations: number): Promise<void> => {
+export const flakeGuard = async (iterations: number): Promise<void> => {
   const timestampStart: number = Date.now();
   const flakeGuardResults: FlakeGuardResult = {};
   const flakeGuardResultsVerbose: object[] = [];
