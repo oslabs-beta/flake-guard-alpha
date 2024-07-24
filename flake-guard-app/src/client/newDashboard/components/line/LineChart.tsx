@@ -7,9 +7,10 @@ import {lineChartParser} from '../../../utilities/lineChartParser';
 const LineChart: React.FC = ({results}) => {
   const [lineChartData, setLineChartData] = useState([]);
 
+
   useEffect(() => {
     const chartData = lineChartParser(results);
-    console.log('Parsed Chart Data:', chartData);
+    // console.log('Parsed Chart Data:', chartData);
     if (Array.isArray(chartData)) setLineChartData(chartData);
   }, [results]);
 
@@ -28,15 +29,7 @@ const LineChart: React.FC = ({results}) => {
       yFormat=" >-.2f"
       axisTop={null}
       axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: 'date',
-        legendOffset: 36,
-        legendPosition: 'middle',
-        truncateTickAt: 0,
-      }}
+      axisBottom={null}
       axisLeft={{
         tickSize: 5,
         tickPadding: 5,

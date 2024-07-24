@@ -8,11 +8,13 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import '../../../styles/dashboard/newDashboard.css';
 import PieChart from '../components/pie/PieChart';
 import Calendar from '../components/calendar/Calendar';
-import {fakeData} from '../components/pie/data'; // data for PieChart
+import BarChart from '../components/bar/BarChart';
 import {CalendarData} from '../components/calendar/data'; // data for Calendar
+import { barchartData } from '../components/bar/data';
 import LineChart from '../components/line/LineChart';
 import {flakyDataParser} from '../../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
+import LoginButton from '../../components/Login/LoginButton';
 
 const NewUserDashboard: React.FC = () => {
   const {userId} = useParams();
@@ -29,7 +31,7 @@ const NewUserDashboard: React.FC = () => {
           const ts = result.created_at;
           result.date = ts.slice(0, ts.indexOf('T'));
         }
-        // console.log('RESULTS USERDASH --->', resultsArray);
+        console.log('RESULTS USERDASH --->', resultsArray);
         setResults(resultsArray);
       } catch (error) {
         console.log('Error getting results: ', error);
@@ -38,7 +40,7 @@ const NewUserDashboard: React.FC = () => {
     getResults();
   }, [userId]);
 
-  // Data from utilities.js
+  // Data for 'Flakiness and Always Failing' boxes
   useEffect(() => {
     const chartData = flakyDataParser(results);
     if (Array.isArray(chartData)) {
@@ -59,19 +61,22 @@ const NewUserDashboard: React.FC = () => {
     }
   }, [results]);
 
-  console.log('flakyData', flakytData);
-
   return (
     <div className="dashboard-container">
       <Sidebar />
       <div className="dashboard-content">
-        <h3>DASHBOARD</h3>
+        <div className='dashboard-title'>
+          <h3 >DASHBOARD</h3>
+          <LoginButton />
+        </div>
         <div className="top-content">
+          <div className='piechart-container graph-style'>
           <div
-            className="piechart-graph graph-style"
-            style={{height: '350px', width: '30%'}}
+            className="piechart-graph "
+            style={{height: '310px', width: '100%'}}
           >
-            <PieChart piechartData={flakytData} />
+            <PieChart results={results} />
+          </div>
           </div>
           <div className="flakiness-details">
             <div className="graph-style flakiness-box">
@@ -134,7 +139,7 @@ const NewUserDashboard: React.FC = () => {
             className="calendar-graph graph-style"
             style={{height: '350px', width: '50%'}}
           >
-            <Calendar CalendarData={CalendarData} />
+            <BarChart results={results}/>
           </div>
         </div>
         <div className="bottom-content">
@@ -144,6 +149,8 @@ const NewUserDashboard: React.FC = () => {
             style={{height: '250px', width: '650px'}}
           >
             <LineChart results={results} />
+            <Calendar CalendarData={CalendarData} />
+
           </div>
         </div>
       </div>

@@ -3,7 +3,12 @@
 }
 .dashboard-content {
     width: 100%;
-
+}
+.dashboard-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-weight: 600;
 }
 
 .top-content {
