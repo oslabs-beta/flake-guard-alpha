@@ -15,15 +15,11 @@ import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import '../../../styles/dashboard/sidebar.css'
 import logo from '../../assets/advantage1.png';
 
+
 const MenuSidebar: React.FC = () => {
   return (
     <div className="sidebar-container">
       <Sidebar backgroundColor="#fdfdfd" className="sidebar">
-        <div className="profile-sidebar">
-          <img src={logo} alt="profile-picture" style={{width: '70px'}} />
-          <h5>Paloma Reynolds</h5>
-          <p style={{opacity: '0.7'}}>palomareynolds</p>
-        </div>
         <Menu className="sidebar-menu">
           <MenuItem>
             <HomeOutlinedIcon />

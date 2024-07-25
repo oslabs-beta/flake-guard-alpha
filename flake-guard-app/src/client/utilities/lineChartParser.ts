@@ -31,6 +31,7 @@ const lineChartParser = (userResults: Array<FG>) => {
     const dataPoint: DataPoint = {x: null, y: null};
     dataPoint.x = fg.created_at;
     let flaky: number = 0;
+    let totalTests: number = 0;
     if (Array.isArray(fg.results.metrics)) {
       fg.results.metrics.forEach((test: Test) => {
         if (
@@ -39,15 +40,14 @@ const lineChartParser = (userResults: Array<FG>) => {
         ) {
           flaky += 1;
         }
+        totalTests += 1;
       });
     }
-    const totalRuns = userResults[0].results.metrics[0].totalRuns;
-    const flakePercentage: number = (flaky / totalRuns) * 100;
+    const flakePercentage: number = (flaky / totalTests) * 100;
     dataPoint.y = flakePercentage;
     if (typeof flakePercentage === 'number' && !isNaN(flakePercentage))
       output.push(dataPoint);
   });
-  // console.log('output --->', output)
   return output;
 };
 

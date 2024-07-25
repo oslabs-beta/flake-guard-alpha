@@ -7,11 +7,9 @@ import PieChart from './PieChart';
 const PieChartPage: React.FC = () => {
   console.log('ata from indexedDB', fakeData);
   return (
-    <div className="piechart-container">
+    <div >
       <Sidebar />
-      <div className="piechart-graph" style={{height: '350px', width: '800px'}}>
-        <PieChart piechartData={fakeData} />
-      </div>
+    
     </div>
   );
 };
