@@ -29,7 +29,7 @@ interface AssertionResult {
 export const calculateFlakePercentage = (
   assertionResults: AssertionResult[]
 ): number | undefined => {
-  let flakeyCount = 0;
+  let flakyCount = 0;
   let totalAssertions = 0;
 
   for (const assertion of assertionResults) {
@@ -37,7 +37,7 @@ export const calculateFlakePercentage = (
 
     // Check if the assertion has at least one pass and one fail
     if (assertion.passed && assertion.failed) {
-      flakeyCount++;
+      flakyCount++;
     }
   }
 
@@ -45,6 +45,6 @@ export const calculateFlakePercentage = (
     return undefined; // No assertions were executed
   }
 
-  const flakePercentage = (flakeyCount / totalAssertions) * 100;
+  const flakePercentage = (flakyCount / totalAssertions) * 100;
   return flakePercentage;
 };

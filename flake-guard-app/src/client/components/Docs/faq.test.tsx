@@ -11,19 +11,19 @@ describe('FAQ',  () => {
         render(<Faq />);
         
   // Assert that the FAQ section is open
-  const firstFaq = screen.getByText('What is a flakey test?');
+  const firstFaq = screen.getByText('What is a flaky test?');
   expect(firstFaq).toBeTruthy();
   
-  const firstAnswer = screen.getByText('A flakey test is a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems..')
+  const firstAnswer = screen.getByText('A flaky test is a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems..')
   expect(firstAnswer).toBeTruthy();
 
-  const secondFaq = screen.getByText('What causes flakey tests?');
+  const secondFaq = screen.getByText('What causes flaky tests?');
   expect(secondFaq).toBeTruthy();
 
   const thirdFaq = screen.getByText('When should I use FlakeGuard?');
   expect(thirdFaq).toBeTruthy();
 
-  const fourthFaq = screen.getByText(`What's the impact of flakey tests?`);
+  const fourthFaq = screen.getByText(`What's the impact of flaky tests?`);
   expect(fourthFaq).toBeTruthy();
     });
 });

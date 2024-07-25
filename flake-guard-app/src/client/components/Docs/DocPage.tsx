@@ -63,27 +63,30 @@ const DocPage = (): JSX.Element => {
               role="tabpanel"
               aria-labelledby="v-pills-home-tab"
             >
-              <h1 className="docs-title">What is FlakeGuard</h1>
+              <h1 className="docs-title">What is FlakeGuard?</h1>
               <p className="docs-text">
-                FlakeGuard a free, open-source tool that allows developers to
+                FlakeGuard a free, open-source, tool that allows developers to
                 run Jest tests to automatically detect, report, and manage flaky
                 tests in software development.
               </p>
-              <h1 className="docs-title">Features</h1>
+              <h1 className="docs-title">Personalized Features</h1>
               <p className="docs-text">
-                Things you can do with FlakeGuard:
+                Things you can do with your personal Flake Guard dashboard:
                 <ul>
-                  <li>Analytics dashboard</li>
-                  <li>Pass vs Fail colored table with flake severity</li>
-                  <li>Runtime metrics</li>
-                  <li>API Response times</li>
-                  <li>Offer recommendations to fix the flake</li>
-                  <li>Pointers to fail points within test code</li>
-                  <li>Running test order permutation</li>
-                  <li>Flagging tests using ‘async’ calls</li>
-                  <li>
-                    Display flake improvement over time after using FlakeGuard
+                  <li>View analytics including, but not limited to:
+                    <ul>
+                    <li>Passing vs failing tests with the color coordinated flake severity table</li>
+                   <li>Analyze Runtime metrics & API response times</li>
+                   <li>See flags and recommendations to fix flaky tests</li>
+                   <li>View pointers showing fail points within test code</li>
+                   <li>Running test order permutation</li>
+                    {/* <li>Flagged tests using ‘async’ calls</li> */}
+                    <li>
+                    Display flake improvement over time
                   </li>
+                    </ul>
+                  </li>
+                
                 </ul>
               </p>
             </div>
@@ -95,28 +98,30 @@ const DocPage = (): JSX.Element => {
             >
               <h1 className="docs-title">Installation</h1>
               <p className="docs-text">
-                On your terminal run
+                Terminal Command:
                 <span className="docs-code">
                   <code>npm i flake-guard</code>
                 </span>
                 Installation as dev dependency:{' '}
                 <span className="docs-code">
                   <code>npm i flake-guard --save-dev</code>
-                </span>
-                To run FlakeGuard, simply execute the command{' '}
-                <code>npx flake-guard {'<filename>'}</code> with the name of the
-                test file that you want to examine. FlakeGuard will analyze your
+                </span><br/>
+                Run Flake Guard:{' '}
+                <code>npx flake-guard</code><br/><p>Or</p>
+                <code>npx flake-guard {'<filename>'}</code> <br/>Please change {`<filename>`} with the appropriate name of the
+                test file that you want to examine. Flake Guard will analyze your
                 E2E tests for flakiness by executing multiple test runs and
-                analyzing the results. The default number of test runs is 10,
-                but this can be adjusted as described below. <br />
-                In general, there is a time versus accuracy tradeoff. More test
-                executions increase accuracy but reduce speed.
+                analyzing the results. 
               </p>
               <h1 className="docs-title">Configuration</h1>
               <p className="docs-text">
+              The default number of test runs is 10,
+                but this can be adjusted as described below. <br />
+                In general, there is a time versus accuracy tradeoff. More test
+                executions increase accuracy but reduce speed. <br/>
                 To adjust FlakeGuard configuration variables, you can create a
                 file in the root directory of your project called{' '}
-                <code>fg.config.json</code>. Below are the defaults, which can
+                <code>fg.config.json</code> Below are the defaults, which can
                 be overridden in your local 'fg.config.json' file.
               </p>
             </div>

@@ -15,7 +15,7 @@ const Faq = (): JSX.Element => {
               aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
-              What is a flakey test?
+              What is a flaky test?
             </button>
           </h2>
           <div
@@ -25,10 +25,10 @@ const Faq = (): JSX.Element => {
             data-bs-parent="#accordionFlushExample"
           >
             <div className="accordion-body" >
-              A flakey test is a test that sometimes passes and sometimes fails
+              A flaky test is a test that sometimes passes and sometimes fails
               for the same code, often due to nondeterministic factors like
               timing issues, network variability, or reliance on external
-              systems..
+              systems.
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ const Faq = (): JSX.Element => {
               aria-expanded="false"
               aria-controls="flush-collapseTwo"
             >
-              What causes flakey tests?
+              What causes flaky tests?
             </button>
           </h2>
           <div
@@ -52,7 +52,7 @@ const Faq = (): JSX.Element => {
             data-bs-parent="#accordionFlushExample"
           >
             <div className="accordion-body">
-              Flakey tests can be caused by race conditions, timing issues,
+              Flaky tests can be caused by race conditions, timing issues,
               network instability, environmental dependencies, or inconsistent
               external service responses.
             </div>
@@ -93,7 +93,7 @@ const Faq = (): JSX.Element => {
               aria-expanded="false"
               aria-controls="flush-collapseFour"
             >
-              What's the impact of flakey tests?
+              What's the impact of flaky tests?
             </button>
           </h2>
           <div
@@ -140,7 +140,7 @@ const Faq = (): JSX.Element => {
               aria-expanded="false"
               aria-controls="flush-collapseFive"
             >
-              What are the best practices to prevent flakey tests?
+              What are the best practices to prevent flaky tests?
             </button>
           </h2>
           <div
@@ -149,18 +149,12 @@ const Faq = (): JSX.Element => {
             aria-labelledby="flush-headingFive"
             data-bs-parent="#accordionFlushExample"
           >
-            <div className="accordion-body">              To prevent flakey tests, ensure tests are isolated to avoid shared
-              state dependencies. Control timing with fixed timeouts and avoid
-              relying on fluctuating conditions. Mock external dependencies for
-              consistent interactions and reduce variability. Use stable,
-              controlled test data to prevent unexpected input changes. Run
-              tests in a repeatable environment for consistency and
-              reproducibility, boosting confidence in results and accelerating
+            <div className="accordion-body">To prevent flaky tests, ensure tests are isolated to avoid shared state dependencies. Control timing with fixed timeouts and avoid relying on fluctuating conditions. Mock external dependencies for consistent interactions and reduce variability. Use stable, controlled test data to prevent unexpected input changes. Run tests in a repeatable environment for consistency and reproducibility, boosting confidence in results and accelerating
               development cycles.
             </div>
           </div>
         </div>
-        <div className="accordion-item faq-container">
+        {/* <div className="accordion-item faq-container">
           <h2 className="accordion-header" id="flush-headingSix">
             <button
               className="accordion-button collapsed custom-bg"
@@ -181,8 +175,8 @@ const Faq = (): JSX.Element => {
           >
             <div className="accordion-body"
             >....</div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </div>
   );
