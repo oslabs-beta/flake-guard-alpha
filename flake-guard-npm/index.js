@@ -1,28 +1,27 @@
 #!/usr/bin/env node
 // ^ shebang to ensure the user can execute script from CL using node interpreter
 
-import {exec, spawn} from 'node:child_process';
-import {ConfigObj, FlakeGuardResult, Assertion} from './types';
-import {loadConfig} from './loadConfig';
-import * as readline from 'readline';
+const {exec, spawn} = require('node:child_process');
+const {loadConfig} = require('./loadConfig');
+const readline = require('readline');
 
 // Set up configuration as defaults with user overrides
-const configObj: ConfigObj = loadConfig();
+const configObj = loadConfig();
 // Amount of runs specified in configuration
-const runTimes: number = configObj.runs;
+const runTimes = configObj.runs;
 console.log(`Number of runs: ${runTimes}`);
 
 // Get test file from user's CLI command and build internal command
-const filename: string = process.argv[2];
+const filename = process.argv[2];
 if (!filename) {
   throw new Error(
     'Please provide a test file name to run FlakeGuard. ex "flake-guard <testfile>.js"'
   );
 }
-const command: string = `jest ${filename} --json`;
+const command = `jest ${filename} --json`;
 
 // Function to run the test file
-const runTest = (): Promise<string> => {
+const runTest = () => {
   return new Promise(resolve => {
     exec(command, (error, stdout) => {
       resolve(stdout);
@@ -31,7 +30,7 @@ const runTest = (): Promise<string> => {
 };
 
 // Function to prompt the user to open dashboard
-function dashPrompt(url: string): void {
+function dashPrompt(url) {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -64,18 +63,18 @@ function dashPrompt(url: string): void {
 }
 
 // Analyze the test by running it 'runTimes' amount of times
-export const flakeGuard = async (iterations: number): Promise<void> => {
-  const timestampStart: number = Date.now();
-  const flakeGuardResults: FlakeGuardResult = {};
-  const flakeGuardResultsVerbose: object[] = [];
+const flakeGuard = async (iterations) => {
+  const timestampStart = Date.now();
+  const flakeGuardResults = {};
+  const flakeGuardResultsVerbose = [];
   for (let i = 0; i < iterations; i++) {
     try {
-      const result: string = await runTest();
+      const result = await runTest();
       const parsedResult = JSON.parse(result);
       flakeGuardResultsVerbose.push(parsedResult);
       const {assertionResults} = parsedResult.testResults[0];
       // Build out the flakeGuardResults array
-      assertionResults.forEach((assertion: Assertion) => {
+      assertionResults.forEach((assertion) => {
         if (
           !Object.prototype.hasOwnProperty.call(
             flakeGuardResults,
@@ -98,7 +97,7 @@ export const flakeGuard = async (iterations: number): Promise<void> => {
   // On completion, send results to FlakeGuard server
   try {
     // On completion, log runtime and website info to user's terminal
-    const timestampEnd: number = Date.now();
+    const timestampEnd = Date.now();
     console.log(
       `Total FlakeGuard runtime: ${
         (timestampEnd - timestampStart) / 1000
@@ -107,6 +106,7 @@ export const flakeGuard = async (iterations: number): Promise<void> => {
     console.log('Results Summary:');
     console.log(flakeGuardResults);
     // Send results to Flake Guard App server
+    // const response = await fetch('https://2wguunmxpr.us-west-2.awsapprunner.com/results', {
     const response = await fetch('http://localhost:3000/results', {
       method: 'POST',
       headers: {

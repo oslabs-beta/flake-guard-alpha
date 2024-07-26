@@ -1,21 +1,20 @@
-import {ConfigObj} from './types';
-import * as path from 'path';
-import * as fs from 'fs';
+const path = require('path');
+const fs = require('fs');
 
 /* This function parses the default config object and then overrides the default with any user-designated properties */
-export function loadConfig(): ConfigObj {
-  const defaultConfigPath: string = path.join(
+function loadConfig() {
+  const defaultConfigPath = path.join(
     __dirname,
-    '../config/default.json'
+    './default.json'
   );
-  let config: ConfigObj = JSON.parse(
+  let config = JSON.parse(
     fs.readFileSync(defaultConfigPath, 'utf8')
   );
 
   // Override with user's config settings if available
-  const userConfigPath: string = path.join(process.cwd(), 'fg.config.json');
+  const userConfigPath = path.join(process.cwd(), 'fg.config.json');
   if (fs.existsSync(userConfigPath)) {
-    const externalConfig: object = JSON.parse(
+    const externalConfig = JSON.parse(
       fs.readFileSync(userConfigPath, 'utf8')
     );
     config = {...config, ...externalConfig};
@@ -23,3 +22,5 @@ export function loadConfig(): ConfigObj {
 
   return config;
 }
+
+module.exports = { loadConfig };
