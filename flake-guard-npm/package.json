@@ -1,40 +1,15 @@
 {
   "name": "flake-guard",
   "version": "1.0.0",
-  "description": "A dev tool to detect and mitigate flake in end-to-end jest-puppeteer tests.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "A dev tool for detecting and mitigating test flake.",
+  "main": "index.js",
   "bin": {
-    "flake-guard": "dist/index.js"
+    "flake-guard": "./index.js"
   },
+  "keywords": ["flake"],
   "scripts": {
-    "watch": "tsc -w",
-    "build": "tsc",
-    "jest": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oslabs-beta/flake-guard.git"
-  },
-  "keywords": [
-    "e2e",
-    "end-to-end",
-    "testing",
-    "test",
-    "flake",
-    "flaky",
-    "jest",
-    "puppeteer"
-  ],
-  "author": "Panda Whale",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oslabs-beta/flake-guard/issues"
-  },
-  "homepage": "https://github.com/oslabs-beta/flake-guard#readme",
-  "devDependencies": {
-    "@types/node": "^20.14.12",
-    "@types/vinyl": "^2.0.12",
-    "typescript": "^5.4.5"
-  }
+  "author": "",
+  "license": "ISC"
 }
