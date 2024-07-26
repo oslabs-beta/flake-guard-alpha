@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styles/styles.css';
+// import '../../../styles/styles.css';
 // import NavBarHeading from '../nav-bar';
 // import Carousel from './carousel';
 import logo from '../../assets/logo.png';
@@ -8,6 +8,7 @@ import Advantages from './Advantages';
 import download from '../../assets/download.png';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
+import graphs from '../../assets/graphs.png'
 import '../../../styles/landingPage.css';
 
 const Landing = (): JSX.Element => {
@@ -39,8 +40,8 @@ const Landing = (): JSX.Element => {
             </button>
             <p className="p-tag-with-link" style={{fontSize: '16px'}}>
               To learn more about FlakeGuard, click{' '}
-              <a
-                href="https://medium.com/"
+              <a href="https://medium.com/@ashleyhannigan88/01431eb6ede3" target="_blank" rel="noopener noreferrer"
+
                 style={{textDecoration: 'underline'}}
               >
                 here
@@ -49,10 +50,12 @@ const Landing = (): JSX.Element => {
             </p>
           </div>
         </div>
-        <div className="right-landing">PLACEHOLDER (graph)</div>
+        <div className="right-landing">
+        <img src={graphs} alt="graphs-landing" style={{width:'750px', marginLeft: '15px'}}/>
+        </div>
       </div>
-      <div style={{textAlign: 'center', backgroundColor: 'yellow'}}>
-        PLACEHOLDER (extra info)
+      <div style={{textAlign: 'center', color:'white'}}>
+        <p style={{textAlign: 'center', color:'white'}}>PLACEHOLDER FOR INSTRUCTIONS OF HOW TO INSTALL FG</p>
       </div>
       <Advantages />
       <Footer />

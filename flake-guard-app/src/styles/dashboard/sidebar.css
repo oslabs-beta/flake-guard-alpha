@@ -4,7 +4,12 @@
 .sidebar-menu {
     display: flex;
     height: 91%;
-    padding-top: 50px;
+}
+.flakeguard-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 .footer-sidebar {
     display: flex;

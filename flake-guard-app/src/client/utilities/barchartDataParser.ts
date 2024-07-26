@@ -47,7 +47,7 @@ export interface FG {
       let passed: number = 0;
       let failed: number = 0;
       let skipped: number = 0;      
-    // (dataPoint.id === fg.id)
+      
       if (Array.isArray(fg.results.metrics)) {
         fg.results.metrics.forEach((test: Test) => {
             if (dataPoint.id === fg.id) {

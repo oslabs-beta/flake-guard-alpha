@@ -13,7 +13,7 @@ import CalendarViewWeekOutlinedIcon from '@mui/icons-material/CalendarViewWeekOu
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import '../../../styles/dashboard/sidebar.css'
-import logo from '../../assets/advantage1.png';
+import logo from '../../assets/logo.png';
 
 
 const MenuSidebar: React.FC = () => {
@@ -21,6 +21,11 @@ const MenuSidebar: React.FC = () => {
     <div className="sidebar-container">
       <Sidebar backgroundColor="#fdfdfd" className="sidebar">
         <Menu className="sidebar-menu">
+        <div className="flakeguard-logo">
+          <Link to='/'>
+          <img src={logo} alt="flakeguard-logo" style={{width:'140px'}} />
+          </Link>
+        </div>
           <MenuItem>
             <HomeOutlinedIcon />
             <Link to="/dashboard">

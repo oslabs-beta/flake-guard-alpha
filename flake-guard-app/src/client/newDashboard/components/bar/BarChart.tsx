@@ -11,7 +11,7 @@ const BarChart: React.FC<{ results: any }> = ({ results }) => {
     useEffect(() => {
         const chartData = barChartParser(results);
         const latestRun = chartData.slice(-20); //Displey the last 20 runs
-        console.log('Parsed BAR Chart Data:', latestRun);
+        // console.log('Parsed BAR Chart Data:', latestRun);
         if (Array.isArray(latestRun)) setBarChartData(latestRun);
     }, [results]);
 
