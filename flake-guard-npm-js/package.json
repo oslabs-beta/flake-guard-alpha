@@ -1,0 +1,15 @@
+{
+  "name": "flake-guard",
+  "version": "1.0.0",
+  "description": "A dev tool for detecting and mitigating test flake.",
+  "main": "index.js",
+  "bin": {
+    "flake-guard": "./index.js"
+  },
+  "keywords": ["flake"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
