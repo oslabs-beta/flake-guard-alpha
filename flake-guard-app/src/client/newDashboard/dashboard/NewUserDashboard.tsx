@@ -9,6 +9,7 @@ import '../../../styles/dashboard/newDashboard.css';
 import PieChart from '../components/pie/PieChart';
 import Calendar from '../components/calendar/Calendar';
 import BarChart from '../components/bar/BarChart';
+import ErrorsDetails from '../components/errorsDetails/ErrorsDetails';
 import {CalendarData} from '../components/calendar/data'; // data for Calendar
 import { barchartData } from '../components/bar/data';
 import LineChart from '../components/line/LineChart';
@@ -146,12 +147,18 @@ const NewUserDashboard: React.FC = () => {
           {/* BOTTOM CONTENT */}
           <div
             className="linechart-graph graph-style"
-            style={{height: '250px', width: '650px'}}
+            style={{height: '250px', width: '550px'}}
           >
             <LineChart results={results} />
-            <Calendar CalendarData={CalendarData} />
 
           </div>
+          <div className='graph-style errors-details'  style={{height: '450px', width: '50%'}}
+> 
+          <p className='errors-title'>Errors</p>
+            <ErrorsDetails results={results}/>
+          </div>
+          {/* <Calendar CalendarData={CalendarData} /> */}
+
         </div>
       </div>
     </div>
@@ -159,3 +166,29 @@ const NewUserDashboard: React.FC = () => {
 };
 
 export default NewUserDashboard;
+
+
+
+// created_at: "2024-07-16T12:09:39.005Z"
+// date: "2024-07-16"
+// id: "18"
+// results: 
+//   metrics: (8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+//   verbose: Array(2)
+//     0: 
+//     numFailedTestSuites: 1
+//     numFailedTests: 0
+//     numPassedTestSuites: 0
+//     numPassedTests: 1
+//     numPendingTestSuites: 0
+//     numPendingTests: 7
+//     numRuntimeErrorTestSuites: 1
+//     numTodoTests: 0
+//     numTotalTestSuites: 1
+//     numTotalTests: 8
+//     openHandles: []
+//     snapshot: {added: 0, didUpdate: false, failure: false, filesAdded: 0, filesRemoved: 0, …}
+//     startTime: 1721131756368
+//     success: false
+//     falsetestResults: [{…}]
+//     wasInterrupted: false

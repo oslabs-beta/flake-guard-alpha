@@ -34,7 +34,7 @@ const NavBarHeading: React.FC = () => {
           />
         </Link>
         <Link to="/docs">Docs</Link>
-        <Link to="/blog">Blog</Link>
+        <a href="https://medium.com/@ashleyhannigan88/01431eb6ede3" target="_blank" rel="noopener noreferrer">Blog</a>
         {userId && <Link to={`/dashboard/user/${userId}`}>Dashboard</Link>}
       </div>
       <div>
