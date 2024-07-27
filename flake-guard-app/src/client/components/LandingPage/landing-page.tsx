@@ -1,7 +1,6 @@
 import React from 'react';
 // import '../../../styles/styles.css';
 // import NavBarHeading from '../nav-bar';
-// import Carousel from './carousel';
 import logo from '../../assets/logo.png';
 import Header from '../nav-bar';
 import Advantages from './Advantages';
@@ -10,6 +9,7 @@ import Footer from '../footer';
 import {Link} from 'react-router-dom';
 import graphs from '../../assets/graphs.png'
 import '../../../styles/landingPage.css';
+import MeetTheTeam from './MeetTheTeam';
 
 const Landing = (): JSX.Element => {
   return (
@@ -20,12 +20,10 @@ const Landing = (): JSX.Element => {
           <h1>Save Thousands of Debugging Hours</h1>
           <div className="left-landing-text">
             <p>
-              Flake-Guard is a free, open-source tool that allows developers to
-              run Jest tests to automatically detect, report, and manage flaky
-              tests in software development.
+              Flake Guard is a free, open-source, software that allows developers to automatically run Jest testing files to detect, report, and manage flaky tests in development.
             </p>
             <p>
-              By identifying and handling these inconsistent tests, Flake-Guard
+              By identifying and handling these inconsistent tests, Flake Guard
               helps maintain test reliability.
             </p>
             <button className="npm-button">
@@ -58,6 +56,9 @@ const Landing = (): JSX.Element => {
         <p style={{textAlign: 'center', color:'white'}}>PLACEHOLDER FOR INSTRUCTIONS OF HOW TO INSTALL FG</p>
       </div>
       <Advantages />
+      <div id="meet-the-team-landing-div">
+        <MeetTheTeam />
+      </div>
       <Footer />
     </>
   );

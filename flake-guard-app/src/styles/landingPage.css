@@ -70,3 +70,45 @@
 #medium-article-link{
     color: #4aa240;
 }
+
+/*TEAM CSS*/
+
+#avatars:hover{
+    background-color: #457f3e;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #457f3e;
+}
+
+.team {
+    text-align: center;
+    padding: 50px 0;
+    color: #457f3e
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* To handle different screen sizes */
+  }
+  
+  .team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px #457f3e;
+    padding: 20px;
+    text-align: center;
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .team-member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  #linkedinlogo{
+    width: 2rem;
+    height: 2rem;
+  }
+  
