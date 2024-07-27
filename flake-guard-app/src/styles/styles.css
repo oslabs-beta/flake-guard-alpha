@@ -240,17 +240,9 @@
 
 /****************************************************/
 
-/*not needed
-
-
-.login-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(70%, -80%);
-  text-align: center;
-  color: white;
-}*/
-
+/*MEDIA QUERY*/
 
 /****************************************************/
+/* @media only screen and (max-width: 800px) {
+
+} */

@@ -1,0 +1,17 @@
+name: Test PUSH action
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest #nodejs preinstalled on the ubuntu runner
+    steps:
+    #action needs specific access to download the code from the repository onto this runner or this server
+      - name: Get code 
+        uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci #npm ci is best practice over npm i
+      - name: Run tests
+        run: npm test

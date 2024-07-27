@@ -12,7 +12,7 @@ const Advantages = (): JSX.Element => {
         <img src={advantage1} alt="advantage1" />
         <h5>Improved Test Reliability</h5>
         <p>
-          By identifying flaky tests, FlakeGuard helps developers resolve
+          By identifying flaky tests, Flake Guard helps developers resolve
           inconsistencies, leading to more reliable and trustworthy test suites.
         </p>
       </div>
