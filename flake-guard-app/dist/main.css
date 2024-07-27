@@ -1,3 +1,278 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    width: 95%;
+    height: 80px;
+    margin: auto;
+    border-bottom: 1px solid #e6e7e8;
+
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+}
+.header-container Link {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.login-btn {
+    width: 200px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #24292E;
+}
+
+/* from LoginButton componenent */
+.loginButton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+	border: none;
+    background-color: none;
+    background-color: #24292E;
+    
+}
+.login-btn:hover {
+    background-color: #323334;
+}
+.loginButton:hover {
+    background-color: #323334;
+}
+.btn-text {
+    color: white;
+    font-size: 14px;
+}
+
+.dropdown-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown-menu button {
+    background-color: none;
+}
+.btn-signout {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* signout button */
+.btn-signout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    font-size: 15px;
+}
+.btn-text-signout {
+    color: #24292E;
+}
+.btn-text-signout:hover {
+    text-decoration: underline;
+}
+
+
+/* green 22C822 */
+
+.advantages-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    font-size: 15px;
+    border-top: 1px solid #e6e7e8;
+
+}
+
+.advantage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .advantage:hover {
+    cursor: auto;
+    border-radius: 5%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+} */
+
+.advantage h5 {
+    text-align: center;
+    width: 250px;
+    color: #376b32;
+    margin-top: 15px;
+}
+.advantage p {
+    text-align: justify;
+    width: 250px;
+    margin-left: 20px;
+    padding: 10px;
+    color: rgb(60, 60, 60);
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    background-color: #457f3e;
+    font-size: 16px;
+
+}
+
+.footer-links a {
+    color: white; 
+}
+.footer-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-icon-links {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.footer-icon-links a:hover {
+    transform: scale(1.05); 
+}
+
+
+.landing-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 550px;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+}
+/* it's called left, because at some point i'd like to add something on the right side */
+.left-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 580px;
+    height: 450px;
+    /* background-color: green; */
+}
+
+.left-landing h1 {
+    align-self: start;
+    width: 98%;
+    height: 120px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #457f3e;
+}
+
+.left-landing-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: self-start;
+    text-align: justify;
+}
+
+.npm-button {
+    width: 100%;
+    height: 40px;
+    background-color: #4aa240;
+    border: none;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+.npm-button:hover {
+    background-color: #41aa35;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.npm-link {
+    color: white;
+}
+.p-tag-with-link a:hover {
+    color: #38932e;
+    text-decoration: underline;
+}
+
+.right-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 750px;
+    height: 100%;
+}
+
+#medium-article-link{
+    color: #4aa240;
+}
+
+/*TEAM CSS*/
+
+#avatars:hover{
+    background-color: #457f3e;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #457f3e;
+}
+
+.team {
+    text-align: center;
+    padding: 50px 0;
+    color: #457f3e
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* To handle different screen sizes */
+  }
+  
+  .team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px #457f3e;
+    padding: 20px;
+    text-align: center;
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .team-member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  #linkedinlogo{
+    width: 2rem;
+    height: 2rem;
+  }
+  
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -240,248 +515,12 @@
 
 /****************************************************/
 
-/*not needed
-
-
-.login-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(70%, -80%);
-  text-align: center;
-  color: white;
-}*/
-
+/*MEDIA QUERY*/
 
 /****************************************************/
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-    width: 95%;
-    height: 80px;
-    margin: auto;
-    border-bottom: 1px solid #e6e7e8;
+/* @media only screen and (max-width: 800px) {
 
-}
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 450px;
-}
-.header-container Link {
-    color: red;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-.login-btn {
-    width: 200px;
-    height: auto;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #24292E;
-}
-
-/* from LoginButton componenent */
-.loginButton {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-	border: none;
-    background-color: none;
-    background-color: #24292E;
-    
-}
-.login-btn:hover {
-    background-color: #323334;
-}
-.loginButton:hover {
-    background-color: #323334;
-}
-.btn-text {
-    color: white;
-    font-size: 14px;
-}
-
-.dropdown-menu li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.dropdown-menu button {
-    background-color: none;
-}
-.btn-signout {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-
-/* signout button */
-.btn-signout {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 60%;
-    font-size: 15px;
-}
-.btn-text-signout {
-    color: #24292E;
-}
-.btn-text-signout:hover {
-    text-decoration: underline;
-}
-
-
-/* green 22C822 */
-
-.advantages-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 300px;
-    margin: auto;
-    font-size: 15px;
-    border-top: 1px solid #e6e7e8;
-
-}
-
-.advantage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-/* .advantage:hover {
-    cursor: auto;
-    border-radius: 5%;
-    transition: transform 0.3s ease;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 } */
-
-.advantage h5 {
-    text-align: center;
-    width: 250px;
-    color: #376b32;
-    margin-top: 15px;
-}
-.advantage p {
-    text-align: justify;
-    width: 250px;
-    margin-left: 20px;
-    padding: 10px;
-    color: rgb(60, 60, 60);
-}
-.footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100px;
-    background-color: #457f3e;
-    font-size: 16px;
-
-}
-
-.footer-links a {
-    color: white; 
-}
-.footer-links {
-    width: 40%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.footer-icon-links {
-    display: flex;
-    justify-content: space-between;
-    width: 10%;
-}
-
-.footer-icon-links a:hover {
-    transform: scale(1.05); 
-}
-
-
-.landing-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 550px;
-    margin: auto;
-    font-size: 20px;
-}
-/* it's called left, because at some point i'd like to add something on the right side */
-.left-landing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 580px;
-    height: 450px;
-}
-
-.left-landing h1 {
-    align-self: start;
-    width: 98%;
-    height: 120px;
-    font-size: 40px;
-    font-weight: 700;
-    color: #457f3e;
-}
-
-.left-landing-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-self: self-start;
-    text-align: justify;
-}
-
-.npm-button {
-    width: 100%;
-    height: 40px;
-    background-color: #4aa240;
-    border: none;
-    border-radius: 5px;
-    margin-top: 35px;
-    margin-bottom: 10px;
-}
-.npm-button:hover {
-    background-color: #41aa35;
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-.npm-link {
-    color: white;
-}
-.p-tag-with-link a:hover {
-    color: #38932e;
-    text-decoration: underline;
-}
-
-.right-landing {
-    margin: auto;
-    background-color: yellow;
-}
-
-#medium-article-link{
-    color: #4aa240;
-}
-
 .docs-container {
   padding: 20px;
 }
@@ -562,6 +601,142 @@ a {
 
 
 
+
+.sidebar {
+    height: 100vh;
+}
+.sidebar-menu {
+    display: flex;
+    height: 91%;
+}
+.flakeguard-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.footer-sidebar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    border-top: 1px  solid #c6d5e2;
+    margin-top: 30px;
+}
+
+.footer-sidebar p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-sidebar span {
+    margin-left: 5px;
+   
+}
+
+
+.dashboard-container {
+    display: flex;
+}
+.dashboard-content {
+    width: 100%;
+}
+.dashboard-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-weight: 600;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 350px;
+}
+.flakiness-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 17%;
+    height: 360px;
+
+}
+
+.flakiness-box {
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+}
+.flakiness-box-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.info-icon {
+    margin-left: 5px;
+}
+
+.flaky-metrics {
+    width: 90%;
+}
+
+.flakiness-text{
+    color:  rgb(185, 185, 185);
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+
+/* CHART STYLE */
+.graph-style {
+    border-radius: 6px;
+    box-shadow: 0px 0px 6px rgb(185, 185, 185);
+    margin: 5px;
+    cursor: pointer;
+}
+/* PIECHART */
+.piechart-graph {
+   
+}
+
+/* CALENDAR GRAPH */
+
+.calendar-graph {
+
+}
+
+
+/* BOTTOM CONTENT */
+.bottom-content {
+    display: flex;
+    justify-content: space-evenly;
+    height: 350px;
+    margin: 10px;
+}
+
+.linechart-graph {
+    /* background-color: green; */
+
+}
+
+/* ERRORS DETAILS */
+.errors-title {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+    margin: auto;
+}
+.errors-details {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
 
 /* SUMMARY */
 .dashboard-container {
@@ -763,3 +938,92 @@ a {
   /* transform: rotate(70deg); */
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
+/* CALENDAR */
+.calendar-container {
+    display: flex;
+
+    
+}
+
+.calendar-graph {
+
+}
+
+
+/* PIE CHART */
+.piechart-container {
+    width: 30%;
+    height: 350px;
+    
+}
+.piechart-graph {
+    width: 100%;
+}
+.flaky-count {
+    background-color: rgb(254, 223, 99, 0.8) ;
+    width: 110px;
+    border-radius: 20px;
+    margin: auto;
+}
+.flaky-count p {
+    font-size: 13px;
+    color: #8a5d2a;
+    text-align: center;
+    padding: 2px;
+}
+
+
+/* LINE CHART */
+.linechart-graph {
+    /* background-color: red; */
+}
+
+
+
+
+/* BOTTOM CONTENT  */
+.bottom-content {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+}
+
+.upper-bottom-content {
+    display: flex;
+    width: 90%;
+
+}
+
+
+/* ERRORS DETAILS */
+.errors-details {
+    /* background-color: orange; */
+}
+ul {
+    list-style-type: none;
+}
+
+.accordion-scrollable {
+    max-height: 450px; 
+    overflow-y: auto;
+    width: 100%;
+}
+
+
+/* DURATION */
+.duration-title {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    font-size: 20px;
+    margin-left: 5px;    
+}
+
+.duration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

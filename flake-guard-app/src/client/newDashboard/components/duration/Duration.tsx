@@ -9,7 +9,7 @@ import {
     Bar,
     XAxis,
     YAxis,
-    Legend,
+    Tooltip,
     CartesianGrid,
     ResponsiveContainer,
 } from 'recharts';
@@ -26,7 +26,7 @@ const Duration = ({ results }) => {
         if (latestRunObj) {
             const formattedData = latestRunObj.durations.map((duration, index) => ({
                 name: `${index + 1}`,
-                uv: duration
+                ms: duration
             }));
             setData(formattedData);
         }
@@ -34,7 +34,7 @@ const Duration = ({ results }) => {
 
     console.log('dataaaa', data);
     return (
-      <div style={{width:"50%", height:"60%"}} className='graph-style duration-container'>
+      <div style={{width:"50%", height:"70%"}} className='graph-style duration-container'>
          <div style={{width:"90%", height:"90%"}}>
         <p className='duration-title'>Execution duration (ms)</p>
          <ResponsiveContainer >
@@ -52,8 +52,9 @@ const Duration = ({ results }) => {
                 <CartesianGrid stroke="#f5f5f5" />
                 <XAxis dataKey="name" scale="band" />
                 <YAxis />
-                <Bar dataKey="uv" barSize={20} fill="#413ea0" />
-                <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+                <Tooltip/>
+                <Bar dataKey="ms" barSize={20} fill="#413ea0" />
+                <Line type="monotone" dataKey="ms" stroke="#ff7300" />
             </ComposedChart>
         </ResponsiveContainer>
        </div>
