@@ -89,7 +89,7 @@ const LoginButton: React.FC = () => {
     );
   } else if (authChecked) {
     return (
-      <div className="login-btn">
+      <div className="login-btn" >
         <button className="loginButton" onClick={signInWithGithub}>
           <img src={github} alt="github-logo" style={{width: '25px'}} />
           <span className="btn-text">Sign in with GitHub</span>

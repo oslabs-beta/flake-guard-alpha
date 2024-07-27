@@ -26,7 +26,7 @@ const Footer = (): JSX.Element => {
       </div>
       <div className="footer-links">
         <Link to="/">Home</Link>
-        <Link to="https://medium.com/">Blog</Link>
+        <a href="https://medium.com/@ashleyhannigan88/01431eb6ede3" target="_blank" rel="noopener noreferrer">Blog</a>
         <Link to="/contact">Contact Us</Link>        
         <Link to="/ourTeam">Our Team</Link>
 

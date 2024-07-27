@@ -1,0 +1,52 @@
+/* CALENDAR */
+.calendar-container {
+    display: flex;
+
+    
+}
+
+.calendar-graph {
+
+}
+
+
+/* PIE CHART */
+.piechart-container {
+    width: 30%;
+    height: 350px;
+    
+}
+.piechart-graph {
+    width: 100%;
+}
+.flaky-count {
+    background-color: rgb(254, 223, 99, 0.8) ;
+    width: 110px;
+    border-radius: 20px;
+    margin: auto;
+}
+.flaky-count p {
+    font-size: 13px;
+    color: #8a5d2a;
+    text-align: center;
+    padding: 2px;
+}
+
+
+/* LINE CHART */
+.linechart-graph {
+    /* background-color: red; */
+}
+
+
+/* ERRORS DETAILS */
+ul {
+    list-style-type: none;
+}
+
+.accordion-scrollable {
+    max-height: 450px; 
+    overflow-y: auto;
+    width: 100%;
+}
+
