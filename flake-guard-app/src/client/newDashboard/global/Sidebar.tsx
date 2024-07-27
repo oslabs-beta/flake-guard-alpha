@@ -6,10 +6,6 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
 import PercentOutlinedIcon from '@mui/icons-material/PercentOutlined';
 import BugReportOutlinedIcon from '@mui/icons-material/BugReportOutlined';
-import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
-import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
-import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
-import CalendarViewWeekOutlinedIcon from '@mui/icons-material/CalendarViewWeekOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import '../../../styles/dashboard/sidebar.css'
