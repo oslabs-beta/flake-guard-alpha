@@ -6,6 +6,8 @@ import ashley from '../../assets/ashley.png';
 import paloma from '../../assets/paloma.png';
 import will from '../../assets/will.png';
 import brendan from '../../assets/brendan.png';
+import tommy from '../../assets/tommy.png';
+
 import linkedInLogo from '../../assets/linkedinlogo.png'; 
 //NEEDING TOMMY INFO -> LINKEDIN AND IMAGE
 //STRETCH FEATURES -> WHEN CLICKING OUR TEAM -> GET DIRECTED TO THIS SPOT ON THE PAGE]
@@ -39,11 +41,11 @@ const TeamMember = () => {
         </div>
       </div>
         <div className="team-member" id="avatars">
-        <img src={ashley} alt={name[2]} className="team-member-image" />
+        <img src={tommy} alt={name[2]} className="team-member-image" />
         <h2>{name[2]}</h2>
         <p>{role}</p>
         <div className="social-links">
-            <a href="https://www.linkedin.com/in/palomareynolds/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/tommy-martinez/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInLogo} alt="LinkedIn" id="linkedinlogo"/>
             </a> 
           {/* Add social links here */}
