@@ -26,68 +26,30 @@ const MenuSidebar: React.FC = () => {
           <img src={logo} alt="flakeguard-logo" style={{width:'140px'}} />
           </Link>
         </div>
-          <MenuItem>
-            <HomeOutlinedIcon />
             <Link to="/dashboard">
-              <span style={{marginLeft: '5px'}}>Dashboard</span>
+              <MenuItem>
+                <span><HomeOutlinedIcon /></span>
+                <span style={{marginLeft: '5px'}}>Dashboard</span>
+              </MenuItem>
             </Link>
-          </MenuItem>
-          <MenuItem>
-            <AnalyticsOutlinedIcon />
             <Link to="/analytics">
+            <MenuItem>
+              <span><AnalyticsOutlinedIcon /></span>
               <span style={{marginLeft: '5px'}}>Analytics</span>
+              </MenuItem>
             </Link>
-          </MenuItem>
-          <MenuItem>
-            <PercentOutlinedIcon />
             <Link to="/analytics">
-              <span style={{marginLeft: '5px'}}>Code Coverage</span>
+              <MenuItem>
+                <span><PercentOutlinedIcon /></span>
+                <span style={{marginLeft: '5px'}}>Code Coverage</span>
+              </MenuItem>
             </Link>
-          </MenuItem>
-          <MenuItem>
-            <BugReportOutlinedIcon />
             <Link to="/analytics">
-              <span style={{marginLeft: '5px'}}>Flaky Tests</span>
-            </Link>
-          </MenuItem>
-          <Typography
-            variant="body2"
-            fontWeight={600}
-            style={{
-              opacity: 0.7,
-              letterSpacing: '0.5px',
-              marginLeft: '10px',
-              marginTop: '8px',
-            }}
-          >
-            Charts
-          </Typography>{' '}
-          <MenuItem>
-            {' '}
-            <PieChartOutlineOutlinedIcon />
-            <Link to="/piechart">
-              <span style={{marginLeft: '5px'}}>Pie Charts</span>
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <ShowChartOutlinedIcon />
-            <Link to="/linechart">
-              <span style={{marginLeft: '5px'}}>Line Charts</span>
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            {' '}
-            <BarChartOutlinedIcon />
-            <Link to="/analytics">
-              <span style={{marginLeft: '5px'}}>Bar Charts</span>
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <CalendarViewWeekOutlinedIcon />
-            <Link to="/calendar">
-              <span style={{marginLeft: '5px'}}>Calendar Charts</span>
-            </Link>
-          </MenuItem>
+              <MenuItem>
+                <span><BugReportOutlinedIcon /></span>
+                <span style={{marginLeft: '5px'}}>Flaky Tests</span>
+              </MenuItem>
+            </Link>         
         </Menu>
         <div className="footer-sidebar">
           <p>
