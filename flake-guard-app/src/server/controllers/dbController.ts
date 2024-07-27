@@ -11,7 +11,7 @@ const dbController: DBController = {
   retrieveResults: async (req: Request, res: Response, next: NextFunction) => {
     try {
       const userId = req.params.userId;
-      const results = await sql`SELECT * FROM results WHERE user_id=${userId}`;
+      const results = await sql`SELECT * FROM results WHERE user_id=${userId} ORDER BY created_at`;
       res.locals.results = results;
       return next();
     } catch (error) {
