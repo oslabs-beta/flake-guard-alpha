@@ -31,7 +31,7 @@ const App: React.FC = () => {
           <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
           <Route path="/tempdashboard/:id" element={<TempDashboard />} />
           <Route path="/docs" element={<DocPage />} />
-          <Route path="/dashboard" element={<NewUserDashboard />} />
+          {/* <Route path="/dashboard" element={<NewUserDashboard />} /> */}
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/piechart" element={<PieChart />} />
           <Route path="/linechart" element={<LineChart />} />

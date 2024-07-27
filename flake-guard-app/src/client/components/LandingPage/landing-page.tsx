@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 import graphs from '../../assets/graphs.png'
 import '../../../styles/landingPage.css';
 import MeetTheTeam from './MeetTheTeam';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 
 const Landing = (): JSX.Element => {
   return (

@@ -12,7 +12,7 @@ const ErrorsDetails: React.FC = ({results}) => {
     useEffect(() => {
         const chartData = displayErrosDataParser(results);
         const latestRun = chartData.slice(-1); //Display the latest run
-        console.log('chartData', chartData)
+        // console.log('chartData', chartData)
        if (latestRun.length > 0) {
         const latestRunMetrics = latestRun[0]
         setMetrics(latestRunMetrics.details)
@@ -20,7 +20,7 @@ const ErrorsDetails: React.FC = ({results}) => {
         if (Array.isArray(latestRun)) setErrorsDetails(latestRun);
     }, [results]);
 
-    console.log('details', errorsDetails, metrics)
+    // console.log('details', errorsDetails, metrics)
     
 
     return (
@@ -43,37 +43,3 @@ const ErrorsDetails: React.FC = ({results}) => {
 }
 
 export default ErrorsDetails;
-
-{/* <div className='errors-container'>
-<p>Errors</p>
-{errorsDetails &&
-<ul>
- {errorsDetails.map(el => (
-     <li key={el.id}>
-         {el.id}
-         {el.fullName}
-     </li> // Changed <ol> to <li> and added key prop
- ))}
-</ul>
-}
-</div>
-) */}
-
-
-// <Accordion>
-// {errorsDetails && errorsDetails.map(error => (
-//     <Accordion.Item eventKey={error.id.toString()} key={error.id}>
-//         <Accordion.Header>{error.id} + {error.fullName}</Accordion.Header>
-//             {metrics && metrics.map((test, index) => (
-//             <Accordion.Body>
-
-//                 <div key={index}>
-//                     <p>{test.fullName}</p>
-//                     <p>Passed{test.passed}</p>
-//                 </div>
-//                 </Accordion.Body>
-
-//             ))}
-//     </Accordion.Item>
-// ))}
-// </Accordion>

@@ -66,7 +66,7 @@ export interface FG {
       }
         output.push(dataPoint);
     });
-    console.log('output from barchart ', output)
+    // console.log('output from barchart ', output)
     return output;
   };
   

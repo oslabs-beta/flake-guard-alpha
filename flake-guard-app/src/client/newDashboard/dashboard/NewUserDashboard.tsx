@@ -16,6 +16,7 @@ import LineChart from '../components/line/LineChart';
 import {flakyDataParser} from '../../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 import LoginButton from '../../components/Login/LoginButton';
+import Duration from '../components/duration/Duration';
 
 const NewUserDashboard: React.FC = () => {
   const {userId} = useParams();
@@ -144,17 +145,20 @@ const NewUserDashboard: React.FC = () => {
           </div>
         </div>
         <div className="bottom-content">
+          
           {/* BOTTOM CONTENT */}
-          <div
-            className="linechart-graph graph-style"
-            style={{height: '250px', width: '550px'}}
-          >
-            <LineChart results={results} />
+          <div className='upper-bottom-content'>
+            <div
+              className="linechart-graph graph-style"
+              style={{height: '250px', width: '60%'}}
+            >
+              <LineChart results={results} />
+            </div>
+            <Duration results={results}/>
 
           </div>
-          <div className='graph-style errors-details'  style={{height: '450px', width: '50%'}}
-> 
-          <p className='errors-title'>Errors</p>
+          <div className='graph-style errors-details'  style={{height: '350px', width: '50%'}}> 
+            <p className='errors-title'>Errors</p>
             <ErrorsDetails results={results}/>
           </div>
           {/* <Calendar CalendarData={CalendarData} /> */}
