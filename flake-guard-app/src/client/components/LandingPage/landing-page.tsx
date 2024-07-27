@@ -9,6 +9,7 @@ import Footer from '../footer';
 import {Link} from 'react-router-dom';
 import graphs from '../../assets/graphs.png'
 import '../../../styles/landingPage.css';
+import MeetTheTeam from './MeetTheTeam';
 
 const Landing = (): JSX.Element => {
   return (
@@ -55,6 +56,9 @@ const Landing = (): JSX.Element => {
         <p style={{textAlign: 'center', color:'white'}}>PLACEHOLDER FOR INSTRUCTIONS OF HOW TO INSTALL FG</p>
       </div>
       <Advantages />
+      <div id="meet-the-team-landing-div">
+        <MeetTheTeam />
+      </div>
       <Footer />
     </>
   );
