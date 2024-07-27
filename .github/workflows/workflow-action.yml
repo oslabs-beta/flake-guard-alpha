@@ -21,7 +21,9 @@ jobs:
     steps:
           # Runs a single command using the runners shell
       - name: Print greeting
-        run: echo "Hello World!"
+        run: |
+              echo "Hello World!"
+              echo "Second line!
       - name: Print goodbye
         run: echo "Done - goodbye!"
     
