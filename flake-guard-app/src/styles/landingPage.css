@@ -73,11 +73,11 @@
 
 /*TEAM CSS*/
 
-#ashley-avatar:hover, #paloma-avatar:hover, #will-avatar:hover, #brendan-avatar:hover, #tommy-avatar:hover{
-transform: scale(1.2);
-
+#avatars:hover{
+    background-color: #457f3e;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #457f3e;
 }
-
 
 .team {
     text-align: center;
@@ -105,5 +105,10 @@ transform: scale(1.2);
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+  }
+
+  #linkedinlogo{
+    width: 2rem;
+    height: 2rem;
   }
   
