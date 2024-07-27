@@ -3,12 +3,12 @@
 name: CI Workflow
 
 # Controls when the workflow will run
-on: 
+on: workflow_dispatch
   # Triggers the workflow on push or pull request events but only for the "dev" branch
-  push:
-    branches: [ "dev" ]
-  pull_request:
-    branches: [ "dev" ]
+  # push:
+  #   branches: [ "dev" ]
+  # pull_request:
+  #   branches: [ "dev" ]
 
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch: workflow_dispatch
