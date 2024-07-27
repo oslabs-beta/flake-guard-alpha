@@ -12,7 +12,7 @@ const ErrorsDetails: React.FC = ({results}) => {
     useEffect(() => {
         const chartData = displayErrosDataParser(results);
         const latestRun = chartData.slice(-1); //Display the latest run
-        console.log('chartData', chartData)
+        // console.log('chartData', chartData)
        if (latestRun.length > 0) {
         const latestRunMetrics = latestRun[0]
         setMetrics(latestRunMetrics.details)
@@ -20,7 +20,7 @@ const ErrorsDetails: React.FC = ({results}) => {
         if (Array.isArray(latestRun)) setErrorsDetails(latestRun);
     }, [results]);
 
-    console.log('details', errorsDetails, metrics)
+    // console.log('details', errorsDetails, metrics)
     
 
     return (

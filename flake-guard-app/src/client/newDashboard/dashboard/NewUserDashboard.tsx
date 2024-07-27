@@ -145,20 +145,20 @@ const NewUserDashboard: React.FC = () => {
           </div>
         </div>
         <div className="bottom-content">
+          
           {/* BOTTOM CONTENT */}
-          <div>
-              <Duration/>
+          <div className='upper-bottom-content'>
             <div
               className="linechart-graph graph-style"
-              style={{height: '250px', width: '550px'}}
+              style={{height: '250px', width: '60%'}}
             >
               <LineChart results={results} />
-
             </div>
+            <Duration results={results}/>
+
           </div>
-          <div className='graph-style errors-details'  style={{height: '450px', width: '50%'}}
-> 
-          <p className='errors-title'>Errors</p>
+          <div className='graph-style errors-details'  style={{height: '350px', width: '50%'}}> 
+            <p className='errors-title'>Errors</p>
             <ErrorsDetails results={results}/>
           </div>
           {/* <Calendar CalendarData={CalendarData} /> */}

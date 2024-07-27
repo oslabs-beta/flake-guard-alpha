@@ -39,7 +39,27 @@
 }
 
 
+
+
+/* BOTTOM CONTENT  */
+.bottom-content {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+}
+
+.upper-bottom-content {
+    display: flex;
+    width: 90%;
+
+}
+
+
 /* ERRORS DETAILS */
+.errors-details {
+    /* background-color: orange; */
+}
 ul {
     list-style-type: none;
 }
@@ -50,3 +70,19 @@ ul {
     width: 100%;
 }
 
+
+/* DURATION */
+.duration-title {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    font-size: 20px;
+    margin-left: 5px;    
+}
+
+.duration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

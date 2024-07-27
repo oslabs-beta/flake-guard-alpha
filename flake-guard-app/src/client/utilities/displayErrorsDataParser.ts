@@ -70,7 +70,7 @@ export interface FG {
    
         output.push(dataPoint);
     });
-    console.log('output from utilities ->', output)
+    // console.log('output from utilities ->', output)
     return output;
   };
   
