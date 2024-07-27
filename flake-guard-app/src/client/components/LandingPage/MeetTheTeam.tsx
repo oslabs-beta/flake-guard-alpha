@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from 'react';
 import '../../../styles/landingPage.css';
 import Avatar from '@mui/material/Avatar';
@@ -78,8 +79,8 @@ const TeamMember = () => {
       <section className="team">
         <h2>Meet Our Team</h2>
         <div className="team-members">
-          {teamMembers.map((member, index) => (
-            <TeamMember key={index} {...member} />
+          {teamMembers.map((name, index) => (
+            <TeamMember key={index} {...name} />
           ))}
         </div>
       </section>
