@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import React, { useEffect, useState } from 'react';
-import { displayErrosDataParser } from '../../../utilities/displayErrorsDataParser';
+import { displayErrorsDataParser } from '../../../utilities/displayErrorsDataParser';
 
 import {
     ComposedChart,
@@ -19,7 +19,7 @@ const Duration = ({ results }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const chartData = displayErrosDataParser(results);
+        const chartData = displayErrorsDataParser(results);
         const latestRun = chartData.slice(-1); // Display the latest run
         const latestRunObj = latestRun[0];
         
