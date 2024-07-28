@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import React, {useEffect, useState, createContext} from 'react';
+import {useParams, useLocation} from 'react-router-dom';
 import {api} from '../services/index';
 import Sidebar from './components/Sidebar';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
@@ -17,9 +17,14 @@ import {flakyDataParser} from '../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 import LoginButton from '../landingPage/components/LoginButton';
 import Duration from './components/duration/Duration';
+import MenuSidebar from './components/Sidebar';
 
 const UserDashboard: React.FC = () => {
   const {userId} = useParams();
+  // const location = useLocation();
+  // const {results} = location.state || {};
+  // console.log('USERDASH RESULTS---->', results);
+
   const [results, setResults] = useState([]);
   const [flakytData, setFlakyData] = useState([]);
 
@@ -35,6 +40,7 @@ const UserDashboard: React.FC = () => {
         }
         console.log('RESULTS USERDASH --->', resultsArray);
         setResults(resultsArray);
+        const resultsContext = createContext(resultsArray);
       } catch (error) {
         console.log('Error getting results: ', error);
       }
@@ -65,7 +71,7 @@ const UserDashboard: React.FC = () => {
 
   return (
     <div className="dashboard-container">
-      <Sidebar />
+      <MenuSidebar />
       <div className="dashboard-content">
         <div className='dashboard-title'>
           <h3 >DASHBOARD</h3>
