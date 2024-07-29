@@ -11,7 +11,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
-  entry: './src/index.tsx',
+  entry: './src/client/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js', // Specify an output filename
@@ -27,7 +27,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/client/index.html',
     }),
 
     new MiniCssExtractPlugin(),

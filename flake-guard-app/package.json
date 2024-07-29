@@ -2,7 +2,7 @@
   "name": "flake-guard",
   "version": "1.0.0",
   "description": "Stability Starts Here: Master Test Flakiness, Ensure Reliability",
-  "main": "./src/index.tsx",
+  "main": "./src/client/index.tsx",
   "scripts": {
     "start": "concurrently \"webpack serve --open\" \"nodemon ./src/server/server.ts\"",
     "test": "jest",
