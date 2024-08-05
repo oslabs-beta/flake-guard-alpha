@@ -48,3 +48,43 @@
     justify-content: center;
     align-items: center;
 }
+
+
+
+@media screen and (max-width: 1350px) {
+    .piechart-container, 
+    .barchart-graph,
+    .duration-container,
+    .linechart-graph {
+        width: 100%;
+    }
+    
+
+}
+
+@media screen and (max-width: 1064px) {
+    .barchart-graph, 
+    .duration-container, 
+    .calendar-container, 
+    .placeholder-dashboard {
+        display: none;
+    }
+    /* PROBLEM: CANT MAKE LINECHART WIDTH 100% */
+    .piechart-container, 
+    .linechart-graph, 
+    .errors-details {
+        width: 100%;
+        background-color: red;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .linechart-graph {
+        display: none;
+    }
+    .piechart-container, 
+    .errors-details {
+        width: 90%;
+        background-color: blue;
+    }
+}

@@ -16,7 +16,6 @@
     flex-direction: column;
     width: 580px;
     height: 450px;
-    /* background-color: green; */
 }
 
 .left-landing h1 {
@@ -82,7 +81,7 @@
 .team {
     text-align: center;
     padding: 50px 0;
-    color: #457f3e
+    color: #457f3e;
   }
   
   .team-members {
@@ -112,3 +111,21 @@
     height: 2rem;
   }
   
+
+
+@media screen and (max-width: 1350px) {
+    .left-landing {
+        width: 70%;
+    }
+    .right-landing {
+        display: none;
+    }
+}
+@media screen and (max-width: 850px) {
+    .left-landing {
+        width: 100%;
+    }
+    .right-landing {
+        display: none;
+    }
+}

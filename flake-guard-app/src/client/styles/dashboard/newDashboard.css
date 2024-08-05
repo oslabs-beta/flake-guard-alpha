@@ -98,3 +98,29 @@
 ul {
     list-style-type: none;
 }
+
+
+
+
+@media screen and (max-width: 1350px) {
+    .flakiness-details,
+    .code-coverage {
+        display: none;
+    }
+  
+
+}
+
+
+/* 
+@media screen and (max-width: 1064px) {
+    .flakiness-details, .middle-content  {
+        display: none;
+    }
+    .errors-details-container {
+        width: 100%;
+        /* margin-top: 20px; */
+    /* }
+  
+}  */
+

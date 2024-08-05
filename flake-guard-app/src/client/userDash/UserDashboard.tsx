@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {useParams} from 'react-router-dom';
 import {api} from '../services/index';
 import Sidebar from './components/Sidebar';
@@ -11,36 +11,36 @@ import Calendar from './components/calendar/Calendar';
 import BarChart from './components/bar/BarChart';
 import ErrorsDetails from './components/errorsDetails/ErrorsDetails';
 import {CalendarData} from './components/calendar/data'; // data for Calendar
-import { barchartData } from '../components/bar/data';
 import LineChart from './components/line/LineChart';
 import {flakyDataParser} from '../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 import LoginButton from '../landingPage/components/LoginButton';
 import Duration from './components/duration/Duration';
+import { ResultsContext } from './contexts/ResultContext';
 
 const UserDashboard: React.FC = () => {
   const {userId} = useParams();
-  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState([]);
   const [flakytData, setFlakyData] = useState([]);
-
-  useEffect(() => {
-    const getResults = async () => {
-      try {
-        const results = await api.get(`/userDash/${userId}`);
-        const resultsArray = results.data;
-        // add a yyyy-mm-dd date to each result
-        for (const result of resultsArray) {
-          const ts = result.created_at;
-          result.date = ts.slice(0, ts.indexOf('T'));
-        }
-        console.log('RESULTS USERDASH --->', resultsArray);
-        setResults(resultsArray);
-      } catch (error) {
-        console.log('Error getting results: ', error);
-      }
-    };
-    getResults();
-  }, [userId]);
+  const results = useContext(ResultsContext)
+  // useEffect(() => {
+  //   const getResults = async () => {
+  //     try {
+  //       const results = await api.get(`/userDash/${userId}`);
+  //       const resultsArray = results.data;
+  //       // add a yyyy-mm-dd date to each result
+  //       for (const result of resultsArray) {
+  //         const ts = result.created_at;
+  //         result.date = ts.slice(0, ts.indexOf('T'));
+  //       }
+  //       console.log('RESULTS USERDASH --->', resultsArray);
+  //       setResults(resultsArray);
+  //     } catch (error) {
+  //       console.log('Error getting results: ', error);
+  //     }
+  //   };
+  //   getResults();
+  // }, [userId]);
 
   // Data for 'Flakiness and Always Failing' boxes
   useEffect(() => {
@@ -138,7 +138,7 @@ const UserDashboard: React.FC = () => {
             </div>
           </div>
           <div
-            className="calendar-graph graph-style"
+            className="barchart-graph graph-style"
             style={{height: '350px', width: '50%'}}
           >
             <BarChart results={results}/>
@@ -154,10 +154,10 @@ const UserDashboard: React.FC = () => {
             <LineChart results={results} />
           </div>
           <Duration results={results}/>
-          <p className='graph-style' style={{height: '220px', width: '20%'}}>code coverage</p>
+          <p className='graph-style code-coverage' style={{height: '220px', width: '20%'}}>code coverage</p>
         </div>
         <div className='bottom-content'>
-          <div className='graph-style errors-details'  style={{height: '350px', width: '50%'}}> 
+          <div className='graph-style errors-details-container'  style={{height: '350px', width: '50%'}}> 
             <p className='errors-title'>Errors</p>
             <ErrorsDetails results={results}/>
           </div>
@@ -165,7 +165,7 @@ const UserDashboard: React.FC = () => {
             <div className="graph-style calendar-container"  style={{height: '250px', width: '100%'}}>
           <Calendar CalendarData={CalendarData} />
           </div>
-          <p className="graph-style" style={{height:'100px', width: '100%'}}>placeholder</p>
+          <p className="graph-style placeholder-dashboard" style={{height:'100px', width: '100%'}}>placeholder</p>
           </div>
 
         </div>

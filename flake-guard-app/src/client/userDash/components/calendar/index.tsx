@@ -9,7 +9,7 @@ const CalendarPage: React.FC = () => {
   return (
     <div className='calendar-container'>
       <Sidebar />
-      <div className='calendar-graph' style={{ height: '350px' , width:'800px'}}> 
+      <div className='barchart-graph' style={{ height: '350px' , width:'800px'}}> 
         <Calendar CalendarData={CalendarData} />
       </div>
     </div>
