@@ -107,7 +107,7 @@ const flakeGuard = async (iterations) => {
     console.log(flakeGuardResults);
     // Send results to Flake Guard App server
     // const response = await fetch('https://2wguunmxpr.us-west-2.awsapprunner.com/results', {
-    const response = await fetch('http://localhost:3000/results', {
+    const response = await fetch('https://flake-guard.com/results', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/JSON',
