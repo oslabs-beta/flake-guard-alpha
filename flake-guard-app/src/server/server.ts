@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 // Default middleware
 app.use(bodyParser.json({limit: '10mb'}));
 app.use(cors());
-app.use(express.static(path.resolve(__dirname, '../client')));
+app.use(express.static(path.resolve(__dirname, '../../dist')));
 
 // Endpoints
 app.use('/results', resultsRouter);
