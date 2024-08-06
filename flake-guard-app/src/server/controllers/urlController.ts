@@ -37,7 +37,7 @@ const urlController: UrlController = {
 
   buildCustomUrl: (req: Request, res: Response, next: NextFunction) => {
     try {
-      const tempUrl: string = `https://flake-guard.com/npm/${res.locals.randomString}`;
+      const tempUrl: string = `https://flakeguard.com/npm/${res.locals.randomString}`;
       res.locals.tempUrl = tempUrl;
       next();
     } catch (error) {
