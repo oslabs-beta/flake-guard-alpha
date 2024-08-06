@@ -7,6 +7,7 @@ import resultsRouter from './routes/resultsRouter';
 import userDashRouter from './routes/userDashRouter';
 import tempDashRouter from './routes/tempDashRouter';
 import {errorHandler} from './errors/errorHandler';
+import {Request, Response} from 'express';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,7 +23,7 @@ app.use('/tempDash', tempDashRouter);
 app.use('/userDash', userDashRouter);
 
 // Catch all
-app.use('*', (req, res) => {
+app.use('*', (req: Request, res: Response) => {
   res.sendFile(path.resolve(__dirname, '../../dist/index.html'));
 });
 
