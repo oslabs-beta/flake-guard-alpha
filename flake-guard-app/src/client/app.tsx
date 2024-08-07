@@ -1,15 +1,11 @@
 import React from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Landing from './components/LandingPage/landing-page';
-import DocPage from './components/Docs/DocPage';
-import UserDashboard from './newDashboard/dashboard/NewUserDashboard';
-import TempDashboard from './components/Dashboard/TempDashboard';
-import DecisionPage from './components/Dashboard/DecisionPage';
-import NewUserDashboard from './newDashboard/dashboard/NewUserDashboard';
-import Calendar from './newDashboard/components/calendar/index';
-import PieChart from './newDashboard/components/pie/index';
-import LineChart from './newDashboard/components/line/index';
+import Landing from './landingPage/LandingPage';
+import DocPage from './docs/DocPage';
+import UserDashboard from './userDash/UserDashboard';
+import TempDashboard from './tempDash/TempDashboard';
+import DecisionPage from './tempDash/DecisionPage';
+import History from './userDash/pages/history/History';
+
 
 import {
   BrowserRouter as Router,
@@ -27,14 +23,13 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/npm/:id" element={<DecisionPage />} />
-          <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
-          <Route path="/tempdashboard/:id" element={<TempDashboard />} />
           <Route path="/docs" element={<DocPage />} />
-          <Route path="/dashboard" element={<NewUserDashboard />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/piechart" element={<PieChart />} />
-          <Route path="/linechart" element={<LineChart />} />
+          <Route path="/npm/:id" element={<DecisionPage />} />
+          <Route path="/tempdashboard/:id" element={<TempDashboard />} />
+          <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
+          <Route path="/flakytests/user/:userId" element={<h1>Flaky Tests</h1>} />
+          <Route path="/codecoverage/user/:userId" element={<h1>Code Coverage</h1>} />
+          <Route path="/history/user/:userId" element={<History />} />
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
