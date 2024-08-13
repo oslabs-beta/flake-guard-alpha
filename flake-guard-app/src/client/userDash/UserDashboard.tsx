@@ -151,7 +151,7 @@ const UserDashboard: React.FC = () => {
             </div>
           </div>
           <div className="duration-container" style={{width:"40%", height:"220px"}}>
-              <Duration results={results}/>
+              <Duration style={{backgroundColor:'blue'}} results={results}/>
           </div>
           <p className='graph-style code-coverage' style={{height: '220px', width: '20%'}}>code coverage</p>
         </div>
@@ -163,7 +163,8 @@ const UserDashboard: React.FC = () => {
             </div>
           </div>
           <div className='bottom-right-section' style={{width: '49%'}}>
-            <div className="graph-style calendar-container"  style={{height: '280px', width: '100%'}}>
+            <div className="graph-style calendar-container"  style={{height: '275px', width: '100%'}}>
+            <p>Flaky Test Frequency by Day</p>
             <Calendar CalendarData={CalendarData} />
           </div>
           </div>

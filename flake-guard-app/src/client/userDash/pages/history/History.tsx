@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { useLocation } from 'react-router-dom';
 import MenuSidebar from "../../components/Sidebar";
 import { useContext } from "react";
 import {ResultsContext} from '../../contexts/ResultContext'

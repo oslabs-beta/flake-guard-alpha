@@ -46,7 +46,7 @@ const Calendar: React.FC<DataProps> = () => {
           emptyColor="#eeeeee"
           colors={[ '#61cdbb', '#fead6a', '#dc8946', '#f47560' ]}
           margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-          yearSpacing={40}
+          yearSpacing={30}
           monthBorderColor="#ffffff"
           dayBorderWidth={2}
           dayBorderColor="#ffffff"

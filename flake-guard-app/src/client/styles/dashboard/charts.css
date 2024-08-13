@@ -58,7 +58,12 @@
     align-items: center;
 }
 
-
+/* CALENDAR */
+.calendar-container p {
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
+}
 
 @media screen and (max-width: 1350px) {
     .piechart-container, 
