@@ -44,8 +44,16 @@ const App: React.FC = () => {
               </ResultsProvider>
             }
           />
+          <Route
+            path="/history/user/:userId"
+            element={
+              <ResultsProvider>
+                <History />
+              </ResultsProvider>
+            }
+          />
           <Route path="/codecoverage/user/:userId" element={<h1>Code Coverage</h1>} />
-          <Route path="/history/user/:userId" element={<History />} />
+          {/* <Route path="/history/user/:userId" element={<History />} /> */}
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

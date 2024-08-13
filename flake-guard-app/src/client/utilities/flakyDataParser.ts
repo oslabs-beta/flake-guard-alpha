@@ -20,6 +20,7 @@ interface Test {
 }
 
 interface FlakyData {
+  date: string | null;
   flaky: number | null;
   alwaysFail: number | null;
   alwaysPass: number | null;
@@ -32,6 +33,7 @@ const flakyDataParser = (userResults: Array<FG>): Array<FlakyData> => {
 
   userResults.forEach((fg: FG) => {
     const data: FlakyData = {
+      date: null,
       flaky: null,
       alwaysFail: null,
       alwaysPass: null,
@@ -60,12 +62,13 @@ const flakyDataParser = (userResults: Array<FG>): Array<FlakyData> => {
         totalTests +=
           (test.skipped + test.failed + test.passed) / test.totalRuns;
       });
-
+      data.date = fg.date;
       data.flaky = flaky;
       data.alwaysFail = alwaysFail;
       data.alwaysPass = alwaysPass;
       data.skipped = skipped;
       data.totalTests = totalTests;
+  
 
       output.push(data);
     }

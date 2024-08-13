@@ -65,6 +65,10 @@
     width: 750px;
     height: 100%;
 }
+.right-landing img {
+    width:'750px';
+    margin-left: '15px'
+}
 
 #medium-article-link{
     color: #4aa240;
@@ -112,6 +116,16 @@
   }
   
 
+  @media screen and (max-width: 1500px) {
+    .right-landing img {
+        width: 650px;
+        margin-left: 20px;
+    }
+    .landing-page-container {
+        width: 85%;
+    }
+
+  }
 
 @media screen and (max-width: 1350px) {
     .left-landing {
@@ -129,3 +143,5 @@
         display: none;
     }
 }
+
+

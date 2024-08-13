@@ -174,7 +174,7 @@ return (
     />
     {flakyCount[0] && 
     <div className="flaky-count">
-      <p>{flakyCount[0].flakyTestsNum}/{flakyCount[1].totalTests} are flaky</p>
+      <p>{flakyCount[1].flakyTestsNum}/{flakyCount[2].totalTests} are flaky</p>
     </div>
     }
     </>

@@ -4,11 +4,8 @@
 .piechart-container {
     width: 30%;
     height: 350px;
-    
 }
-.piechart-graph {
-    width: 100%;
-}
+
 .flaky-count {
     background-color: rgb(254, 223, 99, 0.8) ;
     width: 110px;
@@ -22,13 +19,25 @@
     padding: 2px;
 }
 
+.linechart-container {
+    height: 220px;
+    width: 50%;
+}
 
-
+/* BARCHART  */
+.barchart-container {
+    height: 350px;
+    width: 50%;
+}
 /* BOTTOM CONTENT  */
-
 .accordion-scrollable {
-    max-height: 450px;
+    max-height: 230px;
     overflow-y: auto;
+    width: 100%;
+}
+
+/* ERRORS */
+.errors-details-container {
     width: 100%;
 }
 
@@ -58,33 +67,29 @@
     .linechart-graph {
         width: 100%;
     }
-    
-
 }
 
-@media screen and (max-width: 1064px) {
-    .barchart-graph, 
-    .duration-container, 
+ @media screen and (max-width: 750px) {
     .calendar-container, 
-    .placeholder-dashboard {
+    .placeholder-dashboard, 
+    .errors-details-container, 
+    .flakiness-details,
+    .barchart-container,
+    .sidebar-container {
         display: none;
     }
-    /* PROBLEM: CANT MAKE LINECHART WIDTH 100% */
-    .piechart-container, 
-    .linechart-graph, 
-    .errors-details {
-        width: 100%;
-        background-color: red;
+    .middle-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 500px;
+        width: 500px;
+    }
+    .linechart-container,
+    .piechart-container {
+        width: 90%;
+        margin-bottom: 10px;
     }
 }
 
-@media screen and (max-width: 850px) {
-    .linechart-graph {
-        display: none;
-    }
-    .piechart-container, 
-    .errors-details {
-        width: 90%;
-        background-color: blue;
-    }
-}
+
