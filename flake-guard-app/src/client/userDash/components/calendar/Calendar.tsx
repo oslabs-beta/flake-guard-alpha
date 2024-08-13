@@ -1,5 +1,8 @@
-import React from 'react';
-import {ResponsiveCalendar} from '@nivo/calendar';
+//@ts-nocheck
+import React, { useContext, useEffect, useState } from 'react';
+import { ResponsiveCalendar } from '@nivo/calendar';
+import { ResultsContext } from '../../contexts/ResultContext';
+import { flakyDataParser } from '../../../utilities/flakyDataParser';
 
 interface DataItem {
   value: number;
@@ -10,41 +13,58 @@ interface DataProps {
   CalendarData: DataItem[];
 }
 
-const getColor = (value: number): string => {
-  if (value >= 100) return 'red'; 
-  if (value >= 50) return 'orange';
-  if (value >= 25) return '#e8c1a0';
-  return '#1fbd4f'; 
-};
+const Calendar: React.FC<DataProps> = () => {
+  const [calendarData, setCalendarData] = useState<DataItem[]>([]);
+  const results = useContext(ResultsContext);
 
-const Calendar: React.FC<DataProps> = ({CalendarData}) => {
-  // console.log('data from CalendarData', CalendarData);
+  useEffect(() => {
+    const chartData = flakyDataParser(results);
+    const dataMap: { [key: string]: number } = {};
+
+    chartData.forEach((item: { date: string; flaky: number }) => {
+      dataMap[item.date] = (dataMap[item.date] || 0) + item.flaky;
+    });
+
+    const calendarDataArray = Object.keys(dataMap).map(date => ({
+      day: date,
+      value: dataMap[date]
+    }));
+
+    setCalendarData(calendarDataArray);
+
+  }, [results]);
+
+  console.log('results Calendar', calendarData);
+
   return (
-    <ResponsiveCalendar
-      data={CalendarData}
-      from="2015-03-01"
-      to="2016-07-12"
-      emptyColor="#eeeeee"
-      //the 1st color represents lower values and the last color represents higher values
-      colors={['#61cdbb', '#97e3d5', '#e8c1a0', '#f47560']} 
-      margin={{top: 40, right: 40, bottom: 40, left: 40}}
-      yearSpacing={40}
-      monthBorderColor="#ffffff"
-      dayBorderWidth={2}
-      dayBorderColor="#ffffff"
-      legends={[
-        {
-          anchor: 'bottom-right',
-          direction: 'row',
-          translateY: 36,
-          itemCount: 4,
-          itemWidth: 42,
-          itemHeight: 36,
-          itemsSpacing: 14,
-          itemDirection: 'right-to-left',
-        },
-      ]}
-    />
+    <>
+      {calendarData.length > 0 &&
+        <ResponsiveCalendar
+          data={calendarData}
+          from="2024-01-01"
+          to="2024-12-31"
+          emptyColor="#eeeeee"
+          colors={[ '#61cdbb', '#fead6a', '#dc8946', '#f47560' ]}
+          margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+          yearSpacing={30}
+          monthBorderColor="#ffffff"
+          dayBorderWidth={2}
+          dayBorderColor="#ffffff"
+          legends={[
+            {
+              anchor: 'bottom-right',
+              direction: 'row',
+              translateY: 36,
+              itemCount: 4,
+              itemWidth: 42,
+              itemHeight: 36,
+              itemsSpacing: 14,
+              itemDirection: 'right-to-left',
+            },
+          ]}
+        />
+      }
+    </>
   );
 };
 

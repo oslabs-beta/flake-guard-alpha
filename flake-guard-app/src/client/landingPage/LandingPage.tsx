@@ -46,7 +46,7 @@ const Landing = (): JSX.Element => {
           </div>
         </div>
         <div className="right-landing">
-        <img src={graphs} alt="graphs-landing" style={{width:'750px', marginLeft: '15px'}}/>
+        <img src={graphs} alt="graphs-landing" />
         </div>
       </div>
       <div style={{textAlign: 'center', color:'white'}}>

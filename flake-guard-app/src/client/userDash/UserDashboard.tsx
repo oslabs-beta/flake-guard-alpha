@@ -1,8 +1,6 @@
 // @ts-nocheck
 
-import React, {useEffect, useState, createContext} from 'react';
-import {useParams, useLocation} from 'react-router-dom';
-import {api} from '../services/index';
+import React, {useEffect, useState, useContext} from 'react';
 import Sidebar from './components/Sidebar';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import '../styles/dashboard/newDashboard.css';
@@ -11,42 +9,29 @@ import Calendar from './components/calendar/Calendar';
 import BarChart from './components/bar/BarChart';
 import ErrorsDetails from './components/errorsDetails/ErrorsDetails';
 import {CalendarData} from './components/calendar/data'; // data for Calendar
-import { barchartData } from '../components/bar/data';
 import LineChart from './components/line/LineChart';
 import {flakyDataParser} from '../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 import LoginButton from '../landingPage/components/LoginButton';
 import Duration from './components/duration/Duration';
-import MenuSidebar from './components/Sidebar';
+import { ResultsContext } from './contexts/ResultContext';
+import { barChartParser } from '../utilities/barchartDataParser';
 
 const UserDashboard: React.FC = () => {
-  const {userId} = useParams();
-  // const location = useLocation();
-  // const {results} = location.state || {};
-  // console.log('USERDASH RESULTS---->', results);
-
-  const [results, setResults] = useState([]);
   const [flakytData, setFlakyData] = useState([]);
+  //Uses the state from the ResultsContext
+  const results = useContext(ResultsContext)
 
+
+  // Parses data for the bar chart 
+  const [barChartData, setBarChartData] = useState([]);
   useEffect(() => {
-    const getResults = async () => {
-      try {
-        const results = await api.get(`/userDash/${userId}`);
-        const resultsArray = results.data;
-        // add a yyyy-mm-dd date to each result
-        for (const result of resultsArray) {
-          const ts = result.created_at;
-          result.date = ts.slice(0, ts.indexOf('T'));
-        }
-        console.log('RESULTS USERDASH --->', resultsArray);
-        setResults(resultsArray);
-        const resultsContext = createContext(resultsArray);
-      } catch (error) {
-        console.log('Error getting results: ', error);
-      }
-    };
-    getResults();
-  }, [userId]);
+      const chartData = barChartParser(results);
+      const latestRun = chartData.slice(-20); //Display the last 20 runs
+      // console.log('Parsed BAR Chart Data:', latestRun);
+      if (Array.isArray(latestRun)) setBarChartData(latestRun);
+  }, [results]);
+
 
   // Data for 'Flakiness and Always Failing' boxes
   useEffect(() => {
@@ -71,7 +56,9 @@ const UserDashboard: React.FC = () => {
 
   return (
     <div className="dashboard-container">
-      <MenuSidebar />
+      <div className="sidebar-container">
+      <Sidebar />
+      </div>
       <div className="dashboard-content">
         <div className='dashboard-title'>
           <h3 >DASHBOARD</h3>
@@ -143,31 +130,44 @@ const UserDashboard: React.FC = () => {
               )}
             </div>
           </div>
-          <div
-            className="calendar-graph graph-style"
-            style={{height: '350px', width: '50%'}}
-          >
-            <BarChart results={results}/>
+          <div className="barchart-container">
+            <div
+              className="barchart-graph graph-style"
+              style={{height: '350px', width: '99%'}}
+            >
+              <BarChart barChartData={barChartData}/>
+            </div>
           </div>
         </div>
-        <div className="bottom-content">
           
-          {/* BOTTOM CONTENT */}
-          <div className='upper-bottom-content'>
+        {/* BOTTOM CONTENT */}
+        <div className='middle-content'>
+          <div className="linechart-container">
             <div
               className="linechart-graph graph-style"
-              style={{height: '250px', width: '60%'}}
+              style={{height: '220px', width: '98%'}}
             >
               <LineChart results={results} />
             </div>
-            <Duration results={results}/>
-
           </div>
-          <div className='graph-style errors-details'  style={{height: '350px', width: '50%'}}> 
+          <div className="duration-container" style={{width:"40%", height:"220px"}}>
+              <Duration style={{backgroundColor:'blue'}} results={results}/>
+          </div>
+          <p className='graph-style code-coverage' style={{height: '220px', width: '20%'}}>code coverage</p>
+        </div>
+        <div className='bottom-content'>
+          <div className='graph-style errors-details-container' > 
             <p className='errors-title'>Errors</p>
-            <ErrorsDetails results={results}/>
+            <div className="errors-details-graph" style={{height:'230px', width:'100%'}}>
+              <ErrorsDetails results={results} />
+            </div>
           </div>
-          {/* <Calendar CalendarData={CalendarData} /> */}
+          <div className='bottom-right-section' style={{width: '49%'}}>
+            <div className="graph-style calendar-container"  style={{height: '275px', width: '100%'}}>
+            <p>Flaky Test Frequency by Day</p>
+            <Calendar CalendarData={CalendarData} />
+          </div>
+          </div>
 
         </div>
       </div>
