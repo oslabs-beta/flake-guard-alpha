@@ -5,6 +5,8 @@ import UserDashboard from './userDash/UserDashboard';
 import TempDashboard from './tempDash/TempDashboard';
 import DecisionPage from './tempDash/DecisionPage';
 import History from './userDash/pages/history/History';
+import FlakyTests from './userDash/pages/flakyTests/FlakyTests'
+import ResultsProvider from './userDash/contexts/ResultContext';
 
 import {
   BrowserRouter as Router,
@@ -25,10 +27,33 @@ const App: React.FC = () => {
           <Route path="/docs" element={<DocPage />} />
           <Route path="/npm/:id" element={<DecisionPage />} />
           <Route path="/tempdashboard/:id" element={<TempDashboard />} />
-          <Route path="/dashboard/user/:userId" element={<UserDashboard />} />
-          <Route path="/flakytests/user/:userId" element={<h1>Flaky Tests</h1>} />
+          {/* <Route path="/dashboard/user/:userId" element={<UserDashboard />} /> */}
+          <Route
+            path="/dashboard/user/:userId"
+            element={
+              <ResultsProvider>
+                <UserDashboard />
+              </ResultsProvider>
+            }
+          />
+          <Route
+            path="/flakytests/user/:userId"
+            element={
+              <ResultsProvider>
+                <FlakyTests />
+              </ResultsProvider>
+            }
+          />
+          <Route
+            path="/history/user/:userId"
+            element={
+              <ResultsProvider>
+                <History />
+              </ResultsProvider>
+            }
+          />
           <Route path="/codecoverage/user/:userId" element={<h1>Code Coverage</h1>} />
-          <Route path="/history/user/:userId" element={<History />} />
+          {/* <Route path="/history/user/:userId" element={<History />} /> */}
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
