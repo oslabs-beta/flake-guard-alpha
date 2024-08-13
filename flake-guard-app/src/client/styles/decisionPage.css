@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Logo Styling */
+.logo {
+  height: 90px;
+  width: 180px;
+  margin-left: 25px;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Sign-in Section */
+.signin-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loginButton {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #555;
+}
+
+.github-icon {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.info-text {
+  margin-left: 10px;
+  color: #457f3e;
+  font-size: 16px;
+}
+
+/* Flake Risk Container */
+.flake-risk-container {
+  margin: 40px 0;
+}
+
+/* Temporary Dashboard Text */
+.temporary-dashboard {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+/* Temporary Button */
+.temp-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.temp-button:hover {
+  background-color: #0056b3;
+}
+
+.btn-text {
+  font-size: 16px;
+}
