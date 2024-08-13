@@ -1,0 +1,91 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    width: 95%;
+    height: 80px;
+    margin: auto;
+    border-bottom: 1px solid #e6e7e8;
+
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+}
+.header-container Link {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.login-btn {
+    width: 200px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #24292E;
+}
+
+/* from LoginButton componenent */
+.loginButton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+	border: none;
+    background-color: none;
+    background-color: #24292E;
+    
+}
+.login-btn:hover {
+    background-color: #323334;
+}
+.loginButton:hover {
+    background-color: #323334;
+}
+.btn-text {
+    color: white;
+    font-size: 14px;
+}
+
+.dropdown-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown-menu button {
+    background-color: none;
+}
+.btn-signout {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* signout button */
+.btn-signout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    font-size: 15px;
+}
+.btn-text-signout {
+    color: #24292E;
+}
+.btn-text-signout:hover {
+    text-decoration: underline;
+}
+
+
+/* green 22C822 */

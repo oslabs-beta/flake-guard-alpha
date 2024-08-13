@@ -1,0 +1,80 @@
+.docs-container {
+  padding: 20px;
+}
+.questions button {
+  width: 280px;
+  text-align: start;
+}
+
+.active {
+  width: 600px;
+}
+.nav-pills .nav-link.active {
+  background-color: rgb(248, 246, 246); 
+  color: #457f3e; 
+}
+.nav-pills .nav-link {
+  color: #49af3e;   
+  margin: 10px;
+}
+.tab-content .tab-pane {
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  border-radius: 0.25rem;
+  height: 100vh;
+}
+.docs-title {
+  color: #2b7023;
+}
+
+.docs-text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(86, 90, 111);
+  padding: 10px;
+}
+
+.docs-text li {
+  width: 650px;
+  color: rgb(86, 90, 111);
+  margin: 8px;
+}
+
+
+
+/* FAQ */
+.faq-container {
+}
+.faq-container button{
+  width: 600px;
+  border-radius: 10px;
+}
+/* try to make the font bigger */
+.accordion-header:not(.collapsed) {
+  border: none; 
+
+}
+
+.accordion-header:not(.collapsed) {
+  border-bottom: none; 
+}
+
+
+.custom-bg {
+  color: #000; 
+}
+
+.custom-bg.collapsed {
+  color: #000;
+  border: none; 
+}
+
+.custom-bg:not(.collapsed) {
+  background-color: transparent;
+  color: #000; 
+}
+
+
+
+
