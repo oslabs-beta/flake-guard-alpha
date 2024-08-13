@@ -1,10 +1,10 @@
 # FlakeGuard
 
-FlakeGuard is a dev tool to detect and mitigate flake in end-to-end jest-puppeteer tests. 
+FlakeGuard is a dev tool to detect flake and track test result metrics in Jest test suites. 
 
 Visit flakeguard.com for more information or to create an account. 
 
-This is a beta version for a project in development through OSLabs. 
+This is a alpha version for a project in development through OSLabs. 
 
 If you are interested in contributing, have feedback, or like talking about testing, please contact us. 
 
@@ -44,6 +44,3 @@ For example, if you want to increase accuracy, you can increase test runs.
 
 ## How It Works
 Under the hood, the flake-guard npm package is automating repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
-
-#Run Testing Files
-npx jest
