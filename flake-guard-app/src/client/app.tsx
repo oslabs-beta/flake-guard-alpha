@@ -7,6 +7,7 @@ import DecisionPage from './tempDash/DecisionPage';
 import History from './userDash/pages/history/History';
 import FlakyTests from './userDash/pages/flakyTests/FlakyTests'
 import ResultsProvider from './userDash/contexts/ResultContext';
+import CodeCoverage from './userDash/pages/codeCoverage/CodeCoverage';
 
 import {
   BrowserRouter as Router,
@@ -52,7 +53,11 @@ const App: React.FC = () => {
               </ResultsProvider>
             }
           />
-          <Route path="/codecoverage/user/:userId" element={<h1>Code Coverage</h1>} />
+          <Route path="/codecoverage/user/:userId" element={
+            <ResultsProvider>
+                <CodeCoverage />
+              </ResultsProvider>
+          } />
           {/* <Route path="/history/user/:userId" element={<History />} /> */}
           {/* Redirect any unmatched routes to home */}
           <Route path="*" element={<Navigate to="/" />} />

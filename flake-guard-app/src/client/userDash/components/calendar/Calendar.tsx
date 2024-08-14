@@ -34,10 +34,11 @@ const Calendar: React.FC<DataProps> = () => {
 
   }, [results]);
 
-  console.log('results Calendar', calendarData);
+  // console.log('results Calendar', calendarData);
 
   return (
-    <>
+    <div style={{height: '350px', width: '100%'}}>
+      <p className='calendar-title'>Flaky Test Frequency by Day</p>
       {calendarData.length > 0 &&
         <ResponsiveCalendar
           data={calendarData}
@@ -64,7 +65,7 @@ const Calendar: React.FC<DataProps> = () => {
           ]}
         />
       }
-    </>
+    </div>
   );
 };
 
