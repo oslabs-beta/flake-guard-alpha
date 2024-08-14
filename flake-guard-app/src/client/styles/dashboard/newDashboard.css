@@ -7,6 +7,7 @@
 .dashboard-title {
     display: flex;
     justify-content: space-between;
+    align-items: end;
     margin: 10px;
     font-weight: 600;
 }
@@ -61,7 +62,13 @@
     align-items: center;
     width: 99%;
     margin: auto;
-    height: 250px;
+    height: 275px;
+}
+
+.linechart-container {
+    /* style={{height: '240px', width: '50%'}} */
+    height: 240px;
+    width: 50%;
 }
 
 /* CHART STYLE */
@@ -77,12 +84,13 @@
     display: flex;
     width: 99%;
     margin: auto;
-    
+    height: 375px;
 }
 
-.bottom-right-section{
+/* .bottom-right-section{
     width: 50%;
-}
+    /* background-color: blue; */
+
 /* ERRORS DETAILS */
 .errors-title {
     width: 90%;
@@ -101,8 +109,7 @@ ul {
 
 
 
-@media screen and (max-width: 1350px) {
-    .code-coverage {
-        display: none;
-    }
+@media screen and (max-width: 850px) {
+
+  
 }

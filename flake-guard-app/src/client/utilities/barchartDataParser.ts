@@ -47,24 +47,25 @@ export interface FG {
       let passed: number = 0;
       let failed: number = 0;
       let skipped: number = 0;      
-      
+
       if (Array.isArray(fg.results.metrics)) {
+        console.log('fg metrics',fg.results.metrics.length, fg.id)
         fg.results.metrics.forEach((test: Test) => {
             if (dataPoint.id === fg.id) {
                 passed += test.passed;
                 failed += test.failed;
                 skipped += test.skipped;
-            }
+            }  
             dataPoint.passed = passed;
             dataPoint.passedColor = 'hsl(134, 61%, 41%)';
             dataPoint.failed = failed;
             dataPoint.failedColor = 'hsl(354, 87%, 56%)'; 
             dataPoint.skipped = skipped;
             dataPoint.skippedColor = 'hsl(0, 0%, 71%)';
-
         });
       }
         output.push(dataPoint);
+        // console.log('executionFailed', executionFailed)
     });
     // console.log('output from barchart ', output)
     return output;

@@ -22,7 +22,6 @@ const UserDashboard: React.FC = () => {
   //Uses the state from the ResultsContext
   const results = useContext(ResultsContext)
 
-
   // Parses data for the bar chart 
   const [barChartData, setBarChartData] = useState([]);
   useEffect(() => {
@@ -31,6 +30,10 @@ const UserDashboard: React.FC = () => {
       // console.log('Parsed BAR Chart Data:', latestRun);
       if (Array.isArray(latestRun)) setBarChartData(latestRun);
   }, [results]);
+
+  
+
+  console.log('BARCHART ', barChartData)
 
 
   // Data for 'Flakiness and Always Failing' boxes
@@ -61,7 +64,7 @@ const UserDashboard: React.FC = () => {
       </div>
       <div className="dashboard-content">
         <div className='dashboard-title'>
-          <h3 >DASHBOARD</h3>
+          <h2 >DASHBOARD</h2>
           <LoginButton />
         </div>
         <div className="top-content">
@@ -142,33 +145,31 @@ const UserDashboard: React.FC = () => {
           
         {/* BOTTOM CONTENT */}
         <div className='middle-content'>
-          <div className="linechart-container">
+          <div className="linechart-container graph-style" >
             <div
-              className="linechart-graph graph-style"
-              style={{height: '220px', width: '98%'}}
-            >
+              className="linechart-graph "
+              style={{width:"100%", height:"100%"}}>
               <LineChart results={results} />
             </div>
           </div>
-          <div className="duration-container" style={{width:"40%", height:"220px"}}>
-              <Duration style={{backgroundColor:'blue'}} results={results}/>
+          <div className="duration-container graph-style" style={{width:"50%", height:"240px"}}>
+              <Duration results={results}/>
           </div>
-          <p className='graph-style code-coverage' style={{height: '220px', width: '20%'}}>code coverage</p>
         </div>
         <div className='bottom-content'>
-          <div className='graph-style errors-details-container' > 
-            <p className='errors-title'>Errors</p>
-            <div className="errors-details-graph" style={{height:'230px', width:'100%'}}>
+          <div className='graph-style errors-details-container'> 
+            <p className='errors-title'>Logs</p>
+            <div className="errors-details-graph" >
               <ErrorsDetails results={results} />
             </div>
           </div>
-          <div className='bottom-right-section' style={{width: '49%'}}>
-            <div className="graph-style calendar-container"  style={{height: '275px', width: '100%'}}>
-            <p>Flaky Test Frequency by Day</p>
-            <Calendar CalendarData={CalendarData} />
+          <div style={{height:'250px', width: '50%'}}>
+            <div className='bottom-right-section graph-style' style={{height: "365px", width: '100%'}}>
+              <div className=" calendar-container" >
+                <Calendar CalendarData={CalendarData} />
+              </div>
+            </div>
           </div>
-          </div>
-
         </div>
       </div>
     </div>
