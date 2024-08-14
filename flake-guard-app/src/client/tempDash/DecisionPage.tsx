@@ -7,6 +7,7 @@ import FlakeRiskContainer from '../flakeRiskSign/FlakeRiskSign/FlakeRiskContaine
 import {calculateFlakePercentage} from '../flakeRiskSign/Analytics/flake-percentage';
 import logo from '../assets/logo.png';
 import '../styles/decisionPage.css'
+import LoginButton from '../landingPage/components/LoginButton';
 
 const DecisionPage: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -75,23 +76,23 @@ const DecisionPage: React.FC = () => {
   return (
     <>
       <img
-        className="logo"
+        className="decisionLogo"
         src={logo}
         alt="flakeguard-logo"
       />
-      <div className="container">
-        <div className="signin-section">
-          <button className="loginButton" onClick={signIn}>
-            <img src={github} alt="github-logo" className="github-icon" />
+      <div className="decisionContainer">
+        <h1 className="info-text">To view detailed metrics and save your results:</h1>
+        <div className="login-btn decisionLogin">
+          <button className="loginButton desicionButton" onClick={signIn}>
+            <img src={github} alt="github-logo" style={{width: '25px'}}/>
             <span className="btn-text">Sign in with GitHub</span>
           </button>
-          <h2 className="info-text">to view detailed metrics and save your results</h2>
         </div>
         <div className="flake-risk-container">
           <FlakeRiskContainer flakePercent={flakePercent} />
         </div>
-        <h3 className="temporary-dashboard">To view a temporary dashboard without signing in</h3>
-        <button className="temp-button" onClick={() => goToTemp()}>
+        <h3 className="temp-text">To view a temporary dashboard without signing in:</h3>
+        <button className="npm-button temp-button" onClick={() => goToTemp()} style={{width: '100px'}}>
           <span className="btn-text">Click here</span>
         </button>
       </div>
