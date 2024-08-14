@@ -34,7 +34,7 @@ const Duration = ({ results }) => {
 
     // console.log('dataaaa', data);
     return (
-       <div className="duration-graph graph-style"
+       <div className="duration-graph "
         style={{width:"90%", height:"90%"}}>
         <p className='duration-title'>Execution duration (ms)</p>
          <ResponsiveContainer >

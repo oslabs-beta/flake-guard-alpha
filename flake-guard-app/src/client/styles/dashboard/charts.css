@@ -19,11 +19,6 @@
     padding: 2px;
 }
 
-.linechart-container {
-    height: 220px;
-    width: 50%;
-}
-
 /* BARCHART  */
 .barchart-container {
     height: 350px;
@@ -31,17 +26,26 @@
 }
 /* BOTTOM CONTENT  */
 .accordion-scrollable {
-    max-height: 230px;
+    max-height: 300px;
     overflow-y: auto;
     width: 100%;
 }
 
 /* ERRORS */
 .errors-details-container {
+    width: 50%;
+}
+
+.errors-details-graph {
+    height: 250px;
     width: 100%;
 }
 
+.bottom-right-three-boxes {
+    display: flex;
+    justify-content: space-evenly;
 
+}
 /* DURATION */
 .duration-title {
     display: flex;
@@ -59,41 +63,44 @@
 }
 
 /* CALENDAR */
-.calendar-container p {
+.calendar-title {
     text-align: center;
+    width: 100%;
     font-size: 20px;
-    margin: 5px;
+    padding-top: 5px;
 }
+
 
 @media screen and (max-width: 1350px) {
-    .piechart-container, 
-    .barchart-graph,
-    .duration-container,
-    .linechart-graph {
-        width: 100%;
+    .flakiness-details {
+        background-color: red;
+        display: none;
     }
+    .piechart-container, 
+    .barchart-container {
+        width: 50%;
+    }
+   
 }
 
- @media screen and (max-width: 750px) {
+ @media screen and (max-width: 768px) {
     .calendar-container, 
-    .placeholder-dashboard, 
-    .errors-details-container, 
     .flakiness-details,
     .barchart-container,
+    .duration-container,
     .sidebar-container {
         display: none;
     }
-    .middle-content {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        height: 500px;
-        width: 500px;
+    .bottom-content {
+        margin-left: 20px;
+        width: 750px;
     }
-    .linechart-container,
-    .piechart-container {
-        width: 90%;
-        margin-bottom: 10px;
+
+    .piechart-container, 
+    .linechart-container, 
+    .errors-details-container,
+    .errors-details-graph {
+        width: 450px;
     }
 }
 

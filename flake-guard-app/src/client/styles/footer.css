@@ -6,7 +6,6 @@
     height: 100px;
     background-color: #457f3e;
     font-size: 16px;
-
 }
 
 .footer-links a {
@@ -28,3 +27,20 @@
     transform: scale(1.05); 
 }
 
+@media screen and (max-width: 850px) {
+    .footer-icon-links {
+        width: 120px;
+    }
+
+    .footer-container {
+        height: 160px;
+    }
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+
+}
