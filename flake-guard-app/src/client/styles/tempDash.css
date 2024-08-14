@@ -1,10 +1,10 @@
-.dashboard-container {
+.tempDashboardContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.firstRow {
+.tempDashFirstRow {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -14,7 +14,7 @@
   width: 30vw;
 }
 
-.secondRow {
+.tempDashSecondRow {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -68,9 +68,9 @@ const TempDashboard = (): JSX.Element => {
   return (
     <>
       <NavBarHeading />
-      <div className="dashboard-container">
+      <div className="tempDashboardContainer">
         <div className="dashboard-items">
-          <div className='firstRow'>
+          <div className='tempDashFirstRow'>
             <div className="tempDashSummary">
               {metrics && <Summary metrics={metrics} />}
             </div>
@@ -78,7 +78,7 @@ const TempDashboard = (): JSX.Element => {
               <FlakeRiskContainer flakePercent={flakePercentage}/>
             </div>
           </div>
-          <div className='secondRow'>
+          <div className='tempDashSecondRow'>
           {metrics && <AssertionsGraph fetchResults={fetchResults} />}
           </div>
         </div>
