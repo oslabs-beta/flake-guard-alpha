@@ -49,7 +49,6 @@ export interface FG {
       let skipped: number = 0;      
 
       if (Array.isArray(fg.results.metrics)) {
-        console.log('fg metrics',fg.results.metrics.length, fg.id)
         fg.results.metrics.forEach((test: Test) => {
             if (dataPoint.id === fg.id) {
                 passed += test.passed;
@@ -65,7 +64,6 @@ export interface FG {
         });
       }
         output.push(dataPoint);
-        // console.log('executionFailed', executionFailed)
     });
     // console.log('output from barchart ', output)
     return output;

@@ -31,9 +31,6 @@ const UserDashboard: React.FC = () => {
       if (Array.isArray(latestRun)) setBarChartData(latestRun);
   }, [results]);
 
-  
-
-  console.log('BARCHART ', barChartData)
 
 
   // Data for 'Flakiness and Always Failing' boxes
