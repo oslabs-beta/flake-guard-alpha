@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import {Bar} from 'react-chartjs-2';
 import Flakiness from './Flakiness';
+import '../../styles/tempDash.css'
 
 ChartJS.register(
   CategoryScale,
@@ -105,20 +106,22 @@ const AssertionsGraph: React.FC<AssertionsGraphProps> = ({fetchResults}) => {
   };
 
   return (
-    <div className="assertions-graph box-style ">
-      <div className="flakiness-box">
-        <p>Flaky Rate (%)</p>
-        <div className="flakiness">
-          {fetchResults &&
-            fetchResults.map(result => (
-              <div className="flakiness-container">
-                <Flakiness fetchResults={result.failed/(result.passed+result.failed)*100} />
-              </div>
-            ))}
+    <div className="assertions-graph tempContainer">
+      <div className="temp-flakiness-box">
+        <div className='flakyRate'>
+          <p>Flaky Rate (%)</p>
+          <div className="flakiness">
+            {fetchResults &&
+              fetchResults.map(result => (
+                <div className="flakiness-container">
+                  <Flakiness fetchResults={result.failed/(result.passed+result.failed)*100} />
+                </div>
+              ))}
+          </div>
         </div>
+        <Bar className='barChart' options={options} data={barChartData} />
       </div>
 
-      <Bar options={options} data={barChartData} />
     </div>
   );
 };

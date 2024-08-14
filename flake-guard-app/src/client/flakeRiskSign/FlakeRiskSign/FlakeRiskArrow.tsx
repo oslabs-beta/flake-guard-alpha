@@ -24,8 +24,8 @@ const FlakeRiskArrow: React.FC<FlakeRiskArrowProps> = ({ flakePercent }): JSX.El
   const getArrowStyle = () => {
     if (flakePercent === undefined) return {};
 
-    if (flakePercent < 5) return { transform: `rotate(${positions.low}deg)` };
-    if (flakePercent >= 5 && flakePercent < 10) return { transform: `rotate(${positions.moderate}deg)` };
+    if (flakePercent === 0) return { transform: `rotate(${positions.low}deg)` };
+    if (flakePercent > 0 && flakePercent < 10) return { transform: `rotate(${positions.moderate}deg)` };
     if (flakePercent >= 10 && flakePercent < 20) return { transform: `rotate(${positions.high}deg)` };
     if (flakePercent >= 20 && flakePercent <= 30) return { transform: `rotate(${positions.veryHigh}deg)` };
     return { transform: `rotate(${positions.extreme}deg)` };
