@@ -41,7 +41,7 @@ const MenuSidebar: React.FC = () => {
         <Menu className="sidebar-menu">
           <div className="flakeguard-logo">
             <Link to='/'>
-              <img src={logo} alt="flakeguard-logo" style={{ width: '140px' }} />
+              <img src={logo} alt="flakeguard-logo" style={{ width: '180px' }} />
             </Link>
           </div>
           <Link to={`/dashboard/user/${userId}`}>
@@ -76,7 +76,9 @@ const MenuSidebar: React.FC = () => {
           </p>
           <p>
             <MenuBookOutlinedIcon fontSize="small" />
-            <span style={{ marginLeft: '5px' }}>Documentation</span>
+            <Link to='/docs'>
+              <span style={{ marginLeft: '5px' }}>Documentation</span>
+            </Link>
           </p>
         </div>
       </Sidebar>
