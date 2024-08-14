@@ -9,7 +9,7 @@ import NavBarHeading from '../landingPage/components/NavBar';
 import Footer from '../landingPage/components/Footer';
 import {calculateFlakePercentage} from '../flakeRiskSign/Analytics/flake-percentage';
 import FlakeRiskContainer from '../flakeRiskSign/FlakeRiskSign/FlakeRiskContainer';
-import {failedPercentage} from '../flakeRiskSign/Analytics/overall-failed-percentage';
+import '../styles/tempDash.css';
 
 const TempDashboard = (): JSX.Element => {
   const [metrics, setMetrics] = useState<{[key: string]: number} | undefined>(
@@ -35,6 +35,7 @@ const TempDashboard = (): JSX.Element => {
         setFetchResults(results);
 
         const flakePercentage = calculateFlakePercentage(results); // Calculate flake percentage
+        console.log('FLAKE PERCENTAGE--->', flakePercentage);
         setFlakePercentage(flakePercentage); // Set flakePercentage state
 
         let totalPassed = 0;
@@ -54,6 +55,8 @@ const TempDashboard = (): JSX.Element => {
         };
 
         setMetrics(labelsArr); // Set metrics state
+
+        console.log('METRICS--->', metrics);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -65,50 +68,21 @@ const TempDashboard = (): JSX.Element => {
   return (
     <>
       <NavBarHeading />
-      <div className="dashboard-container">
-        <h1 id="dashboard-header">Flake-Guard Dashboard</h1>
+      <div className="tempDashboardContainer">
         <div className="dashboard-items">
-          <div className="upper-dash">
-            <div className="summary-dash">
+          <div className='tempDashFirstRow'>
+            <div className="tempDashSummary">
               {metrics && <Summary metrics={metrics} />}
             </div>
-            <div>
-              <div className="bar-dash">
-                {metrics && <AssertionsGraph fetchResults={fetchResults} />}
-              </div>
-              <div>
-                <div className="trends-dash">{/* <Trends /> */}</div>
-              </div>
+            <div className='tempDashRisk'>
+              <FlakeRiskContainer flakePercent={flakePercentage}/>
             </div>
           </div>
-          <div className="display-errors-container">
-            <DisplayErrors fetchResults={fetchResults} />
+          <div className='tempDashSecondRow'>
+          {metrics && <AssertionsGraph fetchResults={fetchResults} />}
           </div>
         </div>
-        {flakePercentage !== undefined && (
-          <div>
-            <h2>Assertion Flakiness: </h2>
-            <p>{calculateFlakePercentage(fetchResults)}%</p>
-          </div>
-        )}
-        {flakePercentage !== undefined && (
-          <div>
-            <h2>Test Suite Failures: </h2>
-            <p>{failedPercentage(fetchResults)}%</p>
-          </div>
-        )}
-        {/* {flakePercentage !== undefined && (
-          <div>
-            <h2>100% Failure: </h2>
-            <p>{assertionFailedPercent(fetchResults)}%</p>
-          </div>
-        )} */}
       </div>
-      <div id="analytics-container">
-        {/* <FlakeGauge /> */}
-        <FlakeRiskContainer flakePercent={undefined}/>
-      </div>
-      <Footer />
     </>
   );
 };
