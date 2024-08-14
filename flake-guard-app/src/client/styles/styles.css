@@ -111,7 +111,7 @@
   height: 50vh; /* Ensures full viewport height for centering */
 }
 
-.assertions-graph:hover, .summary-dash:hover, .flakeRiskContainer:hover, .errors-dash:hover, .trends-dash:hover{
+.assertions-graph:hover, .summary-dash:hover, .errors-dash:hover, .trends-dash:hover{
   transition: transform 0.3s ease;
   transform: scale(1.1, 1.1);
 }
@@ -120,7 +120,7 @@
   margin: 30px;
 }
 
-.box-style:hover, .errors-dash:hover, .flakeRiskContainer:hover, #sign-in-button:hover{
+.box-style:hover, .errors-dash:hover, #sign-in-button:hover{
   border: 5px solid rgb(138, 238, 99);
   border-radius: 5%;
   transition: transform 0.3s ease;

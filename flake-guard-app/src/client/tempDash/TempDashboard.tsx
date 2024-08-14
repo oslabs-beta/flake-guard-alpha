@@ -106,7 +106,7 @@ const TempDashboard = (): JSX.Element => {
       </div>
       <div id="analytics-container">
         {/* <FlakeGauge /> */}
-        <FlakeRiskContainer />
+        <FlakeRiskContainer flakePercent={undefined}/>
       </div>
       <Footer />
     </>
