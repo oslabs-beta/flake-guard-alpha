@@ -1,4 +1,5 @@
-<img src="[https://raw.githubusercontent.com/oslabs-beta/flake-guard/98d4d159ba19a2e6dad3be218258100495a82826/flake-guard-app/src/client/assets/logo.png](https://flakeguard.com/d47fa5370b2bf886ebcb.png)" style="width: 40% ; height: 20%"/>
+<img src="https://flakeguard.com/d47fa5370b2bf886ebcb.png" style="background-color: white; width: 40% ; height: 20%"/>
+
 
 # 🚀 Welcome to flake guard! 🚀
 ### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Articles*](https://flake-guard.com/)
