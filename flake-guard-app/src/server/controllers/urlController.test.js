@@ -37,7 +37,7 @@ describe('urlController', () => {
     it('should generate a url and call next', () => {
       res.locals.randomString = 'abcdefghij';
       urlController.buildCustomUrl(req, res, next);
-      expect(res.locals.tempUrl).toBe('https://flakeguard.com/npm/abcdefghij')
+      expect(res.locals.tempUrl).toBe('http://localhost:8080/npm/abcdefghij')
       expect(next).toHaveBeenCalled();
     });
     it('should call next with a CustomError on failure', () => {
