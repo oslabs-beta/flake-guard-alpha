@@ -19,31 +19,17 @@ const FlakyTests: React.FC = () => {
 
 
     console.log('barChartData', barChartData)
-
     return (
-        <div className="dashboard-container">
-            <div>
-                <MenuSidebar />
-            </div>
-            <h1>Flaky Tests</h1>
-            <div className="dashboard-content">  {/* Should i change the name?*/}
-                <div
-                className="piechart-graph "
-                style={{height: '310px', width: '100%'}}
-                >
-                <PieChart results={results} />
-                </div>
-            </div>
-            <div className="barchart-container">
-            <div
-              className="barchart-graph graph-style"
-              style={{height: '350px', width: '99%'}}
-            >
-              <BarChart barChartData={barChartData}/>
-            </div>
+      <div className="dashboard-container">
+          <div>
+              <MenuSidebar />
           </div>
+        <div className="dashboard-content">
+          <h1>In-Depth Details about Flaky Tests Feature</h1>
+          <h1>Check back soon!</h1>
         </div>
-    );
+      </div>
+  );
 }
 
 export default FlakyTests;

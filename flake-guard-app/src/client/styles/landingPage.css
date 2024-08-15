@@ -110,11 +110,12 @@
     object-fit: cover;
   }
 
-  #linkedinlogo{
+  #linkedinlogo,
+  #githublogo {
     width: 2rem;
     height: 2rem;
+    margin: 0rem 1rem 0rem 1rem
   }
-  
 
   @media screen and (max-width: 1500px) {
     .right-landing img {

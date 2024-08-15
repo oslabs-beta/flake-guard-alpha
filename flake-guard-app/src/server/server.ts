@@ -7,6 +7,7 @@ import resultsRouter from './routes/resultsRouter';
 import userDashRouter from './routes/userDashRouter';
 import tempDashRouter from './routes/tempDashRouter';
 import {errorHandler} from './errors/errorHandler';
+import {Request, Response} from 'express';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,7 +23,7 @@ app.use('/tempDash', tempDashRouter);
 app.use('/userDash', userDashRouter);
 
 // 404 error handler
-app.use((req, res) => {
+app.use((req: Request, res: Response) => {
   res.status(404).send('Resource not found');
 });
 

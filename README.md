@@ -17,11 +17,11 @@
 
 </div>
 
-### FlakeGuard is a free, open-source software that allows developers to run Jest tests to automatically detect, report, and manage flaky tests in software development.
+### FlakeGuard is a free, open-source software that allows developers to run Jest tests to automatically detect, report, and track flaky tests in software development.
 ---
 *flaky test: a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems.*
 
-**By identifying and handling these flaky tests, FlakeGuard helps maintain test reliability.**
+**By identifying flaky tests, FlakeGuard helps users improve test assurances.**
 
 ## __Table of Contents__
 1. [Demo](#Demo)
@@ -33,15 +33,15 @@
 
 ---
 # Getting Started
-Installation:
-```npm i flake-guard``` or as a dev dependency:
+
+Install the FlakeGuard NPM package as a dev dependency by running the command
 ```npm i flake-guard --save-dev```
 
-To run FlakeGuard, simply execute the command
+To run FlakeGuard in your project, simply execute the command
 ```npx flake-guard <filename> ```
-. *change `<filename>` to the name of the test file that you want to examine. 
+. Change `<filename>` to the name of the test file that you want to examine. 
 
-👁️FlakeGuard will analyze your E2E tests for flakiness by executing multiple test runs and analyzing the results. _The default number of test runs is 10_, but this can be adjusted as described below.
+👁️FlakeGuard will analyze your tests for flakiness by executing multiple test runs and analyzing the results. _The default number of test runs is 10_, but this can be adjusted as described below.
 
 In general, there is a time versus accuracy tradeoff. More test executions increase accuracy but reduce speed.
 
@@ -74,6 +74,19 @@ Under the hood, the flake-guard npm package is automating repeated runs of your 
 <div>
 <img src="flake-guard-app/src/client/assets/graphs.png" style="height: 250px; width: 250px">
 </div> 
+The flake-guard NPM package pairs with the FlakeGuard web application. After the package runs in the terminal, the user will have the option to press Enter to send the results to the FlakeGuard server and open the FlakeGuard app in the browser. 
+
+The user will be directed to a page where they have the option to either view a one-time simplified version of the user dashboard, or log in via Github to view  advanced metrics and save their data to view the evolution of their test suite over time.
+
+# Future Features and Contributors
+We welcome feedback, new ideas, and contributors!
+
+Some features next in line for development include:
+
+- Allowing users to organize their stored results by filename
+- Incorporating Jest's code coverage metrics to visualize test suite coverage metrics and track changes over time
+- A history page where users can review previous results individually
+- Further tools to help users mitigate test flake, such as pinpointing test failure points and generating potential solutions
 
 ---
 # Authors 
