@@ -15,8 +15,6 @@
 <img src="https://blog.openreplay.com/images/building-and-rendering-charts-with-nivo-in-react/images/hero.png" alt = "nivo react charts logo" id="nivo" style="width: 70px"/>
 <img src="https://miro.medium.com/v2/resize:fit:400/1*ErKwBLuqyI8wAPxC6xwZkQ.jpeg" alt = "chartjs logo" id="chartjs" style="width: 70px ; height: 40px"/>
 <img src="https://getlogo.net/wp-content/uploads/2020/11/supabase-logo-vector.png" alt="supabase logo" style="width: 70px; height: 40px"/>
-<img src="https://miro.medium.com/v2/resize:fit:271/1*u7N4KAoe4tDMzs0GEdN1FA.png" alt="AWS ECR logo" style="width: 50px; height: 40px"/>
-<img src="https://assets.allcode.com/wp-content/uploads/2023/03/aws-app-runner.webp" alt="AWS App runner logo" style="width: 100px; height: 40px"/>
 
 </div>
 
