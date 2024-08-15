@@ -94,4 +94,4 @@ Some features next in line for development include:
 | Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `,` [Github](https://github.com/willsuto)
 
 # Contributing
-See [contributing](CONTRIBUTING.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
