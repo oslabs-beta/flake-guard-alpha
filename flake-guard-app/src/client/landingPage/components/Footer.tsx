@@ -28,7 +28,6 @@ const Footer = (): JSX.Element => {
         <a href="https://medium.com/@ashleyhannigan88/01431eb6ede3" target="_blank" rel="noopener noreferrer">Blog</a>
         <a href="mailto:contact@flakeguard.com">contact@flakeguard.com</a>        
         <Link to="/ourTeam">Our Team</Link>
-
       </div>
     </div>
   );

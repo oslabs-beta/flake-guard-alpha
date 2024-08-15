@@ -13,7 +13,6 @@ import githubLogo from '../../assets/github-logo.png'
 //NEEDING TOMMY INFO -> LINKEDIN AND IMAGE
 //STRETCH FEATURES -> WHEN CLICKING OUR TEAM -> GET DIRECTED TO THIS SPOT ON THE PAGE]
 
-
 const TeamMember = () => {
     const name= ["Ashley", "Paloma", "Tommy", "Brendan", "Will"];
     const role="Full Stack Developer"
