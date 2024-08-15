@@ -2,7 +2,7 @@
 
 import React, {useState, useEffect} from "react";
 import '../../../styles/dashboard/newDashboard.css'
-import {displayErrosDataParser} from '../../../utilities/displayErrorsDataParser'
+import {displayErrorsDataParser} from '../../../utilities/displayErrorsDataParser'
 import Accordion from 'react-bootstrap/Accordion';
 
 const ErrorsDetails: React.FC = ({results}) => {
@@ -10,7 +10,7 @@ const ErrorsDetails: React.FC = ({results}) => {
     const [metrics, setMetrics] = useState([]);
 
     useEffect(() => {
-        const chartData = displayErrosDataParser(results);
+        const chartData = displayErrorsDataParser(results);
         const latestRun = chartData.slice(-1); //Display the latest run
         // console.log('chartData', chartData)
        if (latestRun.length > 0) {

@@ -16,13 +16,6 @@
     flex-direction: column;
 }
 
-/* .advantage:hover {
-    cursor: auto;
-    border-radius: 5%;
-    transition: transform 0.3s ease;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-} */
-
 .advantage h5 {
     text-align: center;
     width: 250px;
@@ -36,3 +29,12 @@
     padding: 10px;
     color: rgb(60, 60, 60);
 }
+
+@media screen and (max-width: 1064px) {
+    .advantages-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+}
+

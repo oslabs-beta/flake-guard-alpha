@@ -16,7 +16,6 @@
     flex-direction: column;
     width: 580px;
     height: 450px;
-    /* background-color: green; */
 }
 
 .left-landing h1 {
@@ -66,6 +65,10 @@
     width: 750px;
     height: 100%;
 }
+.right-landing img {
+    width:'750px';
+    margin-left: '15px'
+}
 
 #medium-article-link{
     color: #4aa240;
@@ -82,7 +85,7 @@
 .team {
     text-align: center;
     padding: 50px 0;
-    color: #457f3e
+    color: #457f3e;
   }
   
   .team-members {
@@ -107,8 +110,39 @@
     object-fit: cover;
   }
 
-  #linkedinlogo{
+  #linkedinlogo,
+  #githublogo {
     width: 2rem;
     height: 2rem;
+    margin: 0rem 1rem 0rem 1rem
   }
-  
+
+  @media screen and (max-width: 1500px) {
+    .right-landing img {
+        width: 650px;
+        margin-left: 20px;
+    }
+    .landing-page-container {
+        width: 85%;
+    }
+
+  }
+
+@media screen and (max-width: 1350px) {
+    .left-landing {
+        width: 70%;
+    }
+    .right-landing {
+        display: none;
+    }
+}
+@media screen and (max-width: 850px) {
+    .left-landing {
+        width: 100%;
+    }
+    .right-landing {
+        display: none;
+    }
+}
+
+

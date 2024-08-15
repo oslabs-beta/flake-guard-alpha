@@ -1,23 +1,28 @@
-<img src="https://raw.githubusercontent.com/oslabs-beta/flake-guard/98d4d159ba19a2e6dad3be218258100495a82826/flake-guard-app/src/client/assets/logo.png" style="background-color: white; width: 40% ; height: 20%"/>
+<img src="flake-guard-app/src/client/assets/logo_with_background.png" style="height: 250px"/>
 
-# 🚀 Welcome to flake guard! 
-### [Website](https://flake-guard.com/) [Npm*](https://flake-guard.com/) [Articles*](https://flake-guard.com/)
+
+
+# 🚀 Welcome to flake guard! 🚀
+### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Articles*](https://flake-guard.com/)
 <div>
-<img src="https://cdn.iconscout.com/icon/free/png-512/free-javascript-1-225993.png?f=webp&w=512" style="width: 40px"/>
-<img src="https://cdn.iconscout.com/icon/free/png-512/free-typescript-1174965.png?f=webp&w=512" style="width: 40px"/> 
-<img src="https://cdn.iconscout.com/icon/free/png-512/free-react-1-282599.png?f=webp&w=512" style="width: 40px"/> 
-<img src ="https://cdn.iconscout.com/icon/free/png-512/free-tailwind-css-5285308-4406745.png?f=webp&w=512" style="width: 40px"/>
-<img src="https://cdn.iconscout.com/icon/free/png-512/free-jest-3521517-2945020.png?f=webp&w=512" style="width: 40px"/>
-<img src="https://cdn.iconscout.com/icon/free/png-512/free-npm-3521612-2945056.png?f=webp&w=512" style="width: 40px"/>
+<img src="https://cdn.iconscout.com/icon/free/png-512/free-javascript-1-225993.png?f=webp&w=512" alt = "javascipt logo" id="javascript" style="width: 40px; height: 40px"/>
+<img src="https://cdn.iconscout.com/icon/free/png-512/free-typescript-1174965.png?f=webp&w=512" alt = "typescript logo" id = "typescript" style="width: 40px; height: 40px"/> 
+<img src="https://cdn.iconscout.com/icon/free/png-512/free-react-1-282599.png?f=webp&w=512" alt = "react js" id = "react" style="width: 40px; height: 40px"/> 
+<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" id="tailwind" alt="tailwind css logo" style="width: 50px; height: 40px"/>
+<img src="https://cdn.iconscout.com/icon/free/png-512/free-jest-3521517-2945020.png?f=webp&w=512" id="jest" alt="jest logo" style="width: 40px; height: 40px"/>
+<img src="https://i.pinimg.com/474x/65/4f/45/654f4522679e9fc4304b32430f44939d.jpg" alt="react testing library logo" style="width: 40px; height: 40px"/>
+<img src="https://cdn.iconscout.com/icon/free/png-512/free-npm-3521612-2945056.png?f=webp&w=512" id="npm" alt="npm logo" style="width: 50px; height: 40px"/>
+<img src="https://blog.openreplay.com/images/building-and-rendering-charts-with-nivo-in-react/images/hero.png" alt = "nivo react charts logo" id="nivo" style="width: 70px"/>
+<img src="https://miro.medium.com/v2/resize:fit:400/1*ErKwBLuqyI8wAPxC6xwZkQ.jpeg" alt = "chartjs logo" id="chartjs" style="width: 70px ; height: 40px"/>
+<img src="https://getlogo.net/wp-content/uploads/2020/11/supabase-logo-vector.png" alt="supabase logo" style="width: 70px; height: 40px"/>
 
 </div>
 
-### Flake-Guard is a free, open-source tool that allows developers to run Jest tests to automatically detect, report, and manage flaky tests in software development.
+### FlakeGuard is a free, open-source software that allows developers to run Jest tests to automatically detect, report, and manage flaky tests in software development.
 ---
-*flaky test
-: a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems.*
+*flaky test: a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems.*
 
-**By identifying and handling these inconsistent tests, Flake-Guard helps maintain test reliability.**
+**By identifying and handling these flaky tests, FlakeGuard helps maintain test reliability.**
 
 # DEMO SECTION WITH VIDEO
 
@@ -25,9 +30,7 @@
 ---
 # Getting Started
 Installation:
-```npm i flake-guard```
-
-Installation as dev dependency:
+```npm i flake-guard``` or as a dev dependency:
 ```npm i flake-guard --save-dev```
 
 To run FlakeGuard, simply execute the command
@@ -43,13 +46,31 @@ To adjust FlakeGuard configuration variables, you can create a file in the root 
 fg.config.json
 . Below are the defaults, which can be overridden in your local 'fg.config.json' file.
 
-# [Flake-guard.com](https://Flake-guard.com)
+
+```
+{
+  runs: 10
+}
+```
+For example, if you want to increase accuracy, you can increase test runs.
+```
+{
+  runs: 100
+}
+```
+
+## How It Works
+Under the hood, the flake-guard npm package is automating repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
+
+## Run Jest Testing Files
+```npx jest```
+
+# [Flakeguard.com](https://Flakeguard.com)
 ## Tracked Dashboard Metrics
 <div>
-<img src="flake-guard-app/src/client/assets/graphs.png" style="height: 20%; ">
+<img src="flake-guard-app/src/client/assets/graphs.png" style="height: 250px; width: 250px">
 </div> 
 
-## Contribution Guidelines
 ---
 # Authors 
 | Name (First, Last) | Connect with us  | 
@@ -59,4 +80,5 @@ fg.config.json
 | Tommy Martinez | [LinkedIn](https://www.linkedin.com/in/tommy-martinez/) `,` [Github](https://github.com/tmm150)
 | Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)`,` [Github](https://github.com/palomareynolds)
 | Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `,` [Github](https://github.com/willsuto)
+
 

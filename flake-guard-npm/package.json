@@ -1,15 +1,11 @@
 {
   "name": "flake-guard",
-  "version": "1.0.0",
-  "description": "A dev tool for detecting and mitigating test flake.",
+  "version": "4.0.0",
+  "description": "A dev tool for detecting flake and tracking metrics in Jest test suites.",
   "main": "index.js",
   "bin": {
     "flake-guard": "./index.js"
   },
-  "keywords": ["flake"],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "keywords": ["flake", "jest", "flaky", "testing", "tests", "flaky tests", "test tracking", "test metrics"],
   "license": "ISC"
 }

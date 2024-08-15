@@ -8,10 +8,10 @@ import will from '../../assets/will.png';
 import brendan from '../../assets/brendan.png';
 import tommy from '../../assets/tommy.png';
 
-import linkedInLogo from '../../assets/linkedinlogo.png'; 
+import linkedInLogo from '../../assets/linkedinlogo.png';
+import githubLogo from '../../assets/github-logo.png'
 //NEEDING TOMMY INFO -> LINKEDIN AND IMAGE
 //STRETCH FEATURES -> WHEN CLICKING OUR TEAM -> GET DIRECTED TO THIS SPOT ON THE PAGE]
-
 
 const TeamMember = () => {
     const name= ["Ashley", "Paloma", "Tommy", "Brendan", "Will"];
@@ -26,7 +26,9 @@ const TeamMember = () => {
             <a href="https://www.linkedin.com/in/ashley-hannigan-88-/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInLogo} alt="LinkedIn" id="linkedinlogo"/>
             </a> 
-          {/* Add social links here */}
+            <a href="https://www.github.com/ashhannigan" target="_blank" rel="noopener noreferrer">
+                <img src={githubLogo} alt="Github" id="githublogo"/>
+            </a> 
         </div>
       </div>
         <div className="team-member" id="avatars">
@@ -37,7 +39,9 @@ const TeamMember = () => {
             <a href="https://www.linkedin.com/in/palomareynolds/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInLogo} alt="LinkedIn" id="linkedinlogo"/>
             </a> 
-          {/* Add social links here */}
+            <a href="https://www.github.com/palomareynolds" target="_blank" rel="noopener noreferrer">
+                <img src={githubLogo} alt="Github" id="githublogo"/>
+            </a>
         </div>
       </div>
         <div className="team-member" id="avatars">
@@ -48,7 +52,9 @@ const TeamMember = () => {
             <a href="https://www.linkedin.com/in/tommy-martinez/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInLogo} alt="LinkedIn" id="linkedinlogo"/>
             </a> 
-          {/* Add social links here */}
+            <a href="https://www.github.com/tmm150" target="_blank" rel="noopener noreferrer">
+                <img src={githubLogo} alt="Github" id="githublogo"/>
+            </a>
         </div>
       </div>
       <div className="team-member" id="avatars">
@@ -59,7 +65,9 @@ const TeamMember = () => {
             <a href="https://www.linkedin.com/in/brendanxiong/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInLogo} alt="LinkedIn" id="linkedinlogo"/>
             </a> 
-          {/* Add social links here */}
+            <a href="https://www.github.com/brendanxiong" target="_blank" rel="noopener noreferrer">
+                <img src={githubLogo} alt="Github" id="githublogo"/>
+            </a>
         </div>
       </div>
       <div className="team-member" id="avatars">
@@ -70,7 +78,9 @@ const TeamMember = () => {
             <a href="https://www.linkedin.com/in/willsuto/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInLogo} alt="LinkedIn" id="linkedinlogo"/>
             </a> 
-          {/* Add social links here */}
+            <a href="https://www.github.com/willsuto" target="_blank" rel="noopener noreferrer">
+                <img src={githubLogo} alt="Github" id="githublogo"/>
+            </a>
         </div>
       </div>
       </>

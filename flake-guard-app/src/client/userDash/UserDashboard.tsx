@@ -1,8 +1,6 @@
 // @ts-nocheck
 
-import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
-import {api} from '../services/index';
+import React, {useEffect, useState, useContext} from 'react';
 import Sidebar from './components/Sidebar';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import '../styles/dashboard/newDashboard.css';
@@ -11,36 +9,29 @@ import Calendar from './components/calendar/Calendar';
 import BarChart from './components/bar/BarChart';
 import ErrorsDetails from './components/errorsDetails/ErrorsDetails';
 import {CalendarData} from './components/calendar/data'; // data for Calendar
-import { barchartData } from '../components/bar/data';
 import LineChart from './components/line/LineChart';
 import {flakyDataParser} from '../utilities/flakyDataParser';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 import LoginButton from '../landingPage/components/LoginButton';
 import Duration from './components/duration/Duration';
+import { ResultsContext } from './contexts/ResultContext';
+import { barChartParser } from '../utilities/barchartDataParser';
 
 const UserDashboard: React.FC = () => {
-  const {userId} = useParams();
-  const [results, setResults] = useState([]);
   const [flakytData, setFlakyData] = useState([]);
+  //Uses the state from the ResultsContext
+  const results = useContext(ResultsContext)
 
+  // Parses data for the bar chart 
+  const [barChartData, setBarChartData] = useState([]);
   useEffect(() => {
-    const getResults = async () => {
-      try {
-        const results = await api.get(`/userDash/${userId}`);
-        const resultsArray = results.data;
-        // add a yyyy-mm-dd date to each result
-        for (const result of resultsArray) {
-          const ts = result.created_at;
-          result.date = ts.slice(0, ts.indexOf('T'));
-        }
-        console.log('RESULTS USERDASH --->', resultsArray);
-        setResults(resultsArray);
-      } catch (error) {
-        console.log('Error getting results: ', error);
-      }
-    };
-    getResults();
-  }, [userId]);
+      const chartData = barChartParser(results);
+      const latestRun = chartData.slice(-20); //Display the last 20 runs
+      // console.log('Parsed BAR Chart Data:', latestRun);
+      if (Array.isArray(latestRun)) setBarChartData(latestRun);
+  }, [results]);
+
+
 
   // Data for 'Flakiness and Always Failing' boxes
   useEffect(() => {
@@ -65,10 +56,12 @@ const UserDashboard: React.FC = () => {
 
   return (
     <div className="dashboard-container">
+      <div className="sidebar-container">
       <Sidebar />
+      </div>
       <div className="dashboard-content">
         <div className='dashboard-title'>
-          <h3 >DASHBOARD</h3>
+          <h2 >DASHBOARD</h2>
           <LoginButton />
         </div>
         <div className="top-content">
@@ -137,32 +130,43 @@ const UserDashboard: React.FC = () => {
               )}
             </div>
           </div>
-          <div
-            className="calendar-graph graph-style"
-            style={{height: '350px', width: '50%'}}
-          >
-            <BarChart results={results}/>
+          <div className="barchart-container">
+            <div
+              className="barchart-graph graph-style"
+              style={{height: '350px', width: '99%'}}
+            >
+              <BarChart barChartData={barChartData}/>
+            </div>
           </div>
         </div>
-        <div className="bottom-content">
           
-          {/* BOTTOM CONTENT */}
-          <div className='upper-bottom-content'>
+        {/* BOTTOM CONTENT */}
+        <div className='middle-content'>
+          <div className="linechart-container graph-style" >
             <div
-              className="linechart-graph graph-style"
-              style={{height: '250px', width: '60%'}}
-            >
+              className="linechart-graph "
+              style={{width:"100%", height:"100%"}}>
               <LineChart results={results} />
             </div>
-            <Duration results={results}/>
-
           </div>
-          <div className='graph-style errors-details'  style={{height: '350px', width: '50%'}}> 
-            <p className='errors-title'>Errors</p>
-            <ErrorsDetails results={results}/>
+          <div className="duration-container graph-style" style={{width:"50%", height:"240px"}}>
+              <Duration results={results}/>
           </div>
-          {/* <Calendar CalendarData={CalendarData} /> */}
-
+        </div>
+        <div className='bottom-content'>
+          <div className='graph-style errors-details-container'> 
+            <p className='errors-title'>Logs</p>
+            <div className="errors-details-graph" >
+              <ErrorsDetails results={results} />
+            </div>
+          </div>
+          <div style={{height:'250px', width: '50%'}}>
+            <div className='bottom-right-section graph-style' style={{height: "365px", width: '100%'}}>
+              <div className=" calendar-container" >
+                <Calendar CalendarData={CalendarData} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

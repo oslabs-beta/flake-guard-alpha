@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 interface ArrowPositions {
   low: number;
   moderate: number;
@@ -6,12 +7,12 @@ interface ArrowPositions {
   veryHigh: number;
   extreme: number;
 }
-// import calculateFlakePercentage from '../Analytics/flake-percentage';
 
-const FlakeRiskArrow = (): JSX.Element => {
-  //const flakePercent = props.flakepercentage
-  const flakePercent: number = 1.0;
+interface FlakeRiskArrowProps {
+  flakePercent: number | undefined;
+}
 
+const FlakeRiskArrow: React.FC<FlakeRiskArrowProps> = ({ flakePercent }): JSX.Element => {
   const positions: ArrowPositions = {
     low: -72,
     moderate: -36,
@@ -20,39 +21,18 @@ const FlakeRiskArrow = (): JSX.Element => {
     extreme: 72,
   };
 
+  const getArrowStyle = () => {
+    if (flakePercent === undefined) return {};
+
+    if (flakePercent === 0) return { transform: `rotate(${positions.low}deg)` };
+    if (flakePercent > 0 && flakePercent < 10) return { transform: `rotate(${positions.moderate}deg)` };
+    if (flakePercent >= 10 && flakePercent < 20) return { transform: `rotate(${positions.high}deg)` };
+    if (flakePercent >= 20 && flakePercent <= 30) return { transform: `rotate(${positions.veryHigh}deg)` };
+    return { transform: `rotate(${positions.extreme}deg)` };
+  };
+
   return (
-    <>
-      {flakePercent < 0.2 && (
-        <div
-          className="flakeRiskArrow"
-          style={{transform: `rotate(${positions.low}deg)`}}
-        ></div>
-      )}
-      {flakePercent >= 0.2 && flakePercent < 0.3 && (
-        <div
-          className="flakeRiskArrow"
-          style={{transform: `rotate(${positions.moderate}deg)`}}
-        ></div>
-      )}
-      {flakePercent >= 0.3 && flakePercent < 0.5 && (
-        <div
-          className="flakeRiskArrow"
-          style={{transform: `rotate(${positions.high}deg)`}}
-        ></div>
-      )}
-      {flakePercent >= 0.5 && flakePercent <= 0.65 && (
-        <div
-          className="flakeRiskArrow"
-          style={{transform: `rotate(${positions.veryHigh}deg)`}}
-        ></div>
-      )}
-      {flakePercent >= 0.65 && (
-        <div
-          className="flakeRiskArrow"
-          style={{transform: `rotate(${positions.extreme}deg)`}}
-        ></div>
-      )}
-    </>
+    <div className="flakeRiskArrow" style={getArrowStyle()}></div>
   );
 };
 
