@@ -4,7 +4,6 @@ node_modules
 build/ 
 dist/*
 coverage/
-package-lock.json
 dist/
 
 # Logs
@@ -120,6 +119,3 @@ sapling/node_modules
 sapling/.vscode-test/
 *.vsix
 
-# Package-Lock files:
-package-lock.json
-*/package-lock.json

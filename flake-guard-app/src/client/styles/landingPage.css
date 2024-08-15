@@ -90,7 +90,7 @@
   
   .team-members {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap; /* To handle different screen sizes */
   }
   
@@ -100,12 +100,12 @@
     box-shadow: 0px 2px 5px #457f3e;
     padding: 20px;
     text-align: center;
-    width: 300px; /* Adjust width as needed */
+    width: 200px; /* Adjust width as needed */
   }
   
   .team-member-image {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
   }

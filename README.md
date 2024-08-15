@@ -1,8 +1,8 @@
-<img src="https://raw.githubusercontent.com/oslabs-beta/flake-guard/98d4d159ba19a2e6dad3be218258100495a82826/flake-guard-app/src/client/assets/logo.png" style="background-color: white; width: 40% ; height: 20%"/>
+<img src="flake-guard-app/src/client/assets/flakeguard-logo-white-background.png" style="height: 250px"/>
 
 # 🚀 Welcome to flake guard! 🚀
-### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Articles*](https://flake-guard.com/)
-<div>
+### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Medium Article](https://medium.com/@ashleyhannigan88/flake-guard-open-source-01431eb6ede3)
+<div align="center">
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-javascript-1-225993.png?f=webp&w=512" alt = "javascipt logo" id="javascript" style="width: 40px; height: 40px"/>
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-typescript-1174965.png?f=webp&w=512" alt = "typescript logo" id = "typescript" style="width: 40px; height: 40px"/> 
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-react-1-282599.png?f=webp&w=512" alt = "react js" id = "react" style="width: 40px; height: 40px"/> 
@@ -13,8 +13,7 @@
 <img src="https://blog.openreplay.com/images/building-and-rendering-charts-with-nivo-in-react/images/hero.png" alt = "nivo react charts logo" id="nivo" style="width: 70px"/>
 <img src="https://miro.medium.com/v2/resize:fit:400/1*ErKwBLuqyI8wAPxC6xwZkQ.jpeg" alt = "chartjs logo" id="chartjs" style="width: 70px ; height: 40px"/>
 <img src="https://getlogo.net/wp-content/uploads/2020/11/supabase-logo-vector.png" alt="supabase logo" style="width: 70px; height: 40px"/>
-<img src="https://miro.medium.com/v2/resize:fit:271/1*u7N4KAoe4tDMzs0GEdN1FA.png" alt="AWS ECR logo" style="width: 50px; height: 40px"/>
-<img src="https://assets.allcode.com/wp-content/uploads/2023/03/aws-app-runner.webp" alt="AWS App runner logo" style="width: 60px"/>
+<img src="https://www.docker.com/wp-content/uploads/2023/08/logo-guide-logos-2.svg" alt="Docker logo" style="width: 100px; height: 40px"/>
 
 </div>
 
@@ -24,9 +23,14 @@
 
 **By identifying and handling these flaky tests, FlakeGuard helps maintain test reliability.**
 
-# DEMO SECTION WITH VIDEO
+## __Table of Contents__
+1. [Demo](#Demo)
+2. [Getting Started](#getting-started)
+3. [How it works](#how-it-works)
+4. [Tracked dashboard metrics](#tracked-dashboard-metrics)
+5. [Authors](#authors)
+6. [Contributing](#contributing)
 
-### end of demo section 
 ---
 # Getting Started
 Installation:
@@ -59,14 +63,14 @@ For example, if you want to increase accuracy, you can increase test runs.
 }
 ```
 
-## How It Works
+# How It Works
 Under the hood, the flake-guard npm package is automating repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
 
 ## Run Jest Testing Files
 ```npx jest```
 
-# [Flakeguard.com](https://Flakeguard.com)
-## Tracked Dashboard Metrics
+## [Flakeguard.com](https://Flakeguard.com)
+# Tracked Dashboard Metrics
 <div>
 <img src="flake-guard-app/src/client/assets/graphs.png" style="height: 250px; width: 250px">
 </div> 
@@ -81,3 +85,5 @@ Under the hood, the flake-guard npm package is automating repeated runs of your 
 | Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)`,` [Github](https://github.com/palomareynolds)
 | Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `,` [Github](https://github.com/willsuto)
 
+# Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md)
