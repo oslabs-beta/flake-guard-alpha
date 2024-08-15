@@ -1,7 +1,5 @@
 <img src="flake-guard-app/src/client/assets/logo_with_background.png" style="height: 250px"/>
 
-
-
 # 🚀 Welcome to flake guard! 🚀
 ### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Articles*](https://flake-guard.com/)
 <div>
@@ -23,6 +21,14 @@
 *flaky test: a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems.*
 
 **By identifying flaky tests, FlakeGuard helps users improve test assurances.**
+
+## __Table of Contents__
+1. [Demo](#Demo)
+2. [Getting Started](#getting-started)
+3. [How it works](#how-it-works)
+4. [Tracked dashboard metrics](#tracked-dashboard-metrics)
+5. [Authors](#authors)
+6. [Contributing](#contributing)
 
 ---
 # Getting Started
@@ -87,4 +93,5 @@ Some features next in line for development include:
 | Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)`,` [Github](https://github.com/palomareynolds)
 | Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `,` [Github](https://github.com/willsuto)
 
-
+# Contributing
+See [contributing](CONTRIBUTING.md)
