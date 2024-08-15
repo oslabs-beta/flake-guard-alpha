@@ -1,4 +1,5 @@
-<img src="https://flakeguard.com/d47fa5370b2bf886ebcb.png" style="background-color: white; width: 40% ; height: 20%"/>
+<img src="flake-guard-app/src/client/assets/logo_with_background.png" style="height: 250px"/>
+
 
 
 # 🚀 Welcome to flake guard! 🚀
