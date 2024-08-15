@@ -28,6 +28,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/client/index.html',
+      favicon: './src/client/assets/condensed-logo.png',
     }),
 
     new MiniCssExtractPlugin(),

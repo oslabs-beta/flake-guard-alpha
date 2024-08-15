@@ -1,4 +1,3 @@
-.env
 .DS_Store
 
 # Logs
@@ -113,7 +112,3 @@ sapling/dist
 sapling/node_modules
 sapling/.vscode-test/
 *.vsix
-
-# Package-Lock files:
-package-lock.json
-*/package-lock.json
