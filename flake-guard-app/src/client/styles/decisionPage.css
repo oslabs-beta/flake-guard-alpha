@@ -1,0 +1,47 @@
+.decisionLogo {
+  height: 90px;
+  width: 180px;
+  margin-left: 25px;
+}
+
+.decisionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.info-text {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  color: #457f3e;
+  font-size: 24px;
+}
+
+.decisionLogin:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.flake-risk-container {
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+.temp-text {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.temp-button {
+  margin-top: 0px;
+  height: 30px
+}
+
+.temp-button:hover {
+  background-color: #49ad2a;
+}
+
+.btn-text {
+  font-size: 16px;
+}

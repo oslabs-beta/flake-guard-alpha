@@ -1,7 +1,11 @@
 import FlakeRiskSlice from './FlakeRiskSlice';
 import FlakeRiskArrow from './FlakeRiskArrow';
 
-const FlakeRiskSign = (): JSX.Element => {
+interface FlakeRiskSignProps {
+  flakePercent: number | undefined
+}
+
+const FlakeRiskSign: React.FC<FlakeRiskSignProps> = ({flakePercent}): JSX.Element => {
   return (
     <div className="flakeRiskSign">
       <FlakeRiskSlice color={'green'} text={'LOW'} />
@@ -9,7 +13,7 @@ const FlakeRiskSign = (): JSX.Element => {
       <FlakeRiskSlice color={'yellow'} text={'HIGH'} />
       <FlakeRiskSlice color={'orange'} text={'VERY HIGH'} />
       <FlakeRiskSlice color={'red'} text={'EXTREME'} />
-      <FlakeRiskArrow />
+      <FlakeRiskArrow flakePercent={flakePercent}/>
     </div>
   );
 };

@@ -7,6 +7,7 @@
 .dashboard-title {
     display: flex;
     justify-content: space-between;
+    align-items: end;
     margin: 10px;
     font-weight: 600;
 }
@@ -54,6 +55,21 @@
     margin-left: 5px;
 }
 
+/* MIDDLE CONTENT */
+.middle-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 99%;
+    margin: auto;
+    height: 275px;
+}
+
+.linechart-container {
+    /* style={{height: '240px', width: '50%'}} */
+    height: 240px;
+    width: 50%;
+}
 
 /* CHART STYLE */
 .graph-style {
@@ -62,25 +78,18 @@
     margin: 5px;
     cursor: pointer;
 }
-/* PIECHART */
-/* .piechart-graph {
-   
-} */
-
-/* CALENDAR GRAPH */
-
-/* .calendar-graph {
-
-} */
-
 
 /* BOTTOM CONTENT */
 .bottom-content {
     display: flex;
-    justify-content: space-evenly;
-    height: 350px;
-    margin: 10px;
+    width: 99%;
+    margin: auto;
+    height: 375px;
 }
+
+/* .bottom-right-section{
+    width: 50%;
+    /* background-color: blue; */
 
 /* ERRORS DETAILS */
 .errors-title {
@@ -93,4 +102,14 @@
     display: flex;
     flex-direction: column;
     align-items:center;
+}
+ul {
+    list-style-type: none;
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+  
 }

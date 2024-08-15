@@ -29,7 +29,7 @@ export interface FG {
     durations: Array<number> | null
   }
   
-  const displayErrosDataParser = (userResults: Array<FG>) => {
+  const displayErrorsDataParser = (userResults: Array<FG>) => {
 
     // Input: The whole user results array
     const output: Array<DataPoint> = [];
@@ -74,4 +74,4 @@ export interface FG {
     return output;
   };
   
-  export {displayErrosDataParser};
+  export {displayErrorsDataParser};

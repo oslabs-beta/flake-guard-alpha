@@ -84,7 +84,7 @@
     "@supabase/supabase-js": "^2.43.4",
     "@testing-library/user-event": "^14.5.2",
     "@types/chart.js": "^2.9.41",
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.3",

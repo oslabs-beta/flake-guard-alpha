@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect, useState } from 'react';
-import { displayErrosDataParser } from '../../../utilities/displayErrorsDataParser';
+import { displayErrorsDataParser } from '../../../utilities/displayErrorsDataParser';
 import '../../../styles/dashboard/charts.css';
 
 import {
@@ -19,7 +19,7 @@ const Duration = ({ results }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const chartData = displayErrosDataParser(results);
+        const chartData = displayErrorsDataParser(results);
         const latestRun = chartData.slice(-1); // Display the latest run
         const latestRunObj = latestRun[0];
         
@@ -32,10 +32,10 @@ const Duration = ({ results }) => {
         }
     }, [results]);
 
-    console.log('dataaaa', data);
+    // console.log('dataaaa', data);
     return (
-      <div style={{width:"50%", height:"70%"}} className='graph-style duration-container'>
-         <div style={{width:"90%", height:"90%"}}>
+       <div className="duration-graph "
+        style={{width:"90%", height:"90%"}}>
         <p className='duration-title'>Execution duration (ms)</p>
          <ResponsiveContainer >
             <ComposedChart
@@ -57,7 +57,6 @@ const Duration = ({ results }) => {
                 <Line type="monotone" dataKey="ms" stroke="#ff7300" />
             </ComposedChart>
         </ResponsiveContainer>
-       </div>
       </div>
     );
 };

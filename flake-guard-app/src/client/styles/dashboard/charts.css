@@ -1,24 +1,11 @@
-/* CALENDAR */
-.calendar-container {
-    display: flex;
-
-    
-}
-
-.calendar-graph {
-
-}
 
 
 /* PIE CHART */
 .piechart-container {
     width: 30%;
     height: 350px;
-    
 }
-.piechart-graph {
-    width: 100%;
-}
+
 .flaky-count {
     background-color: rgb(254, 223, 99, 0.8) ;
     width: 110px;
@@ -32,45 +19,33 @@
     padding: 2px;
 }
 
-
-/* LINE CHART */
-.linechart-graph {
-    /* background-color: red; */
+/* BARCHART  */
+.barchart-container {
+    height: 350px;
+    width: 50%;
 }
-
-
-
-
 /* BOTTOM CONTENT  */
-.bottom-content {
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-    height: 650px;
-}
-
-.upper-bottom-content {
-    display: flex;
-    width: 90%;
-
-}
-
-
-/* ERRORS DETAILS */
-.errors-details {
-    /* background-color: orange; */
-}
-ul {
-    list-style-type: none;
-}
-
 .accordion-scrollable {
-    max-height: 450px; 
+    max-height: 300px;
     overflow-y: auto;
     width: 100%;
 }
 
+/* ERRORS */
+.errors-details-container {
+    width: 50%;
+}
 
+.errors-details-graph {
+    height: 250px;
+    width: 100%;
+}
+
+.bottom-right-three-boxes {
+    display: flex;
+    justify-content: space-evenly;
+
+}
 /* DURATION */
 .duration-title {
     display: flex;
@@ -86,3 +61,47 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
+/* CALENDAR */
+.calendar-title {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+
+@media screen and (max-width: 1350px) {
+    .flakiness-details {
+        background-color: red;
+        display: none;
+    }
+    .piechart-container, 
+    .barchart-container {
+        width: 50%;
+    }
+   
+}
+
+ @media screen and (max-width: 768px) {
+    .calendar-container, 
+    .flakiness-details,
+    .barchart-container,
+    .duration-container,
+    .sidebar-container {
+        display: none;
+    }
+    .bottom-content {
+        margin-left: 20px;
+        width: 750px;
+    }
+
+    .piechart-container, 
+    .linechart-container, 
+    .errors-details-container,
+    .errors-details-graph {
+        width: 450px;
+    }
+}
+
+
