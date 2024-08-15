@@ -4,8 +4,8 @@
 All pull requests will be reviewed by the authors and will either be 
 1. Denied
  2. Denied with feedback 
- 3. Approved contingent upon minor changes
-  4. Approved and merged
+  3. Approved contingent upon minor changes
+   4. Approved and merged
 
 ## Testing
 Please write Jest, or React Testing Library files to test the new code you create.
