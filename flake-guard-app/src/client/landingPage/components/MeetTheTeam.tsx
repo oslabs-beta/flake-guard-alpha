@@ -7,11 +7,9 @@ import paloma from '../../assets/paloma.png';
 import will from '../../assets/will.png';
 import brendan from '../../assets/brendan.png';
 import tommy from '../../assets/tommy.png';
-
 import linkedInLogo from '../../assets/linkedinlogo.png'; 
-//NEEDING TOMMY INFO -> LINKEDIN AND IMAGE
-//STRETCH FEATURES -> WHEN CLICKING OUR TEAM -> GET DIRECTED TO THIS SPOT ON THE PAGE]
 
+//STRETCH FEATURES -> WHEN CLICKING OUR TEAM -> GET DIRECTED TO THIS SPOT ON THE PAGE]
 
 const TeamMember = () => {
     const name= ["Ashley", "Paloma", "Tommy", "Brendan", "Will"];
