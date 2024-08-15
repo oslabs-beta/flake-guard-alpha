@@ -18,9 +18,6 @@
 
 **By identifying flaky tests, FlakeGuard helps users improve test assurances.**
 
-# DEMO SECTION WITH VIDEO
-
-### end of demo section 
 ---
 # Getting Started
 
