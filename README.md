@@ -1,4 +1,4 @@
-<img src="flake-guard-app/src/client/assets/logo_with_background.png" style="height: 150px"/>
+<img src="flake-guard-app/src/client/assets/logo_with_background.png" style="height: 100px"/>
 
 # 🚀 Welcome to flake guard! 🚀
 ### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Articles*](https://flake-guard.com/)
