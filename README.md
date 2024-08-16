@@ -1,8 +1,8 @@
-<img src="flake-guard-app/src/client/assets/logo_with_background.png" style="height: 125px"/>
+<img src="flake-guard-app/src/client/assets/flakeguard-logo-white-background.png" style="height: 250px"/>
 
 # 🚀 Welcome to flake guard! 🚀
-### [Website](https://flakeguard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Medium](https://medium.com/@ashleyhannigan88/flake-guard-open-source-01431eb6ede3)
-<div>
+### [Website](https://flake-guard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Medium Article](https://medium.com/@ashleyhannigan88/flake-guard-open-source-01431eb6ede3)
+<div align="center">
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-javascript-1-225993.png?f=webp&w=512" alt = "javascipt logo" id="javascript" style="width: 40px; height: 40px"/>
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-typescript-1174965.png?f=webp&w=512" alt = "typescript logo" id = "typescript" style="width: 40px; height: 40px"/> 
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-react-1-282599.png?f=webp&w=512" alt = "react js" id = "react" style="width: 40px; height: 40px"/> 
@@ -13,6 +13,7 @@
 <img src="https://blog.openreplay.com/images/building-and-rendering-charts-with-nivo-in-react/images/hero.png" alt = "nivo react charts logo" id="nivo" style="width: 70px"/>
 <img src="https://miro.medium.com/v2/resize:fit:400/1*ErKwBLuqyI8wAPxC6xwZkQ.jpeg" alt = "chartjs logo" id="chartjs" style="width: 70px ; height: 40px"/>
 <img src="https://getlogo.net/wp-content/uploads/2020/11/supabase-logo-vector.png" alt="supabase logo" style="width: 70px; height: 40px"/>
+<img src="https://www.docker.com/wp-content/uploads/2023/08/logo-guide-logos-2.svg" alt="Docker logo" style="width: 100px; height: 40px"/>
 
 </div>
 
@@ -62,10 +63,14 @@ For example, if you want to increase accuracy, you can increase test runs.
 }
 ```
 
-## How It Works
-Under the hood, the flake-guard npm package automates repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
+# How It Works
+Under the hood, the flake-guard npm package is automating repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
 
-# [Flakeguard.com](https://Flakeguard.com)
+## Run Jest Testing Files
+```npx jest```
+
+## [Flakeguard.com](https://Flakeguard.com)
+# Tracked Dashboard Metrics
 <div>
 <img src="flake-guard-app/src/client/assets/graphs.png" style="height: 250px; width: 250px">
 </div> 
