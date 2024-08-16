@@ -1,7 +1,7 @@
 <img src="flake-guard-app/src/client/assets/flakeguard-logo-white-background.png" style="height: 250px"/>
 
 # 🚀 Welcome to flake guard! 🚀
-### [Website](https://flakeguard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Medium Article](https://medium.com/@ashleyhannigan88/flake-guard-open-source-01431eb6ede3)
+### [Website](https://flakeguard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Medium](https://medium.com/@ashleyhannigan88/flake-guard-open-source-01431eb6ede3)
 <div align="left">
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-javascript-1-225993.png?f=webp&w=512" alt = "javascipt logo" id="javascript" style="width: 40px; height: 40px"/>
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-typescript-1174965.png?f=webp&w=512" alt = "typescript logo" id = "typescript" style="width: 40px; height: 40px"/> 
@@ -66,10 +66,7 @@ For example, if you want to increase accuracy, you can increase test runs.
 # How It Works
 Under the hood, the flake-guard npm package is automating repeated runs of your test file. It will do a basic parsing of the results locally to log an object in your terminal with all of your test assertions and their pass/fail metrics. It sends off the raw Jest results objects to the FlakeGuard server for further analysis which you can view at flakeguard.com.
 
-## Run Jest Testing Files
-```npx jest```
 
-## [Flakeguard.com](https://Flakeguard.com)
 # Tracked Dashboard Metrics
 <div>
 <img src="flake-guard-app/src/client/assets/graphs.png" style="height: 250px; width: 250px">
@@ -90,13 +87,13 @@ Some features next in line for development include:
 
 ---
 # Authors 
-| Name (First, Last) | Connect with us  | 
-| ------------- |:-------------:|
-| Ashley Hannigan | [LinkedIn](https://www.linkedin.com/in/ashley-hannigan-88-/) `|` [Github](https://github.com/ashhannigan)
-| Brendan Xiong | [LinkedIn](https://www.linkedin.com/in/brendanxiong/) `|` [Github](https://github.com/brendanxiong)
-| Tommy Martinez | [LinkedIn](https://www.linkedin.com/in/tommy-martinez/) `|` [Github](https://github.com/tmm150)
-| Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)`|` [Github](https://github.com/palomareynolds)
-| Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `|` [Github](https://github.com/willsuto)
+| Name | Connect with Us | Check out Our Work |
+| ------------- |:-------------:|:-------------:|
+| Ashley Hannigan | [LinkedIn](https://www.linkedin.com/in/ashley-hannigan-88-/) | [Github](https://github.com/ashhannigan)
+| Brendan Xiong | [LinkedIn](https://www.linkedin.com/in/brendanxiong/) | [Github](https://github.com/brendanxiong)
+| Tommy Martinez | [LinkedIn](https://www.linkedin.com/in/tommy-martinez/) | [Github](https://github.com/tmm150)
+| Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)| [Github](https://github.com/palomareynolds)
+| Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) | [Github](https://github.com/willsuto)
 
 # Contributing
 [CONTRIBUTING.md](CONTRIBUTING.md)
