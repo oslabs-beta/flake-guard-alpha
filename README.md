@@ -92,11 +92,11 @@ Some features next in line for development include:
 # Authors 
 | Name (First, Last) | Connect with us  | 
 | ------------- |:-------------:|
-| Ashley Hannigan | [LinkedIn](https://www.linkedin.com/in/ashley-hannigan-88-/) `,` [Github](https://github.com/ashhannigan)
-| Brendan Xiong | [LinkedIn](https://www.linkedin.com/in/brendanxiong/) `,` [Github](https://github.com/brendanxiong)
-| Tommy Martinez | [LinkedIn](https://www.linkedin.com/in/tommy-martinez/) `,` [Github](https://github.com/tmm150)
-| Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)`,` [Github](https://github.com/palomareynolds)
-| Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `,` [Github](https://github.com/willsuto)
+| Ashley Hannigan | [LinkedIn](https://www.linkedin.com/in/ashley-hannigan-88-/) `|` [Github](https://github.com/ashhannigan)
+| Brendan Xiong | [LinkedIn](https://www.linkedin.com/in/brendanxiong/) `|` [Github](https://github.com/brendanxiong)
+| Tommy Martinez | [LinkedIn](https://www.linkedin.com/in/tommy-martinez/) `|` [Github](https://github.com/tmm150)
+| Paloma Reynolds | [LinkedIn](https://www.linkedin.com/in/palomareynolds/)`|` [Github](https://github.com/palomareynolds)
+| Will Suto | [LinkedIn](https://www.linkedin.com/in/willsuto/) `|` [Github](https://github.com/willsuto)
 
 # Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+[CONTRIBUTING.md](CONTRIBUTING.md)
