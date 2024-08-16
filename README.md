@@ -19,7 +19,7 @@
 
 ### FlakeGuard is a free, open-source software that allows developers to run Jest tests to automatically detect, report, and track flaky tests in software development.
 ---
-*flaky test: a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems.*
+*Flaky test: a test that sometimes passes and sometimes fails for the same code, often due to nondeterministic factors like timing issues, network variability, or reliance on external systems.*
 
 **By identifying flaky tests, FlakeGuard helps users improve test assurances.**
 
