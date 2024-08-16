@@ -59,7 +59,7 @@ const DecisionPage: React.FC = () => {
     try {
       const signInResponse = await supabaseClient.auth.signInWithOAuth({
         provider: 'github',
-        options: {redirectTo: `http://localhost:8080/npm/${id}`},
+        options: {redirectTo: `https://flakeguard.com/npm/${id}`},
       });
       console.log('SIGN IN RESPONSE------>', signInResponse);
       const {data, error} = await supabaseClient.auth.getUser();
