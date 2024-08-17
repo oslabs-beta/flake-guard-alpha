@@ -1,6 +1,6 @@
 <img src="flake-guard-app/src/client/assets/flakeguard-logo-white-background.png" style="height: 250px"/>
 
-#  🚀 Welcome to flake guard! 🚀
+# 🚀 Welcome to flake guard! 🚀
 ### [Website](https://flakeguard.com/)  | |  [Npm](https://www.npmjs.com/package/flake-guard)  | |  [Medium](https://medium.com/@ashleyhannigan88/flake-guard-open-source-01431eb6ede3)
 <div align="left">
 <img src="https://cdn.iconscout.com/icon/free/png-512/free-javascript-1-225993.png?f=webp&w=512" alt = "javascipt logo" id="javascript" style="width: 40px; height: 40px"/>
